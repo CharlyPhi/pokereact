@@ -1,17 +1,12 @@
 import React from "react";
-
-const Cards = ({element}) => {
+let url =
+  "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/";
+const Cards = ({ pokemon }, { index }) => {
   return (
     <div>
-      <li key={element.id} className="card">
-      <p>{element.id}</p>
-        <p>{element.forms.name}</p>
-        <p>{element.height}</p>
-        <p>{element.id}</p>
-        {/* <img
-          src={`${element.sprites.other.front_default}`}
-          alt={element.name}
-        /> */}
+      <li key={index} className="card">
+        <img src={url + `${pokemon.url.slice(34,-1)}` + ".png"} alt={pokemon.name} />
+        
       </li>
     </div>
   );

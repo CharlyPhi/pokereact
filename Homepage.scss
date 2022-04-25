@@ -1,6 +1,6 @@
 .card {
   position: relative;
-  height: 50%;
+  padding: 0.7em;
   width: 10%;
   border-radius: 4px;
   display: flex;
@@ -27,4 +27,8 @@ img {
     cursor: pointer;
 
   }
+}
+
+h2{
+  font-size:larger
 }

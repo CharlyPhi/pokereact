@@ -1,13 +1,12 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Cards from "./Cards";
-let url = "https://pokeapi.co/api/v2/pokemon/?limit=100000";
+let url = "https://pokeapi.co/api/v2/pokemon/?limit=12000";
 
 const Pokemons = () => {
   const [dataName, setDataName] = useState([]);
   const [rangeValue, setRangeValue] = useState([12]);
   const [selectedRadio, setSelectedRadio] = useState("");
-  const [dataNames, setDataNames] = useState([]);
   const digits = [151, 251, 386, 493, 649, 721, 809, 905, 10300];
 
   useEffect(() => {
@@ -17,16 +16,6 @@ const Pokemons = () => {
       );
     })();
   }, [dataName]);
-
-  useEffect(() => {
-    dataName.map((pokemon, index) =>
-      (async () => {
-        await axios(`https://pokeapi.co/api/v2/pokemon/${pokemon.name}`).then(
-          (res) => setDataNames(res)
-        );
-      })()
-    );
-  },[dataName]);
 
   return (
     <div className="pokemon-name">
@@ -55,9 +44,11 @@ const Pokemons = () => {
         ))}
       </ul>
       <ul>
-        {dataNames
-          .map((element) => (
-            <Cards element={element} />
+        {dataName
+          .slice(0, selectedRadio)
+          .slice(0, rangeValue)
+          .map((pokemon, index) => (
+            <Cards key={index} pokemon={pokemon} />
           ))}
       </ul>
     </div>
