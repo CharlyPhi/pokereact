@@ -7,7 +7,7 @@ const Faq = () => {
       <Navigation />
       <h2>Which is your favorite Pokemon ?</h2>
       <h3>
-        I'd say Pikachu, event got a tatoo of it somewhere on my body...
+        I dont really have one, I mean Mewtwo is pretty rad but man... Psyduck !
       </h3>
       <h2>Why did you create this site ?</h2>
       <h3>To learn Javascript and more precisely React.</h3>
@@ -18,9 +18,9 @@ const Faq = () => {
       <h2>What is your favorite color ?</h2>
       <h3>Some shade of red.</h3>
       <h2>Do you think the human race has a future somehow ?</h2>
-      <h3>Not really, we were doomed to destroy ourselves from the beginning.</h3>
-      <h2>Which is your favorite Pokemon ?</h2>
-      <h3>Mewtoo.</h3>
+      <h3>
+        Not really, we were doomed to destroy ourselves from the beginning.
+      </h3>
     </div>
   );
 };
