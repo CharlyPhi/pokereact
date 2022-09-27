@@ -1,10 +1,42 @@
 import React from "react";
 import Navigation from "../components/Navigation";
+import { useState } from "react";
 
 const About = () => {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [mobile, setMobile] = useState("");
+  const [mail, setMail] = useState("");
+  const [msg, setMsg] = useState("");
+  const [error, setError] = useState("");
+
+  document.body.style.zoom = "110%";
+  document.body.style.backgroundColor = "lightblue";
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    try {
+      if (!firstName) {
+        setError("You need to enter a first name");
+      }
+      if (!lastName) {
+        setError("You need to enter a last name");
+      }
+      if (!mail) {
+        setError("You need to enter an email");
+      }
+      if (!msg) {
+        setError("Well there is no message to read here");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  console.log(firstName);
   return (
     <div>
-      <Navigation/>
+      <Navigation />
+
       <h2>A propos</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur
@@ -44,6 +76,59 @@ const About = () => {
         Deserunt minus nobis obcaecati fugit quae corrupti exercitationem minima
         iure provident!
       </p>
+
+      <section className="form">
+        <div className="pikachu">
+          <img src="assets/waving-pikachu2.gif" alt="sleepingPikachu"></img>
+        </div>
+        <p>
+          If you have any remark or just want to tell us who's your favorite
+          pokemon please use this form.
+        </p>
+        <label htmlFor="First name">First name</label>
+        <input
+          id="First name"
+          placeholder="First name"
+          required={true}
+          onChange={(e) => setFirstName(e.target.value)}
+        ></input>
+        <label htmlFor="Last name">Last name</label>
+        <input
+          id="Last name"
+          placeholder="Last name"
+          required={true}
+          onChange={(e) => setLastName(e.target.value)}
+        ></input>
+        <label htmlFor="Mobile">
+          Mobile (enter your number to receive a sms confirmation)
+        </label>
+        <input
+          id="Mobile"
+          defaultValue="+33"
+          onChange={(e) => setMobile(e.target.value)}
+        ></input>
+        <label htmlFor="e-mail">E-mail</label>
+        <input
+          type="email"
+          id="E-mail"
+          placeholder="E-mail"
+          required={true}
+          onChange={(e) => setMail(e.target.value)}
+        ></input>
+        <label htmlFor="Message">Message</label>
+        <textarea
+          id="Message"
+          placeholder="Message"
+          minLength={10}
+
+          
+          maxLength={200}
+          required={true}
+          onChange={(e) => setMsg(e.target.value)}
+        ></textarea>
+        <input type="submit" onClick={handleSubmit} />
+        <p>{error}</p>
+      </section>
     </div>
   );
 };
