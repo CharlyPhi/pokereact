@@ -1,11 +1,42 @@
-h2{
-   font-family: "Tapestry", sans-serif;
-}
 
 p{
-    font-family: "Roboto", sans-serif;
-    font-size: large;
-    font-weight: 200;
-    font-style:normal ;
-    text-align:justify;
+   font-family: "Roboto", sans-serif;
+   font-size: large;
+   font-weight: 700;
+   font-style:normal ;
+   text-align:justify;
+}
+
+
+.form{
+ background-image: url("/assets/open_pokeball.png");
+ width: 50em;
+ height: 46em;
+ margin: 0 auto;
+
+ label{
+  color: white;
+ }
+
+ input{
+  width: 50%;
+  border-radius: 2%;
+ }
+
+ textarea{
+  width: 50%;
+  border-radius: 2%;
+ }
+}
+
+.contact-form{
+ display: flex;
+ flex-direction: column;
+ margin-top: 17em;
+ margin-left: 19.5em;
+}
+
+.PhoneInput{
+  color: white;
+  width: 15.5rem;
 }
