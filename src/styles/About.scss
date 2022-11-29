@@ -1,11 +1,88 @@
-h2{
-   font-family: "Tapestry", sans-serif;
-}
 
 p{
-    font-family: "Roboto", sans-serif;
-    font-size: large;
-    font-weight: 200;
-    font-style:normal ;
-    text-align:justify;
+   font-family: "Roboto", sans-serif;
+   font-size: large;
+   font-weight: 700;
+   font-style:normal ;
+   text-align:justify;
+}
+
+.about-top{
+  display: flex;
+}
+
+.about-top-left{
+  display: flex;
+  flex-direction: column;
+  margin-left: 8rem;
+  margin-top: 2rem;
+}
+
+.about-top-text{
+  margin-bottom: 5rem;
+}
+
+.graph{
+  img{
+   
+
+  }
+}
+
+.votes{
+  display: flex;
+  flex-direction: column;
+  button{
+    width: 5rem;
+    height:2rem;
+    background-color: rgb(22, 180, 208);
+    border: none;
+    border-radius: 5%;
+  }
+  button:hover{
+    background-color: rgb(228, 228, 228);
+    border: 1px solid;
+    border-color:rgb(22, 180, 208);
+  }
+}
+
+.pifacteur{
+  margin: 0 auto;
+  width: 40rem;
+  height: 40rem;
+  border: none;
+}
+
+.form{
+ background-image: url("/assets/open_pokeball.jpg");
+ width: 50em;
+ height: 46em;
+ margin: 0 auto;
+
+ label{
+  color: white;
+ }
+
+ input{
+  width: 50%;
+  border-radius: 2%;
+ }
+
+ textarea{
+  width: 50%;
+  border-radius: 2%;
+ }
+}
+
+.contact-form{
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+ margin-top: 17em;
+ margin-left: 19.5em;
+}
+
+.PhoneInput{
+  color: white;
+  width: 15.5rem;
 }
