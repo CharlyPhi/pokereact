@@ -6,7 +6,7 @@ const Home = () => {
 
   function toggleZoomScreen() {
     document.body.style.zoom = "110%";
-    document.body.style.backgroundColor ="lightblue";
+    document.body.style.backgroundColor = "rgb(166,231,242,255)";
 
   }
   toggleZoomScreen()

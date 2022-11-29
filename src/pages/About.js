@@ -1,8 +1,11 @@
 import React from "react";
 import Navigation from "../components/Navigation";
 import { useState } from "react";
-import 'react-phone-number-input/style.css'
-import PhoneInput from 'react-phone-number-input'
+import "react-phone-number-input/style.css";
+import PhoneInput from "react-phone-number-input";
+import useGeoLocation from "react-ipgeolocation";
+import Votes from "../components/Votes";
+
 
 const About = () => {
   const [firstName, setFirstName] = useState("");
@@ -11,10 +14,13 @@ const About = () => {
   const [mail, setMail] = useState("");
   const [msg, setMsg] = useState("");
   const [error, setError] = useState("");
+  // get Ip country through "react-ipgeolocation";
+  const location = useGeoLocation();
 
   document.body.style.zoom = "110%";
-  document.body.style.backgroundColor = "rgb(185, 230, 240)";
+  document.body.style.backgroundColor = "rgb(166,231,242,255)";
 
+  // Handles the Form Submit (only the errors at the moment, no actual submit)
   const handleSubmit = (e) => {
     e.preventDefault();
     try {
@@ -35,24 +41,24 @@ const About = () => {
     }
   };
 
-  const getPhoneNumber = () => {
-    return (
-      <PhoneInput
-        placeholder="Enter phone number"
-        value={phone}
-        onChange={setPhone}/>
-    )
-  }
   return (
     <div>
       <Navigation />
-
+      <br></br>
       <h1>A propos</h1>
-      <p>
+      <div className="about-top">
+        <div className="about-top-left">
+      <p className="about-top-text">
         This Website's current aim is to improve my React skills, it will most
-        likely only be visited by unimpressed recruiters and family members.
+        likely only be visited by unimpressed recruiters and family members. Use the vote below to help me choose the next feature to implement. If you have any input regarding what could be improved use the form below and send me an email !
       </p>
-      <img src="./assets/mail_pikachu.jpg" alt="Pikachu_mail"></img>
+      <div className="vote">
+        <Votes/>
+      </div>
+      </div>
+      <img className = "pifacteur" src="mail_pikachu.jpg" alt="Pikachu_mail"></img>
+      </div>
+
       <section className="form">
         <div className="pikachu"></div>
         <p>Contact Us</p>
@@ -74,8 +80,13 @@ const About = () => {
           <label htmlFor="Mobile">Mobile</label>
           <PhoneInput
             id="Mobile"
+            international
+            countryCallingCodeEditable={false}
+            placeholder="Enter phone number"
+            defaultCountry={`${location.country}`}
             defaultValue="+33"
-            onChange={getPhoneNumber}
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
           />
           <label htmlFor="e-mail">E-mail</label>
           <input
