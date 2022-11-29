@@ -1,6 +1,9 @@
 import React from "react";
 import Navigation from "../components/Navigation";
 
+document.body.style.zoom = "110%";
+document.body.style.backgroundColor = "white";
+
 const Faq = () => {
   return (
     <div className="faq">
@@ -16,11 +19,8 @@ const Faq = () => {
       <h2>Do you play Pokemon Go ?</h2>
       <h3>I do indeed, and have been since the game started pretty much.</h3>
       <h2>What is your favorite color ?</h2>
-      <h3>Some shade of red.</h3>
-      <h2>Do you think the human race has a future somehow ?</h2>
-      <h3>
-        Not really, we were doomed to destroy ourselves from the beginning.
-      </h3>
+      <h3>This shade of blue</h3>
+
     </div>
   );
 };
