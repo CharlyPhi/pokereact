@@ -14,7 +14,7 @@ const Cards = ({ pokemon }, { index }) => {
   };
 
   useEffect(() => {
-    const res = axios(url2 + `${infoImage}`).then((response) =>
+    axios(url2 + `${infoImage}`).then((response) =>
       setInfoData(response.data)
     );
   }, [infoImage]);
@@ -36,6 +36,7 @@ const Cards = ({ pokemon }, { index }) => {
       >
         {
           <img
+            // eslint-disable-next-line no-useless-concat
             src={url + `${pokemon.url.slice(34, -1)}` + ".png"}
             alt={pokemon.name}
             onMouseOver={handleClick}

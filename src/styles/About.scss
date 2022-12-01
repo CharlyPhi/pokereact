@@ -8,6 +8,7 @@ p{
 }
 
 .about-top{
+  width:100%;
   display: flex;
 }
 
@@ -23,7 +24,7 @@ p{
 }
 
 .graph{
-  width: 800px;
+  width: 100%;
   .bar-one{
     height: 2rem;
     background-color: blue;
@@ -67,7 +68,7 @@ p{
 }
 
 .form{
- background-image: url("/assets/open_pokeball.jpg");
+ background-image: url("/assets/open_pokeball.png");
  width: 50em;
  height: 46em;
  margin: 0 auto;

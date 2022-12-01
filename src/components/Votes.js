@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from "react";
 
 export default function Votes() {
-  const [vote1, setVote1] = useState(24);
-  const [vote2, setVote2] = useState(86);
-  const [vote3, setVote3] = useState(324);
-  const [vote4, setVote4] = useState(5);
+  const [vote1, setVote1] = useState(182);
+  const [vote2, setVote2] = useState(157);
+  const [vote3, setVote3] = useState(230);
+  const [vote4, setVote4] = useState(35);
 
   useEffect(() => {
     increase1();
     increase2();
     increase3();
     increase4();
-  }, []);
+  },[]);
 
   function increase1() {
     const colorBar = document.getElementById("1");

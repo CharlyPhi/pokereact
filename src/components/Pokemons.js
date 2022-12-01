@@ -19,7 +19,7 @@ const Pokemons = () => {
 
   useEffect(() => {
     (async () => {
-      const pokeName = await axios(url).then((res) =>
+      await axios(url).then((res) =>
         setDataName(res.data.results)
       );
     })();

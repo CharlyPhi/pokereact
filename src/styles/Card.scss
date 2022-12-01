@@ -2,10 +2,10 @@
   height: 100%;
   width: 100%;
 }
-.optionTab{
+.optionTab {
   margin: 8em;
 }
-.pokedex{
+.pokedex {
   padding: 0 12em 20em 12em;
 }
 
@@ -21,7 +21,7 @@
     }
     ul.infos{
       display:none;
-      
+
     }
     &:hover {
       z-index: 1;
@@ -31,9 +31,9 @@
       transform: scale(2);
       transition: none;
       overflow: hidden;
-      
+
       background-color: none;
-      
+
       ul.infos{
         margin-left:30px;
         list-style-type: none;
@@ -44,7 +44,7 @@
           text-transform:capitalize;
       }
       }
-      
+
     }
     &:active{
       background-image: none;
@@ -62,8 +62,3 @@
       width:100px;
     }
 }
-
-
-
-
-

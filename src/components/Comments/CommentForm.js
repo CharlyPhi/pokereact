@@ -19,7 +19,7 @@ const CommentForm = ({
     <form onSubmit={onSubmit}>
       <textarea
         className="comment-form-textarea"
-        maxlength="350"
+        maxLength="350"
         value={text}
         onChange={(e) => setText(e.target.value)}
       />

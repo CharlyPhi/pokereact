@@ -16,7 +16,7 @@ const Home = () => {
   return (
     <div className="home">
       <Navigation />
-      <h2>Click on your favorite pokemon to know everything about him !</h2>
+      <h2>Click on your favorite pokemon to see it way bigger ! Hover for more info </h2>
 
       <Pokemons />
     </div>
