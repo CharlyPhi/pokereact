@@ -15,7 +15,6 @@ const About = () => {
   const [msg, setMsg] = useState("");
   const [error, setError] = useState("");
   // get Ip country through "react-ipgeolocation";
-  const location = useGeoLocation();
 
   document.body.style.zoom = "110%";
   document.body.style.backgroundColor = "rgb(166,231,242,255)";
@@ -56,7 +55,7 @@ const About = () => {
         <Votes/>
       </div>
       </div>
-      <img className = "pifacteur" src="mail_pikachu.jpg" alt="Pikachu_mail"></img>
+      <img className = "pifacteur" src="public/mail_pikachu.jpg" alt="Pikachu_mail"></img>
       </div>
 
       <section className="form">
@@ -83,7 +82,7 @@ const About = () => {
             international
             countryCallingCodeEditable={false}
             placeholder="Enter phone number"
-            defaultCountry={`${location.country}`}
+            defaultCountry={`${useGeoLocation().country}`}
             defaultValue="+33"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
