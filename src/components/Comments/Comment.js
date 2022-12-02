@@ -1,5 +1,6 @@
 import React from "react";
 import CommentForm from "./CommentForm";
+import MyImage from "../../assets/pokeball.jpg"
 
 const Comment = ({
   comment,
@@ -30,7 +31,7 @@ const Comment = ({
   return (
     <div className="comment">
       <div className="comment-image-container">
-        <img src="/pokeball.jpg" alt="default user icon" />
+        <img src={MyImage} alt="default user icon" />
       </div>
       <div className="comment-right-part">
         <div className="comment-content">

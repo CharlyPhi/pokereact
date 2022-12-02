@@ -5,6 +5,7 @@ import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
 import useGeoLocation from "react-ipgeolocation";
 import Votes from "../components/Votes";
+import MyImage from "../assets/mail_pikachu.jpg";
 
 
 const About = () => {
@@ -55,7 +56,7 @@ const About = () => {
         <Votes/>
       </div>
       </div>
-      <img className = "pifacteur" src="/mail_pikachu.jpg" alt="Pikachu_mail"></img>
+      <img className = "pifacteur" src={MyImage} alt="Pikachu_mail"></img>
       </div>
 
       <section className="form">
