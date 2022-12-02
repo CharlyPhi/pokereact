@@ -55,7 +55,7 @@ const About = () => {
         <Votes/>
       </div>
       </div>
-      <img className = "pifacteur" src="public/mail_pikachu.jpg" alt="Pikachu_mail"></img>
+      <img className = "pifacteur" src="/mail_pikachu.jpg" alt="Pikachu_mail"></img>
       </div>
 
       <section className="form">
