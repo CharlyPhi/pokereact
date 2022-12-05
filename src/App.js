@@ -4,7 +4,7 @@ import About from "./pages/About";
 import Home from "./pages/Home";
 import Faq from "./pages/Faq";
 
-const App = () => {
+export default function App(){
   return (
     <BrowserRouter>
       <Routes>
@@ -16,5 +16,3 @@ const App = () => {
     </BrowserRouter>
   );
 };
-
-export default App;

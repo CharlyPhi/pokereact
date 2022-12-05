@@ -2,7 +2,7 @@ import React from "react";
 import Navigation from "../components/Navigation";
 import Pokemons from "../components/Pokemons";
 
-const Home = () => {
+export default function Home(){
 
   function toggleZoomScreen() {
     document.body.style.zoom = "110%";
@@ -22,5 +22,3 @@ const Home = () => {
     </div>
   );
 };
-
-export default Home;
