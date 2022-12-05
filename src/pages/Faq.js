@@ -7,7 +7,7 @@ document.body.style.backgroundColor = "rgb(166,231,242,255)";
 
 
 
-const Faq = () => {
+export default function Faq(){
   return (
     <div className="faq">
       <Navigation />
@@ -15,5 +15,3 @@ const Faq = () => {
     </div>
   );
 };
-
-export default Faq;

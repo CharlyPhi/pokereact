@@ -8,7 +8,7 @@ import {
 import Comment from "./Comment";
 import CommentForm from "./CommentForm";
 
-const Comments = ({ currentUserId }) => {
+export default function Comments({ currentUserId }){
   const [backendComments, setBackendComments] = useState([]);
   const [activeComment, setActiveComment] = useState(null);
   const rootComments = backendComments.filter(
@@ -82,5 +82,3 @@ const Comments = ({ currentUserId }) => {
     </div>
   );
 };
-
-export default Comments;

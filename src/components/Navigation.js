@@ -1,9 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-const Navigation = () => {
+export default function Navigation() {
   return (
-    <div>
+    <div className="NavBar">
       <ul>
         <NavLink
           to="/Home"
@@ -26,6 +26,4 @@ const Navigation = () => {
       </ul>
     </div>
   );
-};
-
-export default Navigation;
+}

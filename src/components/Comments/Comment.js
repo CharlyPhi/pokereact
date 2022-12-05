@@ -2,7 +2,7 @@ import React from "react";
 import CommentForm from "./CommentForm";
 import MyImage from "../../assets/pokeball.jpg"
 
-const Comment = ({
+export default function Comment({
   comment,
   replies,
   currentUserId,
@@ -12,7 +12,7 @@ const Comment = ({
   setActiveComment,
   addComment,
   parentId = null,
-}) => {
+}){
   const fiveMinutes = 300000;
   const timePassed = new Date() - new Date(comment.createdAt) > fiveMinutes;
   const canReply = Boolean(currentUserId);
@@ -110,5 +110,3 @@ const Comment = ({
     </div>
   );
 };
-
-export default Comment;

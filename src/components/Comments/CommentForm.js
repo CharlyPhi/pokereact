@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 
-const CommentForm = ({
+export default function CommentForm({
   handleSubmit,
   submitLabel,
   hasCancelButton = false,
   initialText = "",
   handleCancel,
-}) => {
+}){
   const [text, setText] = useState(initialText);
   const isTextareaDisabled = text.length === 0;
   const onSubmit = (event) => {
@@ -39,5 +39,3 @@ const CommentForm = ({
     </form>
   );
 };
-
-export default CommentForm;

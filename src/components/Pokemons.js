@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Cards from "./Cards";
 let url = "https://pokeapi.co/api/v2/pokemon/?limit=12000";
 
-const Pokemons = () => {
+export default function Pokemon() {
   const digits = [151, 251, 386, 493, 649, 721, 809, 905, 10300];
   const [dataName, setDataName] = useState([]);
   const [selectedRadio, setSelectedRadio] = useState("");
@@ -54,5 +54,3 @@ const Pokemons = () => {
     </div>
   );
 };
-
-export default Pokemons;

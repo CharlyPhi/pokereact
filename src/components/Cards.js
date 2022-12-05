@@ -5,7 +5,7 @@ let url =
   "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/";
 let url2 = "https://pokeapi.co/api/v2/pokemon/";
 
-const Cards = ({ pokemon }, { index }) => {
+export default function Cards({ pokemon }, { index }){
   const [infoImage, setInfoImage] = useState("");
   const [infoData, setInfoData] = useState("");
 
@@ -58,5 +58,3 @@ const Cards = ({ pokemon }, { index }) => {
     </>
   );
 };
-
-export default Cards;

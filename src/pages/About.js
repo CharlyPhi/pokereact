@@ -8,7 +8,7 @@ import Votes from "../components/Votes";
 import MyImage from "../assets/mail_pikachu.jpg";
 
 
-const About = () => {
+export default function About(){
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [phone, setPhone] = useState("");
@@ -113,4 +113,3 @@ const About = () => {
   );
 };
 
-export default About;
