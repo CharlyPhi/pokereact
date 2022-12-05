@@ -11,6 +11,7 @@ export default function Faq(){
   return (
     <div className="faq">
       <Navigation />
+      <div className="banner"></div>
       <Comments currentUserId="1"/>
     </div>
   );

@@ -4,26 +4,24 @@ import { NavLink } from "react-router-dom";
 export default function Navigation() {
   return (
     <div className="NavBar">
-      <ul>
         <NavLink
           to="/Home"
           className={(nav) => (nav.isActive ? "nav-active" : " ")}
         >
-          <li>Homepage</li>
+          <button>Homepage</button>
         </NavLink>
         <NavLink
           to="/About"
           className={(nav) => (nav.isActive ? "nav-active" : " ")}
         >
-          <li>About</li>
+          <button>A propos</button>
         </NavLink>
         <NavLink
           to="/Faq"
           className={(nav) => (nav.isActive ? "nav-active" : " ")}
         >
-          <li>FAQ</li>
+          <button>FAQ</button>
         </NavLink>
-      </ul>
     </div>
   );
 }

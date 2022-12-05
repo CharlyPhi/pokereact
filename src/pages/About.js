@@ -44,6 +44,7 @@ export default function About(){
   return (
     <div>
       <Navigation />
+      <div className="banner"></div>
       <br></br>
       <h1>A propos</h1>
       <div className="about-top">
@@ -112,4 +113,3 @@ export default function About(){
     </div>
   );
 };
-

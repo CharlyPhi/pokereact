@@ -16,8 +16,7 @@ export default function Home(){
   return (
     <div className="home">
       <Navigation />
-      <h2>Click on your favorite pokemon to see it way bigger ! Hover for more info </h2>
-
+      <div className="banner"></div>
       <Pokemons />
     </div>
   );
