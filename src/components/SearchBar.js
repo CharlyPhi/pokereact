@@ -1,24 +1,28 @@
 import React, { useState } from "react";
 
 export default function SearchBar() {
-  const [value, setValue] = useState("");
-  let array = ["pikachu", "bulbazaur", "clefairy", "motisma"];
+  const [list, setList] = useState([
+    "pikachu",
+    "bulbazaur",
+    "clefairy",
+    "motisma",
+  ]);
 
-  console.log(value);
-
-
+  const handleChange = (event) => {
+    if (event.target.value === "") {
+      setList(list);
+      return;
+    }
+    const filteredValues = list.filter(
+      (item) =>
+        item.toLowerCase().indexOf(event.target.value.toLowerCase()) !== -1
+    );
+    setList(filteredValues);
+  };
   return (
     <>
-      <input
-        name="query"
-        type="search"
-        list={array}
-        onChange={(e) => setValue(e.target.value)}
-      ></input>
-      {array &&
-        array.map((item, index) => (
-          <div key={index}>{item}</div>
-        ))}
+      <input name="query" type="search" onChange={handleChange}></input>
+      {list && list.map((item, index) => <div key={index}>{item}</div>)}
     </>
   );
 }
