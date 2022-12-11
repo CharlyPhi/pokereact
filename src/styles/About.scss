@@ -87,6 +87,15 @@ h1{
  width: 40rem;
  height: 40rem;
  border: none;
+ z-index:0;
+}
+
+.play-button{
+  width:2rem;
+  height: 2rem;
+  padding-top: 35rem;
+  border: none;
+  z-index: 1;
 }
 
 .form{
@@ -107,6 +116,10 @@ input{
 textarea{
  width: 50%;
  border-radius: 2%;
+}
+
+span{
+  font-size:small;
 }
 }
 

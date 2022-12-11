@@ -3,19 +3,20 @@ import Navigation from "../components/Navigation";
 import { useState } from "react";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
+// get Ip country through "react-ipgeolocation";
 import useGeoLocation from "react-ipgeolocation";
 import Votes from "../components/Votes";
-import MyImage from "../assets/mail_pikachu.jpg";
+import Pikachu from "../assets/mail_pikachu.jpg";
+import PlayButton from "../assets/play-button.png";
+import Pika from "../assets/pikachu-starter.mp3";
 
-
-export default function About(){
+export default function About() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [phone, setPhone] = useState("");
   const [mail, setMail] = useState("");
   const [msg, setMsg] = useState("");
   const [error, setError] = useState("");
-  // get Ip country through "react-ipgeolocation";
 
   document.body.style.zoom = "110%";
   document.body.style.backgroundColor = "rgb(166,231,242,255)";
@@ -36,9 +37,19 @@ export default function About(){
       if (!msg) {
         setError("Well there is no message to read here");
       }
+      if (!phone) {
+        setError("Well there is no phone number to read here");
+      }
     } catch (error) {
       console.log(error);
     }
+  };
+
+  //Sounds
+  const PikachuCry = new Audio(Pika);
+  const PikaCry = () => {
+    console.log("Pika Pika");
+    PikachuCry.play();
   };
 
   return (
@@ -49,20 +60,30 @@ export default function About(){
       <h1>A propos</h1>
       <div className="about-top">
         <div className="about-top-left">
-      <p className="about-top-text">
-        This Website's current aim is to improve my React skills, it will most
-        likely only be visited by unimpressed recruiters and family members. Use the vote below to help me choose the next feature to implement. If you have any input regarding what could be improved use the form below and send me an email !
-      </p>
-      <div className="vote">
-        <Votes/>
-      </div>
-      </div>
-      <img className = "pifacteur" src={MyImage} alt="Pikachu_mail"></img>
+          <p className="about-top-text">
+            This Website's current aim is to improve my React skills, it will
+            most likely only be visited by unimpressed recruiters and family
+            members. Use the vote below to help me choose the next feature to
+            implement. If you have any input regarding what could be improved
+            use the form below and send me an email !
+          </p>
+          <div className="vote">
+            <Votes />
+          </div>
+        </div>
+        <img
+          className="play-button"
+          src={PlayButton}
+          alt="Play Button"
+          onClick={() => PikaCry()}
+        />
+        <img className="pifacteur" src={Pikachu} alt="Pikachu_mail" />
       </div>
 
       <section className="form">
-        <div className="pikachu"></div>
-        <p>Contact Us</p>
+        <p>
+          "You didnt notice this color change" <span>Obi-Wan-Kenobi</span>
+        </p>
         <div className="contact-form">
           <label htmlFor="First name">First name</label>
           <input
@@ -85,8 +106,6 @@ export default function About(){
             countryCallingCodeEditable={false}
             placeholder="Enter phone number"
             defaultCountry={`${useGeoLocation().country}`}
-            defaultValue="+33"
-            value={phone}
             onChange={(e) => setPhone(e.target.value)}
           />
           <label htmlFor="e-mail">E-mail</label>
@@ -112,4 +131,4 @@ export default function About(){
       </section>
     </div>
   );
-};
+}
