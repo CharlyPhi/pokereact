@@ -5,7 +5,7 @@ let url =
   "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/";
 let url2 = "https://pokeapi.co/api/v2/pokemon/";
 
-export default function Cards({ pokemon }, { index }){
+export default function Cards({ pokemon }, { index }) {
   const [infoImage, setInfoImage] = useState("");
   const [infoData, setInfoData] = useState("");
 
@@ -14,20 +14,31 @@ export default function Cards({ pokemon }, { index }){
   };
 
   useEffect(() => {
-    axios(url2 + `${infoImage}`).then((response) =>
-      setInfoData(response.data)
-    );
-  }, [infoImage]);
+    const controller = new AbortController();
+    axios
+      .get(url2 + `${infoImage}`, {signal: controller.signal})
+      .then((response) => setInfoData(response.data))
+      .catch((err) => {
+        if (axios.isCancel(err)) {
+        } else {
+          console.log("warning you're useEffect is behaving")
+        }
+      });
+    return () => {
+      // cancel the request before component unmounts
+      controller.abort();
+    };
+  }, []);
 
   const classNameGenerator = (...classes) => {
     return classes.join(" ");
   };
 
-  if (!infoData) {
-    return (
-      <img className="pokeball" src="/assets/pokeball.jpg" alt="pokeball"></img>
-    );
-  }
+  // if (!infoData) {
+  //   return (
+  //     <img className="pokeball" src="/assets/pokeball.jpg" alt="pokeball"></img>
+  //   );
+  // }
   return (
     <>
       <li
@@ -45,7 +56,8 @@ export default function Cards({ pokemon }, { index }){
 
         <ul className="infos">
           <li>
-            <h2>Name: {infoData.name}</h2></li>
+            <h2>Name: {infoData.name}</h2>
+          </li>
           <li>
             <h2>Weight: {infoData.weight / 10}kg</h2>
           </li>
@@ -57,4 +69,4 @@ export default function Cards({ pokemon }, { index }){
       </li>
     </>
   );
-};
+}
