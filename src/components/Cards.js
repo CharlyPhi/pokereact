@@ -5,7 +5,7 @@ let url =
   "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/";
 let url2 = "https://pokeapi.co/api/v2/pokemon/";
 
-export default function Cards({ pokemon }, { index }) {
+export default function Cards({ pokemon }, { key }) {
   const [infoImage, setInfoImage] = useState("");
   const [infoData, setInfoData] = useState("");
 
@@ -16,19 +16,19 @@ export default function Cards({ pokemon }, { index }) {
   useEffect(() => {
     const controller = new AbortController();
     axios
-      .get(url2 + `${infoImage}`, {signal: controller.signal})
+      .get(url2 + `${infoImage}`, { signal: controller.signal })
       .then((response) => setInfoData(response.data))
       .catch((err) => {
         if (axios.isCancel(err)) {
         } else {
-          console.log("warning you're useEffect is behaving")
+          console.log("warning your useEffect is behaving");
         }
       });
     return () => {
       // cancel the request before component unmounts
       controller.abort();
     };
-  }, []);
+  }, [infoImage]);
 
   const classNameGenerator = (...classes) => {
     return classes.join(" ");
@@ -42,7 +42,7 @@ export default function Cards({ pokemon }, { index }) {
   return (
     <>
       <li
-        key={index}
+        key={key}
         className={classNameGenerator("card", "random", "classTest")}
       >
         {

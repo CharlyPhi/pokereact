@@ -18,14 +18,24 @@ export default function Pokemon() {
   });
 
   useEffect(() => {
-    (async () => {
-      await axios(url).then((res) =>
-        setDataName(res.data.results)
-      );
-    })();
+    const controller = new AbortController();
+    axios
+      .get(url, { signal: controller.signal })
+      .then((res) => setDataName(res.data.results))
+      .catch((err) => {
+        if (axios.isCancel(err)) {
+        } else {
+          console.log("warning your useEffect is behaving");
+        }
+      });
+    return () => {
+      // cancel the request before component unmounts
+      controller.abort();
+    };
   }, [dataName]);
 
   return (
+    /*setting the names on the "Gen" bar*/
     <div className="pokemon-name">
       <ul className="optionTab">
         {digits.map((Gen, index) => (
@@ -43,14 +53,16 @@ export default function Pokemon() {
         ))}
       </ul>
 
+
       <ul className="pokedex">
         {dataName
           .slice(min, selectedRadio)
           .slice(0, selectedRadio)
-          .map((pokemon, index) => (
-            <Cards index={index} pokemon={pokemon} />
+          .map((pokemon) => (
+            <Cards pokemon={pokemon} key={pokemon.url.slice(34, -1)} />
           ))}
       </ul>
     </div>
   );
-};
+}
+
