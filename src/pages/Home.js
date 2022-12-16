@@ -9,7 +9,7 @@ export default function Home(){
     document.body.style.backgroundColor = "rgb(166,231,242,255)";
 
   }
-  toggleZoomScreen()
+  toggleZoomScreen();
 
 
 
