@@ -11,6 +11,7 @@ export default function Pokemon() {
 
   useEffect(() => {
     digits.forEach((element) => {
+      //eslint-disable-next-line
       if (element == selectedRadio) {
         setMin(digits[digits.indexOf(element) - 1]);
       }
@@ -65,4 +66,3 @@ export default function Pokemon() {
     </div>
   );
 }
-

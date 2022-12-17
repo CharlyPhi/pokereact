@@ -1,9 +1,10 @@
 import axios from "axios";
+import Card from "./Card";
 import React, { useEffect, useState } from "react";
 let url = " https://pokeapi.co/api/v2/pokemon/";
 
 export default function SearchBar() {
-  const [data, setData] = useState("");
+  const [pokemon, setPokemon] = useState("");
   const [inputValue, setInputValue] = useState("pikachu");
   const [name, setName] = useState();
 
@@ -15,7 +16,7 @@ export default function SearchBar() {
     const controller = new AbortController();
     axios
       .get(url + `${name}`, { signal: controller.signal })
-      .then((res) => setData(res.data))
+      .then((res) => setPokemon(res.data))
       .catch((err) => {
         if (axios.isCancel(err)) {
         } else {
@@ -38,19 +39,9 @@ export default function SearchBar() {
       <button name="query" type="submit" onClick={fetchName}>
         Envoyer
       </button>
-      {data && <div>{data.name} {data.weight} {data.height}</div>}
+
+<Card pokemon={pokemon} key={pokemon.order} />
+
     </>
   );
 }
-
-/*const handleChange = (event) => {
-    if (event.target.value === "") {
-      setList(list);
-      return;
-    }
-const filteredValues = list.filter(
-  (item) =>
-    item.toLowerCase().indexOf(event.target.value.toLowerCase()) !== -1
-);
-setList(filteredValues);*/
-/* {list && list.map((item, index) => <div key={index}>{item}</div>)} */
