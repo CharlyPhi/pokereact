@@ -10,11 +10,11 @@ export default function Card({ pokemon }, { key }) {
 
   return (
     <>
-      <li
+      <li className="list card"
         key={key}
       >
         {
-          <img
+          <img className="card"
             // eslint-disable-next-line no-useless-concat
             src={url + `${pokemon.id}` + ".png"}
             alt={pokemon.name}

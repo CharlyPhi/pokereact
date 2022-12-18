@@ -1,7 +1,9 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Cards from "./Cards";
+import SearchBar from "./SearchBar";
 let url = "https://pokeapi.co/api/v2/pokemon/?limit=12000";
+
 
 export default function Pokemon() {
   const digits = [151, 251, 386, 493, 649, 721, 809, 905, 10300];
@@ -52,7 +54,8 @@ export default function Pokemon() {
             />
           </ul>
         ))}
-      </ul>
+
+      </ul>  <SearchBar />
 
 
       <ul className="pokedex">
