@@ -9,7 +9,10 @@ export default function SearchBar() {
   const [name, setName] = useState();
 
   const fetchName = () => {
-    setName(inputValue);
+    if (isNaN(inputValue)) setName(inputValue);
+    else {
+      throw "your input has to be a pokemon name, not a number !";
+    }
   };
 
   useEffect(() => {
@@ -40,8 +43,7 @@ export default function SearchBar() {
         Envoyer
       </button>
 
-<Card pokemon={pokemon} key={pokemon.order} />
-
+      <Card pokemon={pokemon} key={pokemon.order} />
     </>
   );
 }

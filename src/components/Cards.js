@@ -56,15 +56,14 @@ export default function Cards({ pokemon }, { key }) {
 
         <ul className="infos">
           <li>
-            <h2>Name: {infoData.name}</h2>
+            <h2>{infoData.name}</h2>
           </li>
           <li>
-            <h2>Weight: {infoData.weight / 10}kg</h2>
+            <h2>{infoData.weight / 10}kg</h2>
           </li>
           <li>
-            <h2>Height: {infoData.height / 10}m</h2>
+            <h2>{infoData.height / 10}m</h2>
           </li>
-          {/* <li> {infoData.types[0].slot}</li> */}
         </ul>
       </li>
     </>
