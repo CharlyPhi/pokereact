@@ -43,7 +43,7 @@ export default function Cards({ pokemon }, { key }) {
     <>
       <li
         key={key}
-        className={classNameGenerator("card", "random", "classTest")}
+        className={classNameGenerator("cards", "random", "classTest")}
       >
         {
           <img

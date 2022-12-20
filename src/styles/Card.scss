@@ -1,5 +1,6 @@
 
 .card {
+    list-style-type: none;
     margin-left: 100px;
     position: relative;
     height: 100px;
@@ -10,41 +11,15 @@
       font-size: 1rem;
     }
     ul.infos{
-      display:none;
-
+      list-style-type: none;
     }
-    &:hover {
-      z-index: 1;
-      background-image: url(".././assets/book7.gif");
-      height: 103px;
-      width: 230px;
-      transform: scale(2);
-      transition: none;
-      overflow: hidden;
-      background-color: none;
 
-      ul.infos{
-        margin-left: 3rem;
-        list-style-type: none;
-        display:block;
-        z-index: 1;
-        h2{
-          line-height: 180%;
-          text-transform:capitalize;
-      }
-      }
-
-    }
     &:active{
       background-image: none;
       z-index:2;
       transform: scale(8);
       transition: none;
-      ul.infos{
-        display:none;
-      }
     }
-
 
     img{
       border:none;

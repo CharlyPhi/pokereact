@@ -2,10 +2,11 @@ import axios from "axios";
 import Card from "./Card";
 import React, { useEffect, useState } from "react";
 let url = " https://pokeapi.co/api/v2/pokemon/";
+let url2 = " https://pokeapi.co/api/v2/pokemon-species/{id or name}/"
 
 export default function SearchBar() {
-  const [pokemon, setPokemon] = useState("");
-  const [inputValue, setInputValue] = useState("pikachu");
+  const [pokemon, setPokemon] = useState("MissingNo");
+  const [inputValue, setInputValue] = useState("");
   const [name, setName] = useState();
 
   const fetchName = () => {
@@ -36,11 +37,12 @@ export default function SearchBar() {
     <>
       <input
         name="query"
+        defaultValue="missingNo"
         type="search"
         onChange={(e) => setInputValue(e.target.value)}
       ></input>
       <button name="query" type="submit" onClick={fetchName}>
-        Envoyer
+        Search
       </button>
 
       <Card pokemon={pokemon} key={pokemon.order} />
