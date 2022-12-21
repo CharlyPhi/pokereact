@@ -1,28 +1,32 @@
 
 .card {
+    background-image: url("../assets/card-default.png");
+    width: 50rem;
+    height: 50rem;
     list-style-type: none;
     margin-left: 100px;
-    position: relative;
-    height: 100px;
-    width: 200px;
     transition: none;
     z-index: 0;
+    img{
+      margin-top:10rem;
+      height: 13%;
+      width: 14%;
+      transform: scale(2);
+      border:none;
+    }
     h2 {
       font-size: 1rem;
     }
     ul.infos{
       list-style-type: none;
+      .description{
+        margin-top:20rem;
+      }
     }
 
     &:active{
-      background-image: none;
       z-index:2;
       transform: scale(8);
       transition: none;
-    }
-
-    img{
-      border:none;
-      width:100px;
     }
 }

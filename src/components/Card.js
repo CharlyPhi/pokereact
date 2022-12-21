@@ -28,7 +28,7 @@ export default function Card({ pokemon }, { key }) {
 
         <ul className="infos">
           <li>
-            <h2>{description}</h2>
+            <h2 className="description">{description}</h2>
           </li>
         </ul>
       </li>
