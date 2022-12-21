@@ -3,15 +3,17 @@
     background-image: url("../assets/card-default.png");
     width: 50rem;
     height: 50rem;
+    transform: scale(0.8);
     list-style-type: none;
-    margin-left: 100px;
+    margin-left: 25%;
     transition: none;
     z-index: 0;
     img{
-      margin-top:10rem;
+      margin-top:11rem;
+      margin-right: 6rem;
       height: 13%;
       width: 14%;
-      transform: scale(2);
+      transform: scale(2.5);
       border:none;
     }
     h2 {
@@ -22,11 +24,5 @@
       .description{
         margin-top:20rem;
       }
-    }
-
-    &:active{
-      z-index:2;
-      transform: scale(8);
-      transition: none;
     }
 }
