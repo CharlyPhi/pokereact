@@ -1,37 +1,31 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 import defaultImage from "../assets/MissingNo.png";
 
 let url =
   "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/";
 
 export default function Card({ pokemon }, { key }) {
-  const [src, setSrc] = useState("");
+  const [src, setSrc] = useState(url + `${pokemon.id}` + ".png");
   const [description, setDescription] = useState("");
-
-  useEffect(() => {
-    if (pokemon == "MissingNo") {
-      setSrc(defaultImage);
-      setDescription(
-        "if you've played pokemon Red or Blue, you know who that is"
-      );
-      // eslint-disable-next-line no-useless-concat
-    } else {
-      setSrc(url + `${pokemon.id}` + ".png");
-      setDescription(pokemon.description);
-    }
-  }, []);
 
   return (
     <>
-      <li className="list card" key={key}>
-        {<img className="card Image" src={src} alt={pokemon.name} />}
+      <div className="card" key={key}>
+        <div className="info-top">
+          <div className="name">
+            <h2>{pokemon.name}</h2>
+          </div>
+          <div className="hp">hp</div>
+          <div className="type">type</div>
+        </div>
+        {<img className="Image" src={src} alt={pokemon.name} />}
+        <div className="id">{pokemon.id}</div>
+        <div className="weight">{pokemon.weight / 10 + "kg"}</div>
+        <div className="height">{pokemon.height / 10 + "m"}</div>
+        <div className="description"></div>
 
-        <ul className="infos">
-          <li>
-            <h2 className="description">{description}</h2>
-          </li>
-        </ul>
-      </li>
+      </div>
     </>
   );
 }

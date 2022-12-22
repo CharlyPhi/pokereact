@@ -5,7 +5,7 @@ let url = " https://pokeapi.co/api/v2/pokemon/";
 let url2 = " https://pokeapi.co/api/v2/pokemon-species/{id or name}/"
 
 export default function SearchBar() {
-  const [pokemon, setPokemon] = useState("MissingNo");
+  const [pokemon, setPokemon] = useState("corviknight");
   const [inputValue, setInputValue] = useState("");
   const [name, setName] = useState();
 
