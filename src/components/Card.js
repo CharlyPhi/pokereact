@@ -15,20 +15,24 @@ export default function Card({ pokemon }, { key }) {
     <>
       <div className="card" key={key}>
         <div className="top-content">
-          <div className="name">
+          <div className="top-left">
             <h2>{pokemon.name}</h2>
           </div>
-          <div className="hp">hp</div>
-          <div className="type">type</div>
+          <div className="top-right">
+            <div className="hp">hp</div>
+            <div className="type">type</div>
+          </div>
         </div>
         {<img className="Image" src={src} alt={pokemon.name} />}
         <div className="middle-content">
-          <div className="id">{pokemon.id}</div>
+          <div className="id">n°{pokemon.id}</div>
           <div className="weight">{pokemon.weight / 10 + "kg"}</div>
           <div className="height">{pokemon.height / 10 + "m"}</div>
         </div>
         <div className="bottom-content">
-          <div className="description">{description}</div>
+          <div className="habitat">
+            You will be able to find him in {pokemon.habitat}
+          </div>
           <div className="description">{description}</div>
           <div className="description">{description}</div>
         </div>

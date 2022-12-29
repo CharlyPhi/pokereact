@@ -17,19 +17,26 @@
       border:none;
     }
     .top-content{
+      height: 2rem;
       width: 65%;
       margin-left: 11rem;
       display: flex;
       justify-content: space-between ;
       margin-top: 0px;
-      .name{
+      .top-left{
        text-transform: capitalize;
+      }
+      .top-right{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 8rem;
       }
     }
     .middle-content{
       background-image: url("../assets/Grey-Banner.png");
       height:2rem;
-      width: 31rem;
+      width: 60%;
       margin: 6.3rem 0 0 12rem;
       display: flex;
       justify-content: space-between ;
