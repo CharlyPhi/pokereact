@@ -16,12 +16,32 @@
       transform: scale(2.5);
       border:none;
     }
-    .info-top{
-      width: 25rem;
-      margin-right: 15rem;
+    .top-content{
+      width: 65%;
+      margin-left: 11rem;
       display: flex;
       justify-content: space-between ;
       margin-top: 0px;
+      .name{
+       text-transform: capitalize;
+      }
+    }
+    .middle-content{
+      background-image: url("../assets/Grey-Banner.png");
+      height:2rem;
+      width: 31rem;
+      margin: 6.3rem 0 0 12rem;
+      display: flex;
+      justify-content: space-between ;
+    }
+    .bottom-content{
+      height:30%;
+      width: 65%;
+      margin-top: 3rem;
+      margin-left: 11rem;
+      display: flex;
+      flex-direction:column;
+      justify-content: space-between;
     }
 
 }

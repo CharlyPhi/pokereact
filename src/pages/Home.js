@@ -17,6 +17,7 @@ export default function Home(){
     <div className="home">
       <Navigation />
       <div className="banner"></div>
+      <div className="footer"></div>
       <Pokemons />
     </div>
   );
