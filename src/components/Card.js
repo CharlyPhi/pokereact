@@ -1,15 +1,41 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import defaultImage from "../assets/MissingNo.png";
 
 let url =
   "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/";
+let url2 = "https://pokeapi.co/api/v2/pokemon-species/";
 
 export default function Card({ pokemon }, { key }) {
   const [src, setSrc] = useState(url + `${pokemon.id}` + ".png");
-  const [description, setDescription] = useState(
-    "This is a default description, the real one is being written as we speak, anyway this pokemon is fantastic"
-  );
+  const [habitat, setHabitat] = useState(null);
+  const [descriptions, setDescriptions] = useState(null);
+  const [description, setDescription] = useState([null]);
+
+  useEffect(() => {
+    const controller = new AbortController();
+    axios
+      .get(url2 + `${pokemon.name}`, { signal: controller.signal })
+      .then((res) => setHabitat(res.data.habitat.name))
+      .then((res) => setDescriptions(res.data.flavor_text_entries))
+      .catch((err) => {
+        if (axios.isCancel(err)) {
+        } else {
+          console.log("warning your useEffect is behaving");
+        }
+      });
+    return () => {
+      // cancel the request before component unmounts
+      controller.abort();
+    };
+  }, [pokemon]);
+
+  useEffect(() => {
+    descriptions.forEach((element) => {
+      if (element.language == "en") {
+        description.push(element.flavor_text);
+      }
+    });
+  }, [descriptions, description]);
 
   return (
     <>
@@ -30,11 +56,8 @@ export default function Card({ pokemon }, { key }) {
           <div className="height">{pokemon.height / 10 + "m"}</div>
         </div>
         <div className="bottom-content">
-          <div className="habitat">
-            You will be able to find him in {pokemon.habitat}
-          </div>
-          <div className="description">{description}</div>
-          <div className="description">{description}</div>
+          {habitat && <div className="habitat">Lives in {habitat}s</div>}
+          {description && <div className="description">{description}</div>}
         </div>
       </div>
     </>
