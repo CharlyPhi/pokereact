@@ -14,22 +14,10 @@ export default function Card({ pokemon }, { key }) {
     const controller = new AbortController();
     axios
       .get(url2 + `${pokemon.name}`, { signal: controller.signal })
-      .then((res) => setHabitat(res.data.habitat.name))
-      .then((res) =>
-        setDescriptions(
-          res.data.flavor_text_entries.map((ob) => ob.flavor_text)
-        )
-      )
-      .catch((err) => {
-        if (axios.isCancel(err)) {
-        } else {
-          console.log("warning your useEffect is behaving");
-        }
-      });
-    return () => {
-      // cancel the request before component unmounts
-      controller.abort();
-    };
+      .then((res) => {
+        setHabitat(res.data.habitat.name);
+        setDescriptions(res.data.flavor_text_entries.map((ob) => ob.flavor_text));
+      })
   }, [pokemon]);
 
   return (
