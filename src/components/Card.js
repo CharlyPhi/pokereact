@@ -6,17 +6,20 @@ let url =
 let url2 = "https://pokeapi.co/api/v2/pokemon-species/";
 
 export default function Card({ pokemon }, { key }) {
-  const [src, setSrc] = useState(url + `${pokemon.id}` + ".png");
+  const src = url + `${pokemon.id}` + ".png";
   const [habitat, setHabitat] = useState(null);
-  const [descriptions, setDescriptions] = useState(null);
-  const [description, setDescription] = useState([null]);
+  const [descriptions, setDescriptions] = useState([]);
 
   useEffect(() => {
     const controller = new AbortController();
     axios
       .get(url2 + `${pokemon.name}`, { signal: controller.signal })
       .then((res) => setHabitat(res.data.habitat.name))
-      .then((res) => setDescriptions(res.data.flavor_text_entries))
+      .then((res) =>
+        setDescriptions(
+          res.data.flavor_text_entries.map((ob) => ob.flavor_text)
+        )
+      )
       .catch((err) => {
         if (axios.isCancel(err)) {
         } else {
@@ -28,14 +31,6 @@ export default function Card({ pokemon }, { key }) {
       controller.abort();
     };
   }, [pokemon]);
-
-  useEffect(() => {
-    descriptions.forEach((element) => {
-      if (element.language == "en") {
-        description.push(element.flavor_text);
-      }
-    });
-  }, [descriptions, description]);
 
   return (
     <>
@@ -57,7 +52,7 @@ export default function Card({ pokemon }, { key }) {
         </div>
         <div className="bottom-content">
           {habitat && <div className="habitat">Lives in {habitat}s</div>}
-          {description && <div className="description">{description}</div>}
+          {descriptions && descriptions.map((obj) => <div>`${obj}`</div>)}
         </div>
       </div>
     </>
