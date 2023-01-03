@@ -3,12 +3,10 @@ import Card from "./Card";
 import React, { useEffect, useState } from "react";
 let url = "https://pokeapi.co/api/v2/pokemon/";
 
-
 export default function SearchBar() {
   const [pokemon, setPokemon] = useState("corviknight");
   const [inputValue, setInputValue] = useState("");
   const [name, setName] = useState();
-
 
   const fetchName = () => {
     if (isNaN(inputValue)) setName(inputValue);
@@ -21,7 +19,9 @@ export default function SearchBar() {
     const controller = new AbortController();
     axios
       .get(url + `${name}`, { signal: controller.signal })
-      .then((res) => setPokemon(res.data))
+      .then((res) => {
+        setPokemon(res.data);
+      })
       .catch((err) => {
         if (axios.isCancel(err)) {
         } else {
@@ -36,20 +36,20 @@ export default function SearchBar() {
 
   return (
     <>
+      <label for="query">
+        <h2>Type any pokemon name and Search !</h2>
+      </label>
       <input
         name="query"
-        defaultValue="missingNo"
+        defaultValue="missingNo....."
         type="search"
         onChange={(e) => setInputValue(e.target.value)}
       ></input>
-      <button name="query" type="submit" onClick={fetchName}>
+      <button id="search" name="query" type="submit" onClick={fetchName}>
         Search
       </button>
 
-      <Card
-        pokemon={pokemon}
-        key={pokemon.order}
-      />
+      <Card pokemon={pokemon}  key={pokemon.order}  />
     </>
   );
 }

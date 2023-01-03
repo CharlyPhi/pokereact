@@ -7,7 +7,7 @@ let url2 = "https://pokeapi.co/api/v2/pokemon-species/";
 
 export default function Card({ pokemon }, { key }) {
   const src = url + `${pokemon.id}` + ".png";
-  const [habitat, setHabitat] = useState(null);
+  const [habitat, setHabitat] = useState("undiscoverd territorie");
   const [descriptions, setDescriptions] = useState([]);
 
   useEffect(() => {
@@ -15,9 +15,11 @@ export default function Card({ pokemon }, { key }) {
     axios
       .get(url2 + `${pokemon.name}`, { signal: controller.signal })
       .then((res) => {
+        setDescriptions(
+          res.data.flavor_text_entries.map((ob) => ob.flavor_text)
+        );
         setHabitat(res.data.habitat.name);
-        setDescriptions(res.data.flavor_text_entries.map((ob) => ob.flavor_text));
-      })
+      });
   }, [pokemon]);
 
   return (
@@ -28,8 +30,8 @@ export default function Card({ pokemon }, { key }) {
             <h2>{pokemon.name}</h2>
           </div>
           <div className="top-right">
-            <div className="hp">hp</div>
-            <div className="type">type</div>
+            <div className="hp"></div>
+            <div className="type"></div>
           </div>
         </div>
         {<img className="Image" src={src} alt={pokemon.name} />}
@@ -39,8 +41,17 @@ export default function Card({ pokemon }, { key }) {
           <div className="height">{pokemon.height / 10 + "m"}</div>
         </div>
         <div className="bottom-content">
-          {habitat && <div className="habitat">Lives in {habitat}s</div>}
-          {descriptions && descriptions.map((obj) => <div>`${obj}`</div>)}
+          {habitat && (
+            <div className="habitat">
+              <h2>Lives in {habitat}s</h2>
+            </div>
+          )}
+          {descriptions &&
+            descriptions.slice(8, 10).map((obj) => (
+              <div className="description">
+                <h2>{obj}</h2>
+              </div>
+            ))}
         </div>
       </div>
     </>
