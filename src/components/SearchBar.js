@@ -15,6 +15,11 @@ export default function SearchBar() {
     }
   };
 
+  const cardAppear = () => {
+    let carte = document.getElementsByClassName("card");
+    carte[0].style.visibility = "visible";
+  };
+
   useEffect(() => {
     const controller = new AbortController();
     axios
@@ -45,11 +50,19 @@ export default function SearchBar() {
         type="search"
         onChange={(e) => setInputValue(e.target.value)}
       ></input>
-      <button id="search" name="query" type="submit" onClick={fetchName}>
+      <button
+        id="search"
+        name="query"
+        type="submit"
+        onClick={() => {
+          cardAppear();
+          fetchName();
+        }}
+      >
         Search
       </button>
 
-      <Card pokemon={pokemon}  key={pokemon.order}  />
+      <Card pokemon={pokemon} key={pokemon.order} />
     </>
   );
 }
