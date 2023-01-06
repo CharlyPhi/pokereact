@@ -6,10 +6,10 @@ let url = "https://pokeapi.co/api/v2/pokemon/";
 export default function SearchBar() {
   const [pokemon, setPokemon] = useState("corviknight");
   const [inputValue, setInputValue] = useState("");
-  const [name, setName] = useState();
+  const [name, setName] = useState("missingNo");
 
   const fetchName = () => {
-    if (isNaN(inputValue)) setName(inputValue);
+    if (isNaN(inputValue)) setName(inputValue.toLowerCase());
     else {
       throw "your input has to be a pokemon name, not a number !";
     }
@@ -42,7 +42,7 @@ export default function SearchBar() {
   return (
     <>
       <label for="query">
-        <h2>Type any pokemon name and Search !</h2>
+        <h2>Type any pokemon name, and double click Search !</h2>
       </label>
       <input
         name="query"
