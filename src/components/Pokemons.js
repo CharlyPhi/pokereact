@@ -4,7 +4,6 @@ import Cards from "./Cards";
 import SearchBar from "./SearchBar";
 let url = "https://pokeapi.co/api/v2/pokemon/?limit=12000";
 
-
 export default function Pokemon() {
   const digits = [151, 251, 386, 493, 649, 721, 809, 905, 10300];
   const [dataName, setDataName] = useState([]);
@@ -21,21 +20,8 @@ export default function Pokemon() {
   });
 
   useEffect(() => {
-    const controller = new AbortController();
-    axios
-      .get(url, { signal: controller.signal })
-      .then((res) => setDataName(res.data.results))
-      .catch((err) => {
-        if (axios.isCancel(err)) {
-        } else {
-          console.log("warning your useEffect is behaving");
-        }
-      });
-    return () => {
-      // cancel the request before component unmounts
-      controller.abort();
-    };
-  }, [dataName]);
+    axios.get(url).then((res) => setDataName(res.data.results));
+  }, []);
 
   return (
     /*setting the names on the "Gen" bar*/
@@ -54,10 +40,8 @@ export default function Pokemon() {
             />
           </ul>
         ))}
-
-      </ul>  <SearchBar />
-
-
+      </ul>{" "}
+      <SearchBar />
       <ul className="pokedex">
         {dataName
           .slice(min, selectedRadio)
