@@ -9,10 +9,7 @@ export default function SearchBar() {
   const [name, setName] = useState("missingNo");
 
   const fetchName = () => {
-    if (isNaN(inputValue)) setName(inputValue.toLowerCase());
-    else {
-      throw "your input has to be a pokemon name, not a number !";
-    }
+    setName(inputValue.toLowerCase());
   };
 
   const cardAppear = () => {
@@ -41,7 +38,7 @@ export default function SearchBar() {
 
   return (
     <>
-      <label for="query">
+      <label name="query">
         <h2>Type any pokemon name, and double click Search !</h2>
       </label>
       <input

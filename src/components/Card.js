@@ -6,7 +6,7 @@ let url =
 let url2 = "https://pokeapi.co/api/v2/pokemon-species/";
 
 export default function Card({ pokemon }, { key }) {
-  const src = url + `${pokemon.id}` + ".png";
+  const src = url + pokemon.id + ".png";
   const [habitat, setHabitat] = useState("undiscoverd territorie");
   const [descriptions, setDescriptions] = useState([]);
 
