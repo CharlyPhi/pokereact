@@ -55,8 +55,8 @@ export default function SearchBar() {
         name="query"
         type="submit"
         onClick={() => {
-          cardAppear();
           fetchName();
+          cardAppear();
         }}
       >
         Search

@@ -13,7 +13,7 @@ import Pika from "../assets/pikachu-starter.mp3";
 export default function About() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  const [phone, setPhone] = useState("");
+  const [phone, setPhone] = useState();
   const [mail, setMail] = useState("");
   const [msg, setMsg] = useState("");
   const [error, setError] = useState("");
@@ -102,8 +102,6 @@ export default function About() {
           <label htmlFor="Mobile">Mobile</label>
           <PhoneInput
             id="Mobile"
-            international
-            countryCallingCodeEditable={false}
             placeholder="Enter phone number"
             defaultCountry={`${useGeoLocation().country}`}
             onChange={(e) => setPhone(e.target.value)}

@@ -47,7 +47,7 @@ export default function Card({ pokemon }, { key }) {
             </div>
           )}
           {descriptions &&
-            descriptions.slice(8, 10).map((obj) => (
+            descriptions.slice(5, 7).map((obj) => (
               <div className="description">
                 <h2>{obj}</h2>
               </div>
