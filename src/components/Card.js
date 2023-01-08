@@ -7,19 +7,18 @@ let url2 = "https://pokeapi.co/api/v2/pokemon-species/";
 
 export default function Card({ pokemon }, { key }) {
   const src = url + pokemon.id + ".png";
-  const [habitat, setHabitat] = useState("undiscoverd territorie");
+  const [habitat, setHabitat] = useState("");
   const [descriptions, setDescriptions] = useState([]);
 
   useEffect(() => {
-    const controller = new AbortController();
-    axios
-      .get(url2 + `${pokemon.name}`, { signal: controller.signal })
-      .then((res) => {
-        setDescriptions(
-          res.data.flavor_text_entries.map((ob) => ob.flavor_text)
-        );
+    axios.get(url2 + `${pokemon.name}`).then((res) => {
+      setDescriptions(res.data.flavor_text_entries.map((ob) => ob.flavor_text));
+      if (res.data.habitat) {
         setHabitat(res.data.habitat.name);
-      });
+      } else {
+        setHabitat("undiscoverd territorie");
+      }
+    });
   }, [pokemon]);
 
   return (

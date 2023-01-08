@@ -1,7 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Cards from "./Cards";
-import SearchBar from "./SearchBar";
 let url = "https://pokeapi.co/api/v2/pokemon/?limit=12000";
 
 export default function Pokemon() {
@@ -41,7 +40,6 @@ export default function Pokemon() {
           </ul>
         ))}
       </ul>{" "}
-      <SearchBar />
       <ul className="pokedex">
         {dataName
           .slice(min, selectedRadio)

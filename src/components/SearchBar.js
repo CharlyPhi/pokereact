@@ -6,15 +6,10 @@ let url = "https://pokeapi.co/api/v2/pokemon/";
 export default function SearchBar() {
   const [pokemon, setPokemon] = useState("corviknight");
   const [inputValue, setInputValue] = useState("");
-  const [name, setName] = useState("missingNo");
+  const [name, setName] = useState("pikachu");
 
   const fetchName = () => {
     setName(inputValue.toLowerCase());
-  };
-
-  const cardAppear = () => {
-    let carte = document.getElementsByClassName("card");
-    carte[0].style.visibility = "visible";
   };
 
   useEffect(() => {
@@ -35,6 +30,11 @@ export default function SearchBar() {
       controller.abort();
     };
   }, [name]);
+
+  const cardAppear = () => {
+    let carte = document.getElementsByClassName("card");
+    carte[0].style.visibility = "visible";
+  };
 
   return (
     <>
