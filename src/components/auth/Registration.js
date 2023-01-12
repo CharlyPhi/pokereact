@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-export default function Registration() {
+export default function Registration(handleSuccessfulAuth) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [password_confirmation, setPassword_confirmation] = useState("");
-  const [registrationErrors, setRegistrationErrors] = useState("");
-
 
   const handleSubmit = (e) => {
     axios
@@ -22,7 +20,9 @@ export default function Registration() {
         { withCredentials: true }
       )
       .then((res) => {
-        console.log("registrations ok", res);
+        if (res.data.status === "created") {
+          handleSuccessfulAuth();
+        }
       })
       .catch((error) => {
         console.log("registration error", error);
