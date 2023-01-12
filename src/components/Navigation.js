@@ -5,7 +5,7 @@ export default function Navigation() {
   return (
     <div className="NavBar">
       <NavLink
-        to="/Home"
+        to="/Homepage"
         className={(nav) => (nav.isActive ? "nav-active" : " ")}
       >
         <button>Homepage</button>
@@ -17,17 +17,18 @@ export default function Navigation() {
         <button>A propos</button>
       </NavLink>
       <NavLink
-        to="/Faq"
+        to="/Pokedex"
         className={(nav) => (nav.isActive ? "nav-active" : " ")}
       >
-        <button>FAQ</button>
-      </NavLink>
-      <NavLink
-        to="/Miscellaneous"
-        className={(nav) => (nav.isActive ? "nav-active" : " ")}
-      >
-        <button>Misc..</button>
+        <button>Pokedex</button>
       </NavLink>
     </div>
   );
 }
+
+//<NavLink
+// to="/Faq"
+// className={(nav) => (nav.isActive ? "nav-active" : " ")}
+// >
+// <button>FAQ</button>
+// </NavLink>

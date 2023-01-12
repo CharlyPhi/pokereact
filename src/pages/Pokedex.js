@@ -2,7 +2,7 @@ import React from "react";
 import Navigation from "../components/Navigation";
 import Pokemons from "../components/Pokemons";
 
-export default function Home(){
+export default function Pokedex(){
 
   function toggleZoomScreen() {
     document.body.style.zoom = "110%";

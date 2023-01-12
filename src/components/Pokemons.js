@@ -40,7 +40,7 @@ export default function Pokemon() {
           </ul>
         ))}
       </ul>{" "}
-      <ul className="pokedex">
+      <ul className="Homepage">
         {dataName
           .slice(min, selectedRadio)
           .slice(0, selectedRadio)
