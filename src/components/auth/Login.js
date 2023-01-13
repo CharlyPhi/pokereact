@@ -1,31 +1,29 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-export default function Registration({ handleSuccessfulAuth }) {
+export default function Login({ handleSuccessfulAuth }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [password_confirmation, setPassword_confirmation] = useState("");
 
   const handleSubmit = (e) => {
     axios
       .post(
-        "http://localhost:3001/registrations",
+        "http://localhost:3001/sessions",
         {
           user: {
             email: email,
             password: password,
-            password_confirmation: password_confirmation,
           },
         },
         { withCredentials: true }
       )
       .then((res) => {
-        if (res.data.status === "created") {
+        if (res.data.logged_in) {
           handleSuccessfulAuth(res.data.user);
         }
       })
       .catch((error) => {
-        console.log("registration error", error);
+        console.log("login Error", error);
       });
     e.preventDefault();
   };
@@ -39,6 +37,7 @@ export default function Registration({ handleSuccessfulAuth }) {
           placeholder="example@mail.com"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          required
         ></input>
         <input
           type="password"
@@ -46,15 +45,9 @@ export default function Registration({ handleSuccessfulAuth }) {
           placeholder="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          required
         ></input>
-        <input
-          type="password_confirmation"
-          name="password_confirmation"
-          placeholder="password_confirmation"
-          value={password_confirmation}
-          onChange={(e) => setPassword_confirmation(e.target.value)}
-        ></input>
-        <button type="Submit">Register</button>
+        <button type="Submit">Log in</button>
       </form>
     </div>
   );
