@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/pokereact/static/css/main.2fc42b56.chunk.css",
+    "main.js": "/pokereact/static/js/main.83911d81.chunk.js",
+    "main.js.map": "/pokereact/static/js/main.83911d81.chunk.js.map",
+    "runtime-main.js": "/pokereact/static/js/runtime-main.5dd0a390.js",
+    "runtime-main.js.map": "/pokereact/static/js/runtime-main.5dd0a390.js.map",
+    "static/css/2.72a9e112.chunk.css": "/pokereact/static/css/2.72a9e112.chunk.css",
+    "static/js/2.993e1b56.chunk.js": "/pokereact/static/js/2.993e1b56.chunk.js",
+    "static/js/2.993e1b56.chunk.js.map": "/pokereact/static/js/2.993e1b56.chunk.js.map",
+    "index.html": "/pokereact/index.html",
+    "precache-manifest.8bad5043d8fed81ec244ed91c034094d.js": "/pokereact/precache-manifest.8bad5043d8fed81ec244ed91c034094d.js",
+    "service-worker.js": "/pokereact/service-worker.js",
+    "static/css/2.72a9e112.chunk.css.map": "/pokereact/static/css/2.72a9e112.chunk.css.map",
+    "static/css/main.2fc42b56.chunk.css.map": "/pokereact/static/css/main.2fc42b56.chunk.css.map",
+    "static/js/2.993e1b56.chunk.js.LICENSE.txt": "/pokereact/static/js/2.993e1b56.chunk.js.LICENSE.txt",
+    "static/media/index.scss": "/pokereact/static/media/pokereact_banner_1920.08f04ca0.png",
+    "static/media/mail_pikachu.jpg": "/pokereact/static/media/mail_pikachu.5e24c3ed.jpg",
+    "static/media/pikachu-starter.mp3": "/pokereact/static/media/pikachu-starter.8cc622ea.mp3"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5dd0a390.js",
+    "static/css/2.72a9e112.chunk.css",
+    "static/js/2.993e1b56.chunk.js",
+    "static/css/main.2fc42b56.chunk.css",
+    "static/js/main.83911d81.chunk.js"
+  ]
+}
