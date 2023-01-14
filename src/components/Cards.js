@@ -8,26 +8,24 @@ let url2 = "https://pokeapi.co/api/v2/pokemon/";
 export default function Cards({ pokemon }, { key }) {
   const [infoImage, setInfoImage] = useState("");
   const [infoData, setInfoData] = useState("");
+  const indice = pokemon.url.slice(34, -1);
 
   const handleClick = (e) => {
     setInfoImage(e.target.alt);
   };
 
   useEffect(() => {
-    const controller = new AbortController();
-    axios
-      .get(url2 + `${infoImage}`, { signal: controller.signal })
-      .then((response) => setInfoData(response.data))
-      .catch((err) => {
-        if (axios.isCancel(err)) {
-        } else {
-          console.log("warning your useEffect is behaving");
-        }
-      });
-    return () => {
-      // cancel the request before component unmounts
-      controller.abort();
-    };
+    if (infoImage && infoImage.length > 0) {
+      axios
+        .get(url2 + `${infoImage}`)
+        .then((response) => setInfoData(response.data))
+        .catch((err) => {
+          if (axios.isCancel(err)) {
+          } else {
+            console.log("warning your useEffect is behaving");
+          }
+        });
+    }
   }, [infoImage]);
 
   const classNameGenerator = (...classes) => {
@@ -45,14 +43,14 @@ export default function Cards({ pokemon }, { key }) {
         key={key}
         className={classNameGenerator("cards", "random", "classTest")}
       >
-        {
+        {indice && (
           <img
             // eslint-disable-next-line no-useless-concat
-            src={url + `${pokemon.url.slice(34, -1)}` + ".png"}
+            src={url + `${indice}` + ".png"}
             alt={pokemon.name}
             onMouseOver={handleClick}
           />
-        }
+        )}
 
         <ul className="infos">
           <li>

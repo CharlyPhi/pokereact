@@ -39,9 +39,7 @@ export default function Homepage({
       <div>{loggedInStatus && <h1>Status:{loggedInStatus.Status}</h1>}</div>
       <button onClick={() => clickToLogout()}>Log out</button>
       <Registration handleSuccessfulAuth={handleSuccessfulAuth} />
-      <Login
-        handleSuccessfulAuth={(data) => handleSuccessfulAuth(data, handleLogin)}
-      />
+      <Login handleSuccessfulAuth={handleSuccessfulAuth} />
       <SearchBar />
     </div>
   );

@@ -40,7 +40,7 @@ export default function App() {
 
   useEffect(() => {
     checkLoggingStatus();
-  }, []);
+  });
 
   //essayer avec useContext si j'ai le temps
   return (

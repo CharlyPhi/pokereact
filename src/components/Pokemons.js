@@ -27,10 +27,9 @@ export default function Pokemon() {
     <div className="pokemon-name">
       <ul className="optionTab">
         {digits.map((Gen, index) => (
-          <ul>
+          <ul key={index}>
             <label htmlFor="Gen">{`Gen ${index + 1} `}</label>
             <input
-              key={index}
               className={digits}
               id={Gen}
               name="Gen"
