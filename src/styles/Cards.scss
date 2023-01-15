@@ -2,15 +2,24 @@
 .optionTab {
   margin: 8em;
 }
-.Homepage {
+.pokedex {
   padding: 0 12em 20em 12em;
+  ul {
+
+  }
 }
 
 .cards {
-  margin-left: 100px;
-    position: relative;
-    height: 100px;
-    width: 200px;
+  position: relative;
+  padding: 0.7em;
+  height:5em;
+  width: 5.2em;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+  margin-left: 10rem;
     transition: none;
     z-index: 0;
     h2 {
@@ -23,8 +32,8 @@
     &:hover {
       z-index: 1;
       background-image: url(".././assets/book7.gif");
-      height: 103px;
-      width: 230px;
+      height: 8rem;
+      width: 16rem;
       transform: scale(2);
       transition: none;
       overflow: hidden;
@@ -39,6 +48,9 @@
         h2{
           line-height: 180%;
           text-transform: capitalize;
+      }
+      img{
+        width: 1.8rem;
       }
       }
 

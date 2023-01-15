@@ -22,6 +22,12 @@ export default function Navigation() {
       >
         <button>Pokedex</button>
       </NavLink>
+      <NavLink
+        to="/Dashboard"
+        className={(nav) => (nav.isActive ? "nav-active" : " ")}
+      >
+        <button>Dashboard</button>
+      </NavLink>
     </div>
   );
 }

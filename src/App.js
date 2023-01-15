@@ -62,8 +62,13 @@ export default function App() {
           path={"/Dashboard"}
           element={<Dashboard loggedInStatus={loggedInStatus} />}
         />
-        <Route exact path="Pokedex" element={<Pokedex />} />
+        <Route
+          exact
+          path="Pokedex"
+          element={<Pokedex loggedInStatus={loggedInStatus} />}
+        />
         <Route exact path="/about" element={<About />} />
+        <Route exact path="/dashboard" element={<Dashboard />} />
         <Route exact path="*" element={<Homepage />} />
       </Routes>
     </BrowserRouter>

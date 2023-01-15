@@ -10,7 +10,7 @@ export default function Votes() {
 
   const getVotes = async () => {
     try {
-      const res = await axios.get("http://localhost:3001/votes").then((res) => {
+      await axios.get("http://localhost:3001/votes").then((res) => {
         setVote1({
           id: res.data[0].id,
           description: res.data[0].description,

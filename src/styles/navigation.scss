@@ -8,8 +8,8 @@
 
 .NavBar{
   margin-left:0;
-  height:2rem;
-  background-color: rgb(36, 36, 96);;
+  height:2.5rem;
+  background-color: #133378;;
   margin-top: 0;
   width: 100%;
   display: flex;
@@ -21,7 +21,7 @@
     font-size:medium;
     border:none;
     width: 10rem;
-    height: 2rem;
+    height: 2.5rem;
     background: #0052D4;  /* fallback for old browsers */
     background: linear-gradient(to right, #6FB1FC, #4364F7, #0052D4);
     &:hover{
