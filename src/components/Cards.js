@@ -9,20 +9,22 @@ let url2 = "https://pokeapi.co/api/v2/pokemon/";
 export default function Cards({ pokemon, loggedInStatus }) {
   const [infoImage, setInfoImage] = useState("");
   const [infoData, setInfoData] = useState("");
-  const [fav, setFav] = useState("");
+  const [favorites, setFavorites] = useState([""]);
   const indice = pokemon.url.slice(34, -1);
-  const user_id = loggedInStatus.user.id;
+
+  const getFavorites = (loggedInStatus) => {
+    axios
+      .get(`http://localhost:3001/favorites/${loggedInStatus.user.id}`)
+      .then((res) => setFavorites(res.data));
+  };
+
+  useEffect(() => {
+    getFavorites();
+  });
 
   const handleClick = (e) => {
     setInfoImage(e.target.alt);
   };
-
-  const getFavorites = (user_id) => {
-    axios
-      .get(`http://localhost:3001/favorites/${user_id}`)
-      .then((res) => console.log(res));
-  };
-
   const addToFavorites = (e) => {
     axios
       .post(
@@ -36,10 +38,7 @@ export default function Cards({ pokemon, loggedInStatus }) {
         { withCredentials: true }
       )
       .then((res) => {
-        setFav(res.data.name);
-      })
-      .then(() => {
-        getFavorites();
+        console.log(res.data);
       });
   };
 
@@ -85,7 +84,7 @@ export default function Cards({ pokemon, loggedInStatus }) {
             <h2>{infoData.height / 10}m</h2>
           </li>
           <li>
-            {fav.includes(infoData.name) ? (
+            {favorites.includes(infoData.name) ? (
               <img alt="red bow" src={bow} />
             ) : null}
           </li>

@@ -36,7 +36,18 @@ export default function Homepage({
     <div>
       <Navigation />
       <div className="banner"></div>
-      <div>{loggedInStatus && <h1>Status:{loggedInStatus.Status}</h1>}</div>
+      <div>
+        {loggedInStatus && (
+          <h1>
+            You are currently {loggedInStatus.Status}
+          </h1>
+        )}
+        {loggedInStatus.user && (
+          <h1>
+           Welcome user {loggedInStatus.user.id} !
+          </h1>
+        )}
+      </div>
       <button onClick={() => clickToLogout()}>Log out</button>
       <Registration handleSuccessfulAuth={handleSuccessfulAuth} />
       <Login handleSuccessfulAuth={handleSuccessfulAuth} />
