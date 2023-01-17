@@ -11,17 +11,14 @@ export default function Cards({ pokemon, loggedInStatus }) {
   const [infoData, setInfoData] = useState("");
   const [favorites, setFavorites] = useState([]);
   const indice = pokemon.url.slice(34, -1);
-  const [refresh, setRefresh] = useState("");
 
   useEffect(
     (loggedInStatus) => {
       if (loggedInStatus && loggedInStatus.user) {
         getFavorites();
-        console.log("i used the effect");
-        console.log(refresh);
       }
     },
-    [favorites, refresh]
+    [favorites]
   );
 
   const getFavorites = (loggedInStatus) => {
@@ -29,7 +26,6 @@ export default function Cards({ pokemon, loggedInStatus }) {
       .get(`http://localhost:3001/favorites/${loggedInStatus.user.id}`)
       .then((res) => {
         setFavorites(res.data.map((element) => element.name));
-        setRefresh(42);
       });
   };
 
@@ -37,17 +33,18 @@ export default function Cards({ pokemon, loggedInStatus }) {
     setInfoImage(e.target.alt);
   };
   const addToFavorites = (e, loggedInStatus) => {
-    axios.post(
-      "http://localhost:3001/favorites/",
-      {
-        favorite: {
-          name: e.target.alt,
-          user_id: loggedInStatus.user.id,
+    axios
+      .post(
+        "http://localhost:3001/favorites/",
+        {
+          favorite: {
+            name: e.target.alt,
+            user_id: loggedInStatus.user.id,
+          },
         },
-      },
-      { withCredentials: true }
-    );
-    getFavorites(loggedInStatus);
+        { withCredentials: true }
+      )
+      .then(() => getFavorites(loggedInStatus));
   };
 
   useEffect(() => {

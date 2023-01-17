@@ -87,7 +87,7 @@ h1{
 }
 
 .pifacteur{
- margin: 0 auto;
+ margin: 6rem auto;
  width: 40rem;
  height: 40rem;
  border: none;
@@ -95,11 +95,12 @@ h1{
 }
 
 .play-button{
-  width:50rem;
+  width: 5rem;
   height: 2rem;
-  padding-top: 35rem;
+  margin-left: 5rem;
+  padding-top: -5rem;
   border: none;
-  z-index: 1;
+  z-index: 0;
 }
 
 .form{

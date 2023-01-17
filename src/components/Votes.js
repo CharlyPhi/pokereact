@@ -37,8 +37,8 @@ export default function Votes() {
     }
   };
 
-  const upvote = (id) => {
-    axios
+  const upvote = async (id) => {
+    return axios
       .patch(`http://localhost:3001/votes/${id}}`, {
         withCredentials: true,
       })
@@ -50,8 +50,8 @@ export default function Votes() {
       });
   };
 
-  function increase(e) {
-    upvote(e.target.id);
+  async function increase(e) {
+    await upvote(e.target.id);
     getVotes();
   }
 
@@ -69,26 +69,26 @@ export default function Votes() {
           type="button"
           onClick={increase}
         >
-          {vote1.description} {vote1.number}
+          <div>{vote1.description}</div> {vote1.number}
         </button>
       </div>
       <div className="votes">
         <div id="2"></div>
         <button datavote={vote2} id="2" type="button" onClick={increase}>
-          {vote2.description} {vote2.number}
+          <div>{vote2.description}</div> {vote2.number}
         </button>
       </div>
       <div className="votes">
         <div id="3"></div>
         <button datavote={vote3} id="3" type="button" onClick={increase}>
-          {vote3.description}
+          <div>{vote3.description}</div>
           {vote3.number}
         </button>
       </div>
       <div className="votes">
         <div id="4"></div>
         <button datavote={vote4} id="4" type="button" onClick={increase}>
-          {vote4.description} {vote4.number}
+          <div>{vote4.description}</div> {vote4.number}
         </button>
       </div>
     </div>

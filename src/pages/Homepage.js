@@ -35,18 +35,31 @@ export default function Homepage({
   return (
     <div>
       <Navigation />
-      <div className="banner"></div>
       <div>
-        {loggedInStatus && <div>
-          <h1>
-            You are currently {loggedInStatus.Status}
-          </h1></div>
-        }
+        {loggedInStatus && (
+          <div>
+            <h1>You are currently {loggedInStatus.Status}</h1>
+          </div>
+        )}
       </div>
-      <button onClick={() => clickToLogout()}>Log out</button>
-      <Registration handleSuccessfulAuth={handleSuccessfulAuth} />
-      <Login handleSuccessfulAuth={handleSuccessfulAuth} />
-      <SearchBar />
+      {!loggedInStatus.user.id && (
+        <div className="Registration">
+          <Registration handleSuccessfulAuth={handleSuccessfulAuth} />
+        </div>
+      )}
+      {!loggedInStatus.user.id && (
+        <div className="Login">
+          <Login handleSuccessfulAuth={handleSuccessfulAuth} />
+        </div>
+      )}
+      {loggedInStatus.user.id && (
+        <button className="button-10" onClick={() => clickToLogout()}>
+          Log out
+        </button>
+      )}
+      <div className="SearchBar">
+        <SearchBar />
+      </div>
     </div>
   );
 }

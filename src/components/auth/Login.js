@@ -57,7 +57,9 @@ export default function Login({ handleSuccessfulAuth }) {
           onChange={(e) => setPassword(e.target.value)}
           required
         ></input>
-        <button type="Submit">Log in</button>
+        <button className="button-10" type="Submit">
+          Log in
+        </button>
       </form>
     </div>
   );

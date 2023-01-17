@@ -46,6 +46,7 @@ export default function SearchBar() {
         onChange={(e) => setInputValue(e.target.value)}
       ></input>
       <button
+        className="button-10"
         id="search"
         name="query"
         type="submit"

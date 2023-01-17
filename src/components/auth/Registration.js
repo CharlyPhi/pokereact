@@ -64,7 +64,9 @@ export default function Registration({ handleSuccessfulAuth }) {
           value={password_confirmation}
           onChange={(e) => setPassword_confirmation(e.target.value)}
         ></input>
-        <button type="Submit">Register</button>
+        <button className="button-10" type="Submit">
+          Register
+        </button>
       </form>
     </div>
   );
