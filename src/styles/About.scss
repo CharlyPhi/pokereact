@@ -72,14 +72,15 @@ h1{
  display: flex;
  flex-direction: column;
  button{
-   width: 5rem;
-   height:5rem;
-   background-color: rgb(22, 180, 208);
-   border: none;
-   border-radius: 5%;
+   width: 8rem;
+   height:8rem;
+   background-color: rgb(36, 70, 192);
+   border: 1px solid black;
+   border-radius: 15%;
+   box-shadow: 0.8rem 0.8rem 0.1rem 0.05rem rgba(0, 0, 255, .2);
  }
  button:hover{
-   background-color: rgb(228, 228, 228);
+   background-color: rgb(51, 80, 187);
    border: 1px solid;
    border-color:rgb(22, 180, 208);
  }
@@ -94,7 +95,7 @@ h1{
 }
 
 .play-button{
-  width:2rem;
+  width:50rem;
   height: 2rem;
   padding-top: 35rem;
   border: none;
@@ -105,7 +106,7 @@ h1{
 background-image: url(".././assets/open_pokeball.png");
 width: 50em;
 height: 46em;
-margin: 0 auto;
+margin: 3rem auto;
 
 label{
  color: white;

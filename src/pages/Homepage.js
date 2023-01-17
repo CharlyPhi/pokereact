@@ -37,16 +37,11 @@ export default function Homepage({
       <Navigation />
       <div className="banner"></div>
       <div>
-        {loggedInStatus && (
+        {loggedInStatus && <div>
           <h1>
             You are currently {loggedInStatus.Status}
-          </h1>
-        )}
-        {loggedInStatus.user && (
-          <h1>
-           Welcome user {loggedInStatus.user.id} !
-          </h1>
-        )}
+          </h1></div>
+        }
       </div>
       <button onClick={() => clickToLogout()}>Log out</button>
       <Registration handleSuccessfulAuth={handleSuccessfulAuth} />

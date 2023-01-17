@@ -7,7 +7,7 @@ export default function Dashboard({ loggedInStatus }) {
   const getFavorites = (loggedInStatus) => {
     axios
       .get(`http://localhost:3001/favorites/${loggedInStatus.user.id}`)
-      .then((res) => setFavorites(res.data));
+      .then((res) => setFavorites((res.data)));
   };
 
   return (

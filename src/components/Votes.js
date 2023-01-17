@@ -81,7 +81,8 @@ export default function Votes() {
       <div className="votes">
         <div id="3"></div>
         <button datavote={vote3} id="3" type="button" onClick={increase}>
-          {vote3.description} {vote3.number}
+          {vote3.description}
+          {vote3.number}
         </button>
       </div>
       <div className="votes">
