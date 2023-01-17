@@ -25,6 +25,10 @@ export default function Pokemon({ loggedInStatus }) {
   return (
     /*setting the names on the "Gen" bar*/
     <div className="pokemon-name">
+      <h2 className="pokedex-tip">
+        Hover to check your favorite pokemon's info, and click on the picture to
+        add them to your favorites !
+      </h2>
       <ul className="optionTab">
         {digits.map((Gen, index) => (
           <ul key={index}>

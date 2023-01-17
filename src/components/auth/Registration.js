@@ -3,6 +3,7 @@ import axios from "axios";
 
 export default function Registration({ handleSuccessfulAuth }) {
   const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [password_confirmation, setPassword_confirmation] = useState("");
 
@@ -13,6 +14,7 @@ export default function Registration({ handleSuccessfulAuth }) {
         {
           user: {
             email: email,
+            username: username,
             password: password,
             password_confirmation: password_confirmation,
           },
@@ -39,6 +41,14 @@ export default function Registration({ handleSuccessfulAuth }) {
           placeholder="example@mail.com"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+        ></input>
+        <input
+          type="username"
+          name="username"
+          placeholder="username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          required
         ></input>
         <input
           type="password"

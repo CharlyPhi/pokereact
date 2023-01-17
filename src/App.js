@@ -60,7 +60,12 @@ export default function App() {
         <Route
           exact
           path={"/Dashboard"}
-          element={<Dashboard loggedInStatus={loggedInStatus} />}
+          element={
+            <Dashboard
+              checkLoggingStatus={checkLoggingStatus}
+              loggedInStatus={loggedInStatus}
+            />
+          }
         />
         <Route
           exact
