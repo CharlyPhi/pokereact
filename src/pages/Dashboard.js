@@ -58,7 +58,7 @@ export default function Dashboard({ loggedInStatus, checkLoggingStatus }) {
           <div>
             <h1>
               You need to be logged in to have a Dashboard..
-              <img src={Psyduck} />
+              <img src={Psyduck} alt="confused Psyduck " />
             </h1>
             <br></br>
             <br></br>
