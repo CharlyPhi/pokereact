@@ -1,16 +1,36 @@
 
+.dashboard{
+  .favorite-list{
 
-.grid-container{
+    ul{
+      overflow-y: scroll;
+    }
 
-  display: grid;
-  grid-template-rows: repeat(auto-fill, 50px);
-  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-  grid-gap: 10px;
-}
-
-.favorite-list{
-
-  ul{
-    overflow-y: scroll;
+       /*  &:active{
+        background-image: none;
+        z-index:2;
+        transform: scale(8);
+         transition: none;
+         ul.infos{
+          display:none;
+        }
+      } */
   }
+
+  .not_logged{
+    margin-top: 2rem;
+
+    .psyduck_pc{
+      margin-top: 2rem;
+      margin-bottom: -4rem;
+      width: 35%;
+    }
+
+    button{
+      margin-left: 1rem;
+      border:none;
+      background: none;
+    }
+  }
+
 }

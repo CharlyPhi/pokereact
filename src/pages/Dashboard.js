@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 import Navigation from "../components/Navigation";
 import Psyduck from "../assets/Psyduck-PC.png";
 
@@ -55,16 +56,30 @@ export default function Dashboard({ loggedInStatus, checkLoggingStatus }) {
       </div>
       <div>
         {!username && (
-          <div>
+          <div className="not_logged">
             <h1>
               You need to be logged in to have a Dashboard..
-              <img src={Psyduck} alt="confused Psyduck " />
+              <img
+                className="psyduck_pc"
+                src={Psyduck}
+                alt="confused Psyduck "
+              />
             </h1>
             <br></br>
             <br></br>
             <br></br>
             <br></br>
             <h1>Dont worry, it's easy !</h1>
+            <NavLink
+              to="/Homepage"
+              className={(nav) => (nav.isActive ? "nav-active" : " ")}
+            >
+              <button>
+                <h2 type="button" className="button-10">
+                  Click here
+                </h2>
+              </button>
+            </NavLink>
           </div>
         )}
       </div>

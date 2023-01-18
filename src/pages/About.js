@@ -53,7 +53,7 @@ export default function About() {
   };
 
   return (
-    <div>
+    <div className="about">
       <Navigation />
       <div className="banner"></div>
       <br></br>

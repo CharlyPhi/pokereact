@@ -33,7 +33,7 @@ export default function Homepage({
   };
 
   return (
-    <div>
+    <div className="homepage">
       <Navigation />
       <div>
         {loggedInStatus && (
@@ -43,20 +43,18 @@ export default function Homepage({
         )}
       </div>
 
-        <div className="Registration">
-          <Registration handleSuccessfulAuth={handleSuccessfulAuth} />
-        </div>
+      <div className="Registration_form">
+        <Registration handleSuccessfulAuth={handleSuccessfulAuth} />
+      </div>
 
+      <div className="Login_form">
+        <Login handleSuccessfulAuth={handleSuccessfulAuth} />
+      </div>
 
-        <div className="Login">
-          <Login handleSuccessfulAuth={handleSuccessfulAuth} />
-        </div>
+      <button className="button-10" onClick={() => clickToLogout()}>
+        Log out
+      </button>
 
-
-        <button className="button-10" onClick={() => clickToLogout()}>
-          Log out
-        </button>
-      
       <div className="SearchBar">
         <SearchBar />
       </div>

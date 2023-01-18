@@ -1,142 +1,146 @@
-p{
-  font-size: large;
-  font-weight: 600;
-  font-style:oblique ;
-  text-align:justify;
-}
+.about{
 
-h1{
-  margin-left:0.5rem;
-}
-.about-top{
- width:100%;
- display: flex;
-}
-
-.about-top-left{
- display: flex;
- flex-direction: column;
- margin-left: 8rem;
- margin-top: 2rem;
-}
-
-.about-top-text{
- margin-bottom: 5rem;
-}
-
-.graph{
- width: 100%;
- .bar-one{
-   height: 2rem;
-   background-color: blue;
-   border: 1px solid black;
- }
- .bar-two{
-   height: 2rem;
-   background-color: rgb(0, 0, 0);
-   border: 2px solid black;
- }
- .bar-three{
-   height: 2rem;
-   background-color: rgb(227, 12, 12);
-   border: 1px solid black;
- }
- .bar-four{
-   height: 2rem;
-   background-color: rgb(218, 188, 21);
-   border: 1px solid black;
- }
-}
-
-.graph{
-  width: 100%;
-  .bar-one{
-    height: 2rem;
-    background-color: blue;
+  p{
+    font-size: large;
+    font-weight: 600;
+    font-style:oblique ;
+    text-align:justify;
   }
-  .bar-two{
-    height: 2rem;
-    background-color: rgb(0, 0, 0);
+
+  h1{
+    margin-left:0.5rem;
   }
-  .bar-three{
-    height: 2rem;
-    background-color: rgb(227, 12, 12);
+  .about-top{
+   width:100%;
+   display: flex;
   }
-  .bar-four{
-    height: 2rem;
-    background-color: rgb(218, 188, 21);
+
+  .about-top-left{
+   display: flex;
+   flex-direction: column;
+   margin-left: 8rem;
+   margin-top: 2rem;
   }
-}
 
-.votes{
- display: flex;
- flex-direction: column;
- button{
-   width: 8rem;
-   height:8rem;
-   background-color: rgb(36, 70, 192);
-   border: 1px solid black;
-   border-radius: 15%;
-   box-shadow: 0.8rem 0.8rem 0.1rem 0.05rem rgba(0, 0, 255, .2);
- }
- button:hover{
-   background-color: rgb(51, 80, 187);
-   border: 1px solid;
-   border-color:rgb(22, 180, 208);
- }
-}
+  .about-top-text{
+   margin-bottom: 5rem;
+  }
 
-.pifacteur{
- margin: 6rem auto;
- width: 40rem;
- height: 40rem;
- border: none;
- z-index:0;
-}
+  .graph{
+   width: 100%;
+   .bar-one{
+     height: 2rem;
+     background-color: blue;
+     border: 1px solid black;
+   }
+   .bar-two{
+     height: 2rem;
+     background-color: rgb(0, 0, 0);
+     border: 2px solid black;
+   }
+   .bar-three{
+     height: 2rem;
+     background-color: rgb(227, 12, 12);
+     border: 1px solid black;
+   }
+   .bar-four{
+     height: 2rem;
+     background-color: rgb(218, 188, 21);
+     border: 1px solid black;
+   }
+  }
 
-.play-button{
-  width: 5rem;
-  height: 2rem;
-  margin-left: 5rem;
-  padding-top: -5rem;
-  border: none;
-  z-index: 0;
-}
+  .graph{
+    width: 100%;
+    .bar-one{
+      height: 2rem;
+      background-color: blue;
+    }
+    .bar-two{
+      height: 2rem;
+      background-color: rgb(0, 0, 0);
+    }
+    .bar-three{
+      height: 2rem;
+      background-color: rgb(227, 12, 12);
+    }
+    .bar-four{
+      height: 2rem;
+      background-color: rgb(218, 188, 21);
+    }
+  }
 
-.form{
-background-image: url(".././assets/open_pokeball.png");
-width: 50em;
-height: 46em;
-margin: 3rem auto;
+  .votes{
+   display: flex;
+   flex-direction: column;
+   button{
+     width: 8rem;
+     height:8rem;
+     background-color: rgb(36, 70, 192);
+     border: 1px solid black;
+     border-radius: 15%;
+     box-shadow: 0.8rem 0.8rem 0.1rem 0.05rem rgba(0, 0, 255, .2);
+   }
+   button:hover{
+     background-color: rgb(51, 80, 187);
+     border: 1px solid;
+     border-color:rgb(22, 180, 208);
+   }
+  }
 
-label{
- color: white;
-}
+  .pifacteur{
+   margin: 6rem auto;
+   width: 40rem;
+   height: 40rem;
+   border: none;
+   z-index:0;
+  }
 
-input{
- width: 50%;
- border-radius: 2%;
-}
+  .play-button{
+    width: 5rem;
+    height: 2rem;
+    margin-left: 5rem;
+    padding-top: -5rem;
+    border: none;
+    z-index: 0;
+  }
 
-textarea{
- width: 50%;
- border-radius: 2%;
-}
+  .form{
+  background-image: url(".././assets/open_pokeball.png");
+  width: 50em;
+  height: 46em;
+  margin: 3rem auto;
 
-span{
-  font-size:small;
-}
-}
+  label{
+   color: white;
+  }
 
-.contact-form{
-display: flex;
-flex-direction: column;
-justify-content: space-between;
-margin-top: 17em;
-margin-left: 19.5em;
-}
+  input{
+   width: 50%;
+   border-radius: 2%;
+  }
 
-.PhoneInput{
- color: white;
- width: 15.5rem;
+  textarea{
+   width: 50%;
+   border-radius: 2%;
+  }
+
+  span{
+    font-size:small;
+  }
+  }
+
+  .contact-form{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 17em;
+  margin-left: 19.5em;
+  }
+
+  .PhoneInput{
+   color: white;
+   width: 15.5rem;
+  }
+
 }
