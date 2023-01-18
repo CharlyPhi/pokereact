@@ -42,21 +42,19 @@ export default function Homepage({
           </div>
         )}
       </div>
-      {!loggedInStatus.user.id && (
-        <div className="Registration">
-          <Registration handleSuccessfulAuth={handleSuccessfulAuth} />
-        </div>
-      )}
-      {!loggedInStatus.user.id && (
-        <div className="Login">
-          <Login handleSuccessfulAuth={handleSuccessfulAuth} />
-        </div>
-      )}
-      {loggedInStatus.user.id && (
-        <button className="button-10" onClick={() => clickToLogout()}>
-          Log out
-        </button>
-      )}
+
+      <div className="Registration">
+        <Registration handleSuccessfulAuth={handleSuccessfulAuth} />
+      </div>
+
+      <div className="Login">
+        <Login handleSuccessfulAuth={handleSuccessfulAuth} />
+      </div>
+
+      <button className="button-10" onClick={() => clickToLogout()}>
+        Log out
+      </button>
+
       <div className="SearchBar">
         <SearchBar />
       </div>
