@@ -9,7 +9,8 @@ let url2 = "https://pokeapi.co/api/v2/pokemon/";
 export default function Cards({ pokemon, loggedInStatus }) {
   const [infoImage, setInfoImage] = useState("");
   const [infoData, setInfoData] = useState("");
-  const [favorites, setFavorites] = useState([]);
+  const [favorites, setFavorites] = useState([{}]);
+  // const [names, setNames] = useState([]);
   const indice = pokemon.url.slice(34, -1);
 
   useEffect(
@@ -21,30 +22,43 @@ export default function Cards({ pokemon, loggedInStatus }) {
     [favorites]
   );
 
+  // const getNames = () => {
+  //   setNames(favorites.map((fav) => fav.name));
+  // };
+
   const getFavorites = (loggedInStatus) => {
     axios
       .get(`http://localhost:3001/favorites/${loggedInStatus.user.id}`)
       .then((res) => {
-        setFavorites(res.data.map((element) => element.name));
+        setFavorites(res.data);
       });
   };
 
   const handleClick = (e) => {
     setInfoImage(e.target.alt);
   };
-  const addToFavorites = (e, loggedInStatus) => {
-    axios
-      .post(
-        "http://localhost:3001/favorites/",
-        {
-          favorite: {
-            name: e.target.alt,
-            user_id: loggedInStatus.user.id,
+
+  const addOrRemoveFavorites = (e, loggedInStatus) => {
+    if (!favorites.map((fav) => fav.name).includes(e.target.alt)) {
+      axios
+        .post(
+          "http://localhost:3001/favorites/",
+          {
+            favorite: {
+              name: e.target.alt,
+              user_id: loggedInStatus.user.id,
+            },
           },
-        },
-        { withCredentials: true }
-      )
-      .then(() => getFavorites(loggedInStatus));
+          { withCredentials: true }
+        )
+        .then(() => getFavorites(loggedInStatus));
+    } else {
+      let fav = favorites.find((elem) => elem.name === e.target.alt);
+      axios.delete(
+        `http://localhost:3001/favorites/${fav.id}/${loggedInStatus.user.id}`
+      );
+      // console.log(fav.id);
+    }
   };
 
   useEffect(() => {
@@ -75,7 +89,7 @@ export default function Cards({ pokemon, loggedInStatus }) {
             alt={pokemon.name}
             onMouseOver={handleClick}
             onClick={(e) => {
-              addToFavorites(e, loggedInStatus);
+              addOrRemoveFavorites(e, loggedInStatus);
             }}
           />
         )}
@@ -91,7 +105,7 @@ export default function Cards({ pokemon, loggedInStatus }) {
             <h2>{infoData.height / 10}m</h2>
           </li>
           <li>
-            {favorites.includes(infoData.name) ? (
+            {favorites.map((fav) => fav.name).includes(infoData.name) ? (
               <img alt="red bow" src={bow} />
             ) : null}
           </li>

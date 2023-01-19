@@ -19,6 +19,7 @@ export default function Dashboard({ loggedInStatus, checkLoggingStatus }) {
       .then((res) => setFavorites(res.data));
   };
 
+
   return (
     <div className="dashboard">
       <Navigation />
@@ -51,6 +52,16 @@ export default function Dashboard({ loggedInStatus, checkLoggingStatus }) {
               You dont have any favorites at the moment, go to the pokedex if
               you want to add some.
             </h1>
+            <NavLink
+              to="/Pokedex"
+              className={(nav) => (nav.isActive ? "nav-active" : " ")}
+            >
+              <button>
+                <h2 type="button" className="button-10">
+                  Click here
+                </h2>
+              </button>
+            </NavLink>
           </div>
         )}
       </div>
