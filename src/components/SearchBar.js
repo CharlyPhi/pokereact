@@ -6,29 +6,27 @@ let url = "https://pokeapi.co/api/v2/pokemon/";
 export default function SearchBar() {
   const [pokemon, setPokemon] = useState("corviknight");
   const [inputValue, setInputValue] = useState("");
-  const [name, setName] = useState("pikachu");
+  const [name, setName] = useState("");
 
   const fetchName = () => {
     setName(inputValue.toLowerCase());
   };
 
   useEffect(() => {
-    const controller = new AbortController();
-    axios
-      .get(url + `${name}`, { signal: controller.signal })
-      .then((res) => {
-        setPokemon(res.data);
-      })
-      .catch((err) => {
-        if (axios.isCancel(err)) {
-        } else {
-          console.log("warning your useEffect is behaving");
-        }
-      });
-    return () => {
-      // cancel the request before component unmounts
-      controller.abort();
-    };
+    if (name.length > 0) {
+      const controller = new AbortController();
+      axios
+        .get(url + `${name}`, { signal: controller.signal })
+        .then((res) => {
+          setPokemon(res.data);
+        })
+        .catch((err) => {
+          if (axios.isCancel(err)) {
+          } else {
+            console.log("warning your useEffect is behaving");
+          }
+        });
+    }
   }, [name]);
 
   const cardAppear = () => {
@@ -37,7 +35,7 @@ export default function SearchBar() {
   };
 
   return (
-    <>
+    <div className="searchbar">
       <label name="query">
         <h2>Type any pokemon name, and double click Search !</h2>
       </label>
@@ -48,6 +46,7 @@ export default function SearchBar() {
         onChange={(e) => setInputValue(e.target.value)}
       ></input>
       <button
+        className="button-10"
         id="search"
         name="query"
         type="submit"
@@ -60,6 +59,6 @@ export default function SearchBar() {
       </button>
 
       <Card pokemon={pokemon} key={pokemon.order} />
-    </>
+    </div>
   );
 }

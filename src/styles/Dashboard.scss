@@ -1,0 +1,36 @@
+
+.dashboard{
+  .favorite-list{
+
+    ul{
+      overflow-y: scroll;
+    }
+
+       /*  &:active{
+        background-image: none;
+        z-index:2;
+        transform: scale(8);
+         transition: none;
+         ul.infos{
+          display:none;
+        }
+      } */
+  }
+
+  .not_logged{
+    margin-top: 2rem;
+
+    .psyduck_pc{
+      margin-top: 2rem;
+      margin-bottom: -4rem;
+      width: 35%;
+    }
+
+    button{
+      margin-left: 1rem;
+      border:none;
+      background: none;
+    }
+  }
+
+}

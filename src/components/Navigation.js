@@ -5,29 +5,44 @@ export default function Navigation() {
   return (
     <div className="NavBar">
       <NavLink
-        to="/Home"
+        to="/Homepage"
         className={(nav) => (nav.isActive ? "nav-active" : " ")}
       >
-        <button>Homepage</button>
+        <button>
+          <h2 style={{ fontSize: "bold", fontWeight: "600" }}>Homepage</h2>
+        </button>
       </NavLink>
       <NavLink
         to="/About"
         className={(nav) => (nav.isActive ? "nav-active" : " ")}
       >
-        <button>A propos</button>
+        <button>
+          <h2 style={{ fontSize: "bold", fontWeight: "600" }}>About</h2>
+        </button>
       </NavLink>
       <NavLink
-        to="/Faq"
+        to="/Pokedex"
         className={(nav) => (nav.isActive ? "nav-active" : " ")}
       >
-        <button>FAQ</button>
+        <button>
+          <h2 style={{ fontSize: "bold", fontWeight: "600" }}>Pokedex</h2>
+        </button>
       </NavLink>
       <NavLink
-        to="/Miscellaneous"
+        to="/Dashboard"
         className={(nav) => (nav.isActive ? "nav-active" : " ")}
       >
-        <button>Misc..</button>
+        <button>
+          <h2 style={{ fontSize: "bold", fontWeight: "600" }}>Dashboard</h2>
+        </button>
       </NavLink>
     </div>
   );
 }
+
+//<NavLink
+// to="/Faq"
+// className={(nav) => (nav.isActive ? "nav-active" : " ")}
+// >
+// <button>FAQ</button>
+// </NavLink>

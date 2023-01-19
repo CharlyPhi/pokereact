@@ -11,14 +11,18 @@ export default function Card({ pokemon }, { key }) {
   const [descriptions, setDescriptions] = useState([]);
 
   useEffect(() => {
-    axios.get(url2 + `${pokemon.name}`).then((res) => {
-      setDescriptions(res.data.flavor_text_entries.map((ob) => ob.flavor_text));
-      if (res.data.habitat) {
-        setHabitat(res.data.habitat.name);
-      } else {
-        setHabitat("undiscoverd territorie");
-      }
-    });
+    if (pokemon.name && pokemon.name.length > 0) {
+      axios.get(url2 + `${pokemon.name}`).then((res) => {
+        setDescriptions(
+          res.data.flavor_text_entries.map((ob) => ob.flavor_text)
+        );
+        if (res.data.habitat) {
+          setHabitat(res.data.habitat.name);
+        } else {
+          setHabitat("undiscoverd territorie");
+        }
+      });
+    }
   }, [pokemon]);
 
   return (
@@ -46,8 +50,8 @@ export default function Card({ pokemon }, { key }) {
             </div>
           )}
           {descriptions &&
-            descriptions.slice(5, 7).map((obj) => (
-              <div className="description">
+            descriptions.slice(5, 7).map((obj, index) => (
+              <div className="description" key={index}>
                 <h2>{obj}</h2>
               </div>
             ))}

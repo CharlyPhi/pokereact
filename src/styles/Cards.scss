@@ -1,16 +1,14 @@
-
-.optionTab {
-  margin: 8em;
-}
-.pokedex {
-  padding: 0 12em 20em 12em;
-}
-
 .cards {
-  margin-left: 100px;
-    position: relative;
-    height: 100px;
-    width: 200px;
+  position: relative;
+  padding: 0.7em;
+  height:5em;
+  width: 5.2em;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+  margin-left: 10rem;
     transition: none;
     z-index: 0;
     h2 {
@@ -18,44 +16,34 @@
     }
     ul.infos{
       display:none;
-
     }
+
     &:hover {
       z-index: 1;
       background-image: url(".././assets/book7.gif");
-      height: 103px;
-      width: 230px;
+      height: 8rem;
+      width: 16.4rem;
       transform: scale(2);
       transition: none;
       overflow: hidden;
-
       background-color: none;
 
       ul.infos{
-        margin-left:30px;
+        margin-right: 1rem;
         list-style-type: none;
         display:block;
         z-index: 1;
         h2{
-          line-height: 180%;
+          line-height: 150%;
           text-transform: capitalize;
       }
+      img{
+        width: 1.8rem;
       }
-
-    }
-    &:active{
-      background-image: none;
-      z-index:2;
-      transform: scale(8);
-      transition: none;
-      ul.infos{
-        display:none;
       }
     }
-
 
     img{
-      border:none;
-      width:100px;
+      width: 8rem;
     }
 }

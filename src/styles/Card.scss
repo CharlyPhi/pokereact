@@ -1,14 +1,13 @@
 
 .card {
+  background: none;
   visibility:hidden;
-  width: 50rem;
+  width: 45rem;
   height: 50rem;
   background-image: url("../assets/card-default.png");
   transform: scale(0.8);
-  list-style-type: none;
   margin-left: 30%;
-  transition: none;
-  z-index: 0;
+  border:none;
     img{
       margin-top: 10rem;
       margin-left: 25rem;
