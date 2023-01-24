@@ -8,6 +8,8 @@ export default function Dashboard({ loggedInStatus, checkLoggingStatus }) {
   const [favorites, setFavorites] = useState([{}]);
   const id = loggedInStatus.user.id;
   const username = loggedInStatus.user.username;
+  const url1 =
+    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/";
 
   useEffect(() => {
     checkLoggingStatus();
@@ -19,6 +21,13 @@ export default function Dashboard({ loggedInStatus, checkLoggingStatus }) {
       .then((res) => setFavorites(res.data));
   };
 
+  // const switchShiny = (e, fav) => {
+  //   if ((e.target.src = `{url1 + ${fav.pokeId} + ".png"}`)) {
+  //     e.target.src = `{url2 + ${fav.pokeId} + ".png"}`;
+  //   } else if ((e.target.src = `{url2 + ${fav.pokeId} + ".png"}`)) {
+  //     e.target.src = `{url1 + ${fav.pokeId} + ".png"}`;
+  //   }
+  // };
 
   return (
     <div className="dashboard">
@@ -34,7 +43,15 @@ export default function Dashboard({ loggedInStatus, checkLoggingStatus }) {
           <div className="list">
             <ul className="favorite-list">
               {favorites.map((fav, index) => (
-                <li key={index}>{fav.name}</li>
+                <li key={index}>
+                  {fav.pokeId && (
+                    <img
+                      src={url1 + `${fav.pokeId}` + ".png"}
+                      alt={fav.name}
+                      // onClick={(e, fav) => switchShiny(e, fav)}
+                    />
+                  )}
+                </li>
               ))}
             </ul>
             {favorites[0] && (

@@ -3,8 +3,12 @@
   .favorite-list{
 
 display: flex;
-justify-content: space-between;
+justify-content: space-around;
 list-style-type: none;
+
+img{
+  transform: scale(0.5);
+}
 
 
        /*  &:active{

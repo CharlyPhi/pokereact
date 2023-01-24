@@ -10,7 +10,6 @@ export default function Cards({ pokemon, loggedInStatus }) {
   const [infoImage, setInfoImage] = useState("");
   const [infoData, setInfoData] = useState("");
   const [favorites, setFavorites] = useState([{}]);
-  // const [names, setNames] = useState([]);
   const indice = pokemon.url.slice(34, -1);
 
   useEffect(
@@ -21,10 +20,6 @@ export default function Cards({ pokemon, loggedInStatus }) {
     },
     [favorites]
   );
-
-  // const getNames = () => {
-  //   setNames(favorites.map((fav) => fav.name));
-  // };
 
   const getFavorites = (loggedInStatus) => {
     axios
@@ -47,6 +42,7 @@ export default function Cards({ pokemon, loggedInStatus }) {
             favorite: {
               name: e.target.alt,
               user_id: loggedInStatus.user.id,
+              pokeId: e.target.id,
             },
           },
           { withCredentials: true }
@@ -57,7 +53,6 @@ export default function Cards({ pokemon, loggedInStatus }) {
       axios.delete(
         `http://localhost:3001/favorites/${fav.id}/${loggedInStatus.user.id}`
       );
-      // console.log(fav.id);
     }
   };
 
@@ -87,6 +82,7 @@ export default function Cards({ pokemon, loggedInStatus }) {
             // eslint-disable-next-line no-useless-concat
             src={url + `${indice}` + ".png"}
             alt={pokemon.name}
+            id={pokemon.url.slice(34, -1)}
             onMouseOver={handleClick}
             onClick={(e) => {
               addOrRemoveFavorites(e, loggedInStatus);
