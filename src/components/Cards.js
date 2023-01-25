@@ -6,36 +6,18 @@ let url =
   "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/";
 let url2 = "https://pokeapi.co/api/v2/pokemon/";
 
-export default function Cards({ pokemon, loggedInStatus }) {
+export default function Cards({
+  pokemon,
+  loggedInStatus,
+  favorites,
+  getFavorites,
+}) {
   const [infoImage, setInfoImage] = useState("");
   const [infoData, setInfoData] = useState("");
-  const [favorites, setFavorites] = useState([{}]);
-  // const [names, setNames] = useState([]);
   const indice = pokemon.url.slice(34, -1);
-
-  useEffect(
-    (loggedInStatus) => {
-      if (loggedInStatus && loggedInStatus.user) {
-        getFavorites();
-      }
-    },
-    [favorites]
-  );
-
-  // const getNames = () => {
-  //   setNames(favorites.map((fav) => fav.name));
-  // };
-
-  const getFavorites = (loggedInStatus) => {
-    axios
-      .get(`http://localhost:3001/favorites/${loggedInStatus.user.id}`)
-      .then((res) => {
-        setFavorites(res.data);
-      });
-  };
-
   const handleClick = (e) => {
     setInfoImage(e.target.alt);
+    getFavorites(loggedInStatus);
   };
 
   const addOrRemoveFavorites = (e, loggedInStatus) => {
@@ -47,6 +29,7 @@ export default function Cards({ pokemon, loggedInStatus }) {
             favorite: {
               name: e.target.alt,
               user_id: loggedInStatus.user.id,
+              pokeId: e.target.id,
             },
           },
           { withCredentials: true }
@@ -57,7 +40,6 @@ export default function Cards({ pokemon, loggedInStatus }) {
       axios.delete(
         `http://localhost:3001/favorites/${fav.id}/${loggedInStatus.user.id}`
       );
-      // console.log(fav.id);
     }
   };
 
@@ -65,13 +47,7 @@ export default function Cards({ pokemon, loggedInStatus }) {
     if (infoImage && infoImage.length > 0) {
       axios
         .get(url2 + `${infoImage}`)
-        .then((response) => setInfoData(response.data))
-        .catch((err) => {
-          if (axios.isCancel(err)) {
-          } else {
-            console.log("warning your useEffect is behaving");
-          }
-        });
+        .then((response) => setInfoData(response.data));
     }
   }, [infoImage]);
 
@@ -87,9 +63,11 @@ export default function Cards({ pokemon, loggedInStatus }) {
             // eslint-disable-next-line no-useless-concat
             src={url + `${indice}` + ".png"}
             alt={pokemon.name}
+            id={pokemon.url.slice(34, -1)}
             onMouseOver={handleClick}
             onClick={(e) => {
               addOrRemoveFavorites(e, loggedInStatus);
+              getFavorites(loggedInStatus);
             }}
           />
         )}

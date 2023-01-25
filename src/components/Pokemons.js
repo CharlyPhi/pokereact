@@ -8,6 +8,21 @@ export default function Pokemon({ loggedInStatus }) {
   const [dataName, setDataName] = useState([]);
   const [selectedRadio, setSelectedRadio] = useState("");
   const [min, setMin] = useState("");
+  const [favorites, setFavorites] = useState([{}]);
+
+  useEffect((loggedInStatus) => {
+    if (loggedInStatus && loggedInStatus.user) {
+      getFavorites();
+    }
+  });
+
+  const getFavorites = (loggedInStatus) => {
+    axios
+      .get(`http://localhost:3001/favorites/${loggedInStatus.user.id}`)
+      .then((res) => {
+        setFavorites(res.data);
+      });
+  };
 
   useEffect(() => {
     digits.forEach((element) => {
@@ -50,6 +65,8 @@ export default function Pokemon({ loggedInStatus }) {
             .slice(0, selectedRadio)
             .map((pokemon) => (
               <Cards
+                getFavorites={getFavorites}
+                favorites={favorites}
                 pokemon={pokemon}
                 key={pokemon.url.slice(34, -1)}
                 loggedInStatus={loggedInStatus}

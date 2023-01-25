@@ -46,10 +46,14 @@
       height:30%;
       width: 60%;
       margin-top: 3rem;
-      margin-left: 12.5rem;
+      margin-left: 15rem;
       display: flex;
       flex-direction:column;
       justify-content: space-between;
+
+      h2{
+        font-size:larger ;
+      }
     }
 
 }
