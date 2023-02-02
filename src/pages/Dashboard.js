@@ -33,6 +33,7 @@ export default function Dashboard({ loggedInStatus, checkLoggingStatus }) {
     <div className="dashboard">
       <Navigation />
       <div className="banner"></div>
+
       {username && (
         <div className="Welcome">
           <h1>Hey {username} ! Welcome back to your Dashboard.</h1>
