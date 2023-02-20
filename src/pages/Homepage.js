@@ -35,6 +35,8 @@ export default function Homepage({
   return (
     <div className="homepage">
       <Navigation />
+      <div className="banner"></div>
+
       <div>
         {loggedInStatus && (
           <div>
