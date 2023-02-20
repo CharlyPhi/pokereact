@@ -1,7 +1,7 @@
 import axios from "axios";
 import Card from "./Card";
 import React, { useEffect, useState } from "react";
-let url = "https://pokeapi.co/api/v2/pokemon/";
+let url = process.env.REACT_APP_UrlBase;
 
 export default function SearchBar() {
   const [pokemon, setPokemon] = useState("corviknight");

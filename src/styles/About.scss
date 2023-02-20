@@ -1,3 +1,5 @@
+@import 'variables.scss';
+
 .about{
 
   p{
@@ -73,18 +75,19 @@
   .votes{
    display: flex;
    flex-direction: column;
+   padding-bottom: 1em;
    button{
      width: 8rem;
      height:8rem;
-     background-color: rgb(36, 70, 192);
-     border: 1px solid black;
+     background-color: $my_blue;
+     border: 2px solid darken($my_blue, 50);
      border-radius: 15%;
-     box-shadow: 0.8rem 0.8rem 0.1rem 0.05rem rgba(0, 0, 255, .2);
+     box-shadow: 0.8rem 0.8rem 0.1rem 0.05rem lighten($my_blue, 40);
    }
    button:hover{
-     background-color: rgb(51, 80, 187);
+     background-color: lighten($my_blue, 10);
      border: 1px solid;
-     border-color:rgb(22, 180, 208);
+     border-color:lighten($my_blue, 5);
    }
   }
 

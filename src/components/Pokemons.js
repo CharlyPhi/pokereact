@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Cards from "./Cards";
-let url = "https://pokeapi.co/api/v2/pokemon/?limit=12000";
+let url = process.env.REACT_APP_UrlBase;
 
 export default function Pokemon({ loggedInStatus }) {
   const digits = [151, 251, 386, 493, 649, 721, 809, 905, 10300];

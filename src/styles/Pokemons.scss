@@ -22,13 +22,13 @@
       }
     }
   }
-  
+
 .optionTab {
   justify-content: space-around;
   align-items: center;
   margin: 6rem;
   margin-bottom: 20px;
-  background: rgb(13, 15, 104);
+  background: darken($my_blue, 12);
   border-radius: 20px;
   padding: 3px;
   color: white;
