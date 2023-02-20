@@ -81,9 +81,7 @@ export default function About() {
       </div>
 
       <section className="form">
-        <p>
-          "You didnt notice this color change" <span>Obi-Wan-Kenobi</span>
-        </p>
+        <p>Use this form if you feel like your vote wasn't considered</p>
         <div className="contact-form">
           <label htmlFor="First name">First name</label>
           <input
