@@ -33,8 +33,10 @@ export default function Homepage({
   };
 
   return (
-    <div>
+    <div className="homepage">
       <Navigation />
+      <div className="banner"></div>
+
       <div>
         {loggedInStatus && (
           <div>
@@ -43,11 +45,11 @@ export default function Homepage({
         )}
       </div>
 
-      <div className="Registration">
+      <div className="Registration_form">
         <Registration handleSuccessfulAuth={handleSuccessfulAuth} />
       </div>
 
-      <div className="Login">
+      <div className="Login_form">
         <Login handleSuccessfulAuth={handleSuccessfulAuth} />
       </div>
 
@@ -55,9 +57,7 @@ export default function Homepage({
         Log out
       </button>
 
-      <div className="SearchBar">
-        <SearchBar />
-      </div>
+      
     </div>
   );
 }

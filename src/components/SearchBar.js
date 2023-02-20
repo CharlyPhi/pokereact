@@ -35,7 +35,7 @@ export default function SearchBar() {
   };
 
   return (
-    <>
+    <div className="searchbar">
       <label name="query">
         <h2>Type any pokemon name, and double click Search !</h2>
       </label>
@@ -59,6 +59,6 @@ export default function SearchBar() {
       </button>
 
       <Card pokemon={pokemon} key={pokemon.order} />
-    </>
+    </div>
   );
 }

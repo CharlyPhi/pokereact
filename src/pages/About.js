@@ -26,10 +26,7 @@ export default function About() {
     e.preventDefault();
     try {
       if (!firstName) {
-        setError("You need to enter a first name");
-      }
-      if (!lastName) {
-        setError("You need to enter a last name");
+        setError("You need to enter a Name");
       }
       if (!mail) {
         setError("You need to enter an email");
@@ -48,12 +45,11 @@ export default function About() {
   //Sounds
   const PikachuCry = new Audio(Pika);
   const PikaCry = () => {
-    console.log("Pika Pika");
     PikachuCry.play();
   };
 
   return (
-    <div>
+    <div className="about">
       <Navigation />
       <div className="banner"></div>
       <br></br>
@@ -77,27 +73,18 @@ export default function About() {
           alt="Play Button"
           onClick={() => PikaCry()}
         />
+        <span>Beware Loud !</span>
         <img className="pifacteur" src={Pikachu} alt="Pikachu_mail" />
       </div>
 
-      <section className="form">
-        <p>
-          "You didnt notice this color change" <span>Obi-Wan-Kenobi</span>
-        </p>
+      <div className="form">
         <div className="contact-form">
-          <label htmlFor="First name">First name</label>
+          <label htmlFor="Name">Name</label>
           <input
-            id="First name"
-            placeholder="First name"
+            id="Name"
+            placeholder="Name"
             required={true}
             onChange={(e) => setFirstName(e.target.value)}
-          ></input>
-          <label htmlFor="Last name">Last name</label>
-          <input
-            id="Last name"
-            placeholder="Last name"
-            required={true}
-            onChange={(e) => setLastName(e.target.value)}
           ></input>
           <label htmlFor="Mobile">Mobile</label>
           <PhoneInput
@@ -127,7 +114,7 @@ export default function About() {
           <input type="submit" onClick={handleSubmit} />
           <p>{error}</p>
         </div>
-      </section>
+      </div>
     </div>
   );
 }

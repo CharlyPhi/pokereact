@@ -8,6 +8,21 @@ export default function Pokemon({ loggedInStatus }) {
   const [dataName, setDataName] = useState([]);
   const [selectedRadio, setSelectedRadio] = useState("");
   const [min, setMin] = useState("");
+  const [favorites, setFavorites] = useState([{}]);
+
+  useEffect((loggedInStatus) => {
+    if (loggedInStatus && loggedInStatus.user) {
+      getFavorites();
+    }
+  });
+
+  const getFavorites = (loggedInStatus) => {
+    axios
+      .get(`http://localhost:3001/favorites/${loggedInStatus.user.id}`)
+      .then((res) => {
+        setFavorites(res.data);
+      });
+  };
 
   useEffect(() => {
     digits.forEach((element) => {
@@ -24,37 +39,41 @@ export default function Pokemon({ loggedInStatus }) {
 
   return (
     /*setting the names on the "Gen" bar*/
-    <div className="pokemon-name">
-      <h2 className="pokedex-tip">
-        Hover to check your favorite pokemon's info, and click on the picture to
-        add them to your favorites !
-      </h2>
-      <ul className="optionTab">
-        {digits.map((Gen, index) => (
-          <ul key={index}>
-            <label htmlFor="Gen">{`Gen ${index + 1} `}</label>
-            <input
-              className={digits}
-              id={Gen}
-              name="Gen"
-              type="radio"
-              onChange={(e) => setSelectedRadio(e.target.id)}
-            />
-          </ul>
-        ))}
-      </ul>{" "}
-      <ul className="pokedex">
-        {dataName
-          .slice(min, selectedRadio)
-          .slice(0, selectedRadio)
-          .map((pokemon) => (
-            <Cards
-              pokemon={pokemon}
-              key={pokemon.url.slice(34, -1)}
-              loggedInStatus={loggedInStatus}
-            />
+    <div className="pokemons">
+      <div className="pokemon-name">
+        <h2 className="pokedex-tip">
+          Hover to check your favorite pokemon's info, and click on the picture
+          to add them to your favorites !
+        </h2>
+        <ul className="optionTab">
+          {digits.map((Gen, index) => (
+            <ul key={index}>
+              <label htmlFor="Gen">{`Gen ${index + 1} `}</label>
+              <input
+                className={digits}
+                id={Gen}
+                name="Gen"
+                type="radio"
+                onChange={(e) => setSelectedRadio(e.target.id)}
+              />
+            </ul>
           ))}
-      </ul>
+        </ul>{" "}
+        <ul className="pokedex">
+          {dataName
+            .slice(min, selectedRadio)
+            .slice(0, selectedRadio)
+            .map((pokemon) => (
+              <Cards
+                getFavorites={getFavorites}
+                favorites={favorites}
+                pokemon={pokemon}
+                key={pokemon.url.slice(34, -1)}
+                loggedInStatus={loggedInStatus}
+              />
+            ))}
+        </ul>
+      </div>
     </div>
   );
 }

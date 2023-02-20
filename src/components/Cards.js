@@ -6,58 +6,48 @@ let url =
   "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/";
 let url2 = "https://pokeapi.co/api/v2/pokemon/";
 
-export default function Cards({ pokemon, loggedInStatus }) {
+export default function Cards({
+  pokemon,
+  loggedInStatus,
+  favorites,
+  getFavorites,
+}) {
   const [infoImage, setInfoImage] = useState("");
   const [infoData, setInfoData] = useState("");
-  const [favorites, setFavorites] = useState([]);
   const indice = pokemon.url.slice(34, -1);
-
-  useEffect(
-    (loggedInStatus) => {
-      if (loggedInStatus && loggedInStatus.user) {
-        getFavorites();
-      }
-    },
-    [favorites]
-  );
-
-  const getFavorites = (loggedInStatus) => {
-    axios
-      .get(`http://localhost:3001/favorites/${loggedInStatus.user.id}`)
-      .then((res) => {
-        setFavorites(res.data.map((element) => element.name));
-      });
-  };
-
   const handleClick = (e) => {
     setInfoImage(e.target.alt);
+    getFavorites(loggedInStatus);
   };
-  const addToFavorites = (e, loggedInStatus) => {
-    axios
-      .post(
-        "http://localhost:3001/favorites/",
-        {
-          favorite: {
-            name: e.target.alt,
-            user_id: loggedInStatus.user.id,
+
+  const addOrRemoveFavorites = (e, loggedInStatus) => {
+    if (!favorites.map((fav) => fav.name).includes(e.target.alt)) {
+      axios
+        .post(
+          "http://localhost:3001/favorites/",
+          {
+            favorite: {
+              name: e.target.alt,
+              user_id: loggedInStatus.user.id,
+              pokeId: e.target.id,
+            },
           },
-        },
-        { withCredentials: true }
-      )
-      .then(() => getFavorites(loggedInStatus));
+          { withCredentials: true }
+        )
+        .then(() => getFavorites(loggedInStatus));
+    } else {
+      let fav = favorites.find((elem) => elem.name === e.target.alt);
+      axios.delete(
+        `http://localhost:3001/favorites/${fav.id}/${loggedInStatus.user.id}`
+      );
+    }
   };
 
   useEffect(() => {
     if (infoImage && infoImage.length > 0) {
       axios
         .get(url2 + `${infoImage}`)
-        .then((response) => setInfoData(response.data))
-        .catch((err) => {
-          if (axios.isCancel(err)) {
-          } else {
-            console.log("warning your useEffect is behaving");
-          }
-        });
+        .then((response) => setInfoData(response.data));
     }
   }, [infoImage]);
 
@@ -73,9 +63,11 @@ export default function Cards({ pokemon, loggedInStatus }) {
             // eslint-disable-next-line no-useless-concat
             src={url + `${indice}` + ".png"}
             alt={pokemon.name}
+            id={pokemon.url.slice(34, -1)}
             onMouseOver={handleClick}
             onClick={(e) => {
-              addToFavorites(e, loggedInStatus);
+              addOrRemoveFavorites(e, loggedInStatus);
+              getFavorites(loggedInStatus);
             }}
           />
         )}
@@ -91,7 +83,7 @@ export default function Cards({ pokemon, loggedInStatus }) {
             <h2>{infoData.height / 10}m</h2>
           </li>
           <li>
-            {favorites.includes(infoData.name) ? (
+            {favorites.map((fav) => fav.name).includes(infoData.name) ? (
               <img alt="red bow" src={bow} />
             ) : null}
           </li>
