@@ -45,7 +45,6 @@ export default function About() {
   //Sounds
   const PikachuCry = new Audio(Pika);
   const PikaCry = () => {
-    console.log("Pika Pika");
     PikachuCry.play();
   };
 
@@ -74,11 +73,11 @@ export default function About() {
           alt="Play Button"
           onClick={() => PikaCry()}
         />
+        <span>Beware Loud !</span>
         <img className="pifacteur" src={Pikachu} alt="Pikachu_mail" />
       </div>
 
-      <section className="form">
-        <p>Use this form if you feel like your vote wasn't considered</p>
+      <div className="form">
         <div className="contact-form">
           <label htmlFor="Name">Name</label>
           <input
@@ -115,7 +114,7 @@ export default function About() {
           <input type="submit" onClick={handleSubmit} />
           <p>{error}</p>
         </div>
-      </section>
+      </div>
     </div>
   );
 }
