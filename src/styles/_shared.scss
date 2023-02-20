@@ -1,8 +1,10 @@
+@import 'variables';
+
 
 .NavBar{
   margin-left:0;
   height:2.5rem;
-  background-color: #133378;;
+  background-color: $my_blue;
   margin-top: 0;
   width: 100%;
   display: flex;
@@ -20,8 +22,8 @@
     border:none;
     width: 10rem;
     height: 2.5rem;
-    background: #0052D4;  /* fallback for old browsers */
-    background: linear-gradient(to right, #6FB1FC, #4364F7, #0052D4);
+    background: $my_blue;  /* fallback for old browsers */
+    background: linear-gradient(to right, lighten($my_blue, 50), lighten($my_blue, 10), $my_blue);
     &:hover{
       background: #195dca;  /* fallback for old browsers */
       background: linear-gradient(to right, #85bcfb, #657ff1, #1962d7);
@@ -34,12 +36,12 @@
   background-image: url("../assets/pokereact_banner_1920.png") ;
   height: 17.5rem;
   min-width: 100%;
-  border: 0.2rem solid rgb(17, 16, 30);
+  border: 0.2rem solid darken($my_blue,60);
 }
 
 .footer {
   font-weight: 800;
-  background: #133378;
+  background: $my_blue;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -76,12 +78,17 @@
   border-radius: 6px;
   border: none;
   color: #fff;
-  background: linear-gradient(180deg, #4B91F7 0%, #367AF6 100%);
-   background-origin: border-box;
+  background: linear-gradient(180deg, lighten($my_blue, 50), lighten($my_blue, 10));
+  background-origin: border-box;
   box-shadow: 0px 0.5px 1.5px rgba(54, 122, 246, 0.25), inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2);
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+
+  &:hover{
+    background: #195dca;  /* fallback for old browsers */
+    background: linear-gradient(to right, #85bcfb, #657ff1, #1962d7);
+  }
 
   &:focus{
     box-shadow: inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2), 0px 0.5px 1.5px rgba(54, 122, 246, 0.25), 0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
