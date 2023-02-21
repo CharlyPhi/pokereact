@@ -50,6 +50,7 @@
     ]
   },
   "devDependencies": {
+    "dotenv-webpack": "^8.0.1",
     "gh-pages": "^4.0.0"
   }
 }

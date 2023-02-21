@@ -57,7 +57,9 @@ export default function Homepage({
         Log out
       </button>
 
-      
+      <div>
+        <SearchBar />
+      </div>
     </div>
   );
 }

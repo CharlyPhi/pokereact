@@ -1,7 +1,7 @@
 import axios from "axios";
 import Card from "./Card";
 import React, { useEffect, useState } from "react";
-let url = process.env.REACT_APP_UrlBase;
+let url = process.env.REACT_APP_UrlBase2;
 
 export default function SearchBar() {
   const [pokemon, setPokemon] = useState("corviknight");

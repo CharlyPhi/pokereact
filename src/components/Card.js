@@ -4,6 +4,10 @@ import axios from "axios";
 let url = process.env.REACT_APP_UrlSprites;
 let url2 = process.env.REACT_APP_UrlSpecies;
 
+// let url =
+//   "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/";
+// let url2 = "https://pokeapi.co/api/v2/pokemon-species/";
+
 export default function Card({ pokemon }, { key }) {
   const src = url + pokemon.id + ".png";
   const [habitat, setHabitat] = useState("");
