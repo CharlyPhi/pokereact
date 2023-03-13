@@ -8,3 +8,12 @@
 @import "./Card.scss";
 @import "./Dashboard.scss";
 @import "./Pokemons.scss";
+@import 'variables.scss';
+
+
+
+.footer{
+  span{
+    &:hover{color: $pika_yellow}
+  }
+}
