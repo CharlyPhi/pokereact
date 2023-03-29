@@ -61,22 +61,23 @@ export default function Homepage({
           </div>
         )}
         <div>
-          {!registered && (
-            <div className="not_logged">
-              <h1>Please register</h1>
+          {!registered &&
+            (!username && (
+              <div className="not_logged">
+                <h1>Please register</h1>
 
-              <div className="Registration_form">
-                <Registration handleSuccessfulAuth={handleSuccessfulAuth} />
+                <div className="Registration_form">
+                  <Registration handleSuccessfulAuth={handleSuccessfulAuth} />
+                </div>
+                <h1>If you already have an account click here to Log in.</h1>
+                <button
+                  className="button-10"
+                  onClick={() => loginRegisterSwitch()}
+                >
+                  Go to Log IN
+                </button>
               </div>
-              <h1>If you already have an account click here to Log in.</h1>
-              <button
-                className="button-10"
-                onClick={() => loginRegisterSwitch()}
-              >
-                Go to Log IN
-              </button>
-            </div>
-          )}
+            ))}
         </div>
 
         <div>{username && <SearchBar />}</div>
