@@ -4,7 +4,6 @@ import axios from "axios";
 export default function Login({ handleSuccessfulAuth }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [username, setUsername] = useState("");
 
   const handleSubmit = (e) => {
     axios
@@ -13,7 +12,6 @@ export default function Login({ handleSuccessfulAuth }) {
         {
           user: {
             email: email,
-            username: username,
             password: password,
           },
         },
@@ -36,17 +34,9 @@ export default function Login({ handleSuccessfulAuth }) {
         <input
           type="email"
           name="email"
-          placeholder="example@mail.com"
+          placeholder="e-mail"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          required
-        ></input>
-        <input
-          type="username"
-          name="username"
-          placeholder="username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
           required
         ></input>
         <input

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Registration from "../components/auth/Registration";
 import Navigation from "../components/Navigation";
@@ -15,6 +15,8 @@ export default function Homepage({
   handleLogout,
 }) {
   const navigate = useNavigate();
+  const username = loggedInStatus.user.username;
+  let [registered, setRegistered] = useState(false);
 
   const handleSuccessfulAuth = (data) => {
     handleLogin(data);
@@ -32,33 +34,52 @@ export default function Homepage({
       });
   };
 
+  const loginRegisterSwitch = () => {
+    setRegistered(!registered);
+    return registered;
+  };
+
   return (
     <div className="homepage">
       <Navigation />
       <div className="banner"></div>
-
-      <div>
-        {loggedInStatus && (
+      <div className="forms">
+        {username && (
           <div>
-            <h1>You are currently {loggedInStatus.Status}</h1>
+            <button className="button-10" onClick={() => clickToLogout()}>
+              Log out
+            </button>
           </div>
         )}
-      </div>
 
-      <div className="Registration_form">
-        <Registration handleSuccessfulAuth={handleSuccessfulAuth} />
-      </div>
+        {registered && (
+          <div className="Login_form">
+            <Login handleSuccessfulAuth={handleSuccessfulAuth} />
+            <button className="button-10" onClick={() => loginRegisterSwitch()}>
+              Not registered yet ?
+            </button>
+          </div>
+        )}
+        <div>
+          {!registered && (
+            <div className="not_logged">
+              <h1>Please register</h1>
 
-      <div className="Login_form">
-        <Login handleSuccessfulAuth={handleSuccessfulAuth} />
-      </div>
+              <div className="Registration_form">
+                <Registration handleSuccessfulAuth={handleSuccessfulAuth} />
+              </div>
+              <h1>If you already have an account click here to Log in.</h1>
+              <button
+                className="button-10"
+                onClick={() => loginRegisterSwitch()}
+              >
+                Go to Log IN
+              </button>
+            </div>
+          )}
+        </div>
 
-      <button className="button-10" onClick={() => clickToLogout()}>
-        Log out
-      </button>
-
-      <div>
-        <SearchBar />
+        <div>{username && <SearchBar />}</div>
       </div>
     </div>
   );
