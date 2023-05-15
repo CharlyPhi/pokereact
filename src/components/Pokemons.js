@@ -47,7 +47,7 @@ export default function Pokemon({ loggedInStatus }) {
         </h2>
         <ul className="optionTab">
           {digits.map((Gen, index) => (
-            <ul key={index}>
+            <ul className="Gen_selector" key={index}>
               <label htmlFor="Gen">{`Gen ${index + 1} `}</label>
               <input
                 className={digits}

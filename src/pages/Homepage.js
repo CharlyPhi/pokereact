@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Registration from "../components/auth/Registration";
 import Navigation from "../components/Navigation";
-import SearchBar from "../components/SearchBar";
 import Login from "../components/auth/Login";
 import axios from "axios";
 
@@ -15,7 +14,7 @@ export default function Homepage({
   handleLogout,
 }) {
   const navigate = useNavigate();
-  const username = loggedInStatus.user.username;
+  // const username = loggedInStatus.user.username;
   let [registered, setRegistered] = useState(false);
 
   const handleSuccessfulAuth = (data) => {
@@ -41,11 +40,12 @@ export default function Homepage({
 
   return (
     <div className="homepage">
+
       <Navigation />
       <div className="banner"></div>
       <div className="forms">
-        {username && (
-          <div>
+        {loggedInStatus.Status === 'logged_in' && (
+          <div className='logout'>
             <button className="button-10" onClick={() => clickToLogout()}>
               Log out
             </button>
@@ -60,27 +60,24 @@ export default function Homepage({
             </button>
           </div>
         )}
-        <div>
+
           {!registered &&
-            (!username && (
+            ((
               <div className="not_logged">
-                <h1>Please register</h1>
+                <h1>First time ?</h1>
 
                 <div className="Registration_form">
                   <Registration handleSuccessfulAuth={handleSuccessfulAuth} />
                 </div>
-                <h1>If you already have an account click here to Log in.</h1>
+                <h3>Otherwise</h3>
                 <button
                   className="button-10"
                   onClick={() => loginRegisterSwitch()}
                 >
-                  Go to Log IN
+                  Go to Log In
                 </button>
               </div>
             ))}
-        </div>
-
-        <div>{username && <SearchBar />}</div>
       </div>
     </div>
   );

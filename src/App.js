@@ -4,6 +4,7 @@ import About from "./pages/About";
 import Homepage from "./pages/Homepage";
 import Pokedex from "./pages/Pokedex";
 import Dashboard from "./pages/Dashboard";
+import SearchBar from "./pages/SearchBar";
 import axios from "axios";
 
 export default function App() {
@@ -71,6 +72,11 @@ export default function App() {
           exact
           path="Pokedex"
           element={<Pokedex loggedInStatus={loggedInStatus} />}
+        />
+        <Route
+          exact
+          path={"/SearchBar"}
+          element={<SearchBar/>}
         />
         <Route exact path="/about" element={<About />} />
         <Route exact path="/dashboard" element={<Dashboard />} />

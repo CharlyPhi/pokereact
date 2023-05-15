@@ -1,49 +1,51 @@
 .cards {
   position: relative;
   padding: 0.7em;
-  height:5em;
-  width: 5.2em;
+  width: 2rem;
   border-radius: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 0;
   margin-left: 10rem;
+  transition: none;
+
+  h2 {
+    font-size: 1rem;
+  }
+
+  ul.infos {
+    display: none;
+  }
+
+  &:hover {
+    z-index: 1;
+    background-image: url(".././assets/book7.gif");
+    height: 8rem;
+    width: 16.4rem;
+    transform: scale(2);
     transition: none;
-    z-index: 0;
-    h2 {
-      font-size: 1rem;
-    }
-    ul.infos{
-      display:none;
-    }
+    overflow: hidden;
+    background-color: none;
 
-    &:hover {
+    ul.infos {
+      margin-right: 1rem;
+      list-style-type: none;
+      display: block;
       z-index: 1;
-      background-image: url(".././assets/book7.gif");
-      height: 8rem;
-      width: 16.4rem;
-      transform: scale(2);
-      transition: none;
-      overflow: hidden;
-      background-color: none;
 
-      ul.infos{
-        margin-right: 1rem;
-        list-style-type: none;
-        display:block;
-        z-index: 1;
-        h2{
-          line-height: 150%;
-          text-transform: capitalize;
+      h2 {
+        line-height: 150%;
+        text-transform: capitalize;
       }
-      img{
-        width: 1.8rem;
-      }
+
+      img {
+        width: 1.7rem;
       }
     }
+  }
 
-    img{
-      width: 8rem;
-    }
+  img {
+    width: 8rem;
+  }
 }
