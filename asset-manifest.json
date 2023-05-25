@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/pokereact/static/css/main.7f3c8b94.chunk.css",
-    "main.js": "/pokereact/static/js/main.a5d25a8d.chunk.js",
-    "main.js.map": "/pokereact/static/js/main.a5d25a8d.chunk.js.map",
+    "main.css": "/pokereact/static/css/main.1f8d6f16.chunk.css",
+    "main.js": "/pokereact/static/js/main.ca61a3af.chunk.js",
+    "main.js.map": "/pokereact/static/js/main.ca61a3af.chunk.js.map",
     "runtime-main.js": "/pokereact/static/js/runtime-main.5dd0a390.js",
     "runtime-main.js.map": "/pokereact/static/js/runtime-main.5dd0a390.js.map",
     "static/css/2.72a9e112.chunk.css": "/pokereact/static/css/2.72a9e112.chunk.css",
     "static/js/2.59ba0a9c.chunk.js": "/pokereact/static/js/2.59ba0a9c.chunk.js",
     "static/js/2.59ba0a9c.chunk.js.map": "/pokereact/static/js/2.59ba0a9c.chunk.js.map",
     "index.html": "/pokereact/index.html",
-    "precache-manifest.5a2ae5beefb4e0be0b69b02cb7430560.js": "/pokereact/precache-manifest.5a2ae5beefb4e0be0b69b02cb7430560.js",
+    "precache-manifest.a93e979ecd124e9045208cf2269ba879.js": "/pokereact/precache-manifest.a93e979ecd124e9045208cf2269ba879.js",
     "service-worker.js": "/pokereact/service-worker.js",
     "static/css/2.72a9e112.chunk.css.map": "/pokereact/static/css/2.72a9e112.chunk.css.map",
-    "static/css/main.7f3c8b94.chunk.css.map": "/pokereact/static/css/main.7f3c8b94.chunk.css.map",
+    "static/css/main.1f8d6f16.chunk.css.map": "/pokereact/static/css/main.1f8d6f16.chunk.css.map",
     "static/js/2.59ba0a9c.chunk.js.LICENSE.txt": "/pokereact/static/js/2.59ba0a9c.chunk.js.LICENSE.txt",
-    "static/js/main.a5d25a8d.chunk.js.LICENSE.txt": "/pokereact/static/js/main.a5d25a8d.chunk.js.LICENSE.txt",
+    "static/js/main.ca61a3af.chunk.js.LICENSE.txt": "/pokereact/static/js/main.ca61a3af.chunk.js.LICENSE.txt",
     "static/media/Psyduck-PC.png": "/pokereact/static/media/Psyduck-PC.ce128ade.png",
     "static/media/index.scss": "/pokereact/static/media/pokereact_banner_1920.08f04ca0.png",
     "static/media/bow.png": "/pokereact/static/media/bow.642a0534.png",
@@ -26,7 +26,7 @@
     "static/js/runtime-main.5dd0a390.js",
     "static/css/2.72a9e112.chunk.css",
     "static/js/2.59ba0a9c.chunk.js",
-    "static/css/main.7f3c8b94.chunk.css",
-    "static/js/main.a5d25a8d.chunk.js"
+    "static/css/main.1f8d6f16.chunk.css",
+    "static/js/main.ca61a3af.chunk.js"
   ]
 }
