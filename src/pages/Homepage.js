@@ -10,6 +10,7 @@ document.body.style.backgroundColor = "rgb(100,231,242,255)";
 
 export default function Homepage({
   loggedInStatus,
+  loggedInStatusStatus,
   handleLogin,
   handleLogout,
 }) {
@@ -44,7 +45,7 @@ export default function Homepage({
       <Navigation />
       <div className="banner"></div>
       <div className="forms">
-        {loggedInStatus.Status === 'logged_in' && (
+        {loggedInStatusStatus === 'logged_in' && (
           <div className='logout'>
             <button className="button-10" onClick={() => clickToLogout()}>
               Log out

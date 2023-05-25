@@ -4,7 +4,8 @@ import About from "./pages/About";
 import Homepage from "./pages/Homepage";
 import Pokedex from "./pages/Pokedex";
 import Dashboard from "./pages/Dashboard";
-import SearchBar from "./pages/SearchBar";
+import NewFeatures from "./pages/NewFeatures";
+import Faq from "./pages/Faq";
 import axios from "axios";
 
 export default function App() {
@@ -25,11 +26,10 @@ export default function App() {
     axios
       .get("http://localhost:3001/logged_in", { withCredentials: true })
       .then((res) => {
-        if (res.data.logged_in && loggedInStatus.Status === "Not_logged_in") {
+        if (res.data.logged_in ) {
           setLoggedInStatus({ Status: "Logged_in", user: res.data.user });
         } else if (
-          !res.data.logged_in &&
-          loggedInStatus.Status === "Logged_in"
+          !res.data.logged_in
         ) {
           setLoggedInStatus({ Status: "Not_logged_in", user: {} });
         }
@@ -53,6 +53,7 @@ export default function App() {
           element={
             <Homepage
               loggedInStatus={loggedInStatus}
+              loggedInStatusStatus={loggedInStatus.Status}
               handleLogin={handleLogin}
               handleLogout={handleLogout}
             />
@@ -75,8 +76,13 @@ export default function App() {
         />
         <Route
           exact
-          path={"/SearchBar"}
-          element={<SearchBar/>}
+          path={"/NewFeatures"}
+          element={<NewFeatures/>}
+        />
+         <Route
+          exact
+          path={"/Faq"}
+          element={<Faq/>}
         />
         <Route exact path="/about" element={<About />} />
         <Route exact path="/dashboard" element={<Dashboard />} />
