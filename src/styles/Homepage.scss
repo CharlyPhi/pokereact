@@ -1,38 +1,45 @@
+@import 'variables';
 
-
-.homepage{
-  .forms{
-     display: flex;
-     justify-content: center;
+.homepage {
+  .forms {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
   }
-
 
   img {
-  position: relative;
-  height: 100%;
-  width:100%;
-  z-index: 0;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
   }
 
-.Registration_form{
+}
+
+.Registration_form {
   margin-top: 2rem;
   margin-bottom: 2rem;
-  button{
-    margin-top:1rem;
+  width: 100px;
+  font-size: 16px;
+
+
+  button {
+    margin-top: 1rem;
   }
 }
 
-.Login_form{
+.Login_form {
+  justify-content: center;
   margin-top: 2rem;
   margin-bottom: 2rem;
-  button{
-    margin-top:1rem;
+
+  button {
+    margin-top: 1rem;
   }
 }
 
-.SearchBar{
-  margin-top: 5rem;
-  min-height: 20rem;
-
-}
+.not_logged {
+  max-height: 50vh;
+  max-width: 60vw;
+  color: $my_blue;
 }

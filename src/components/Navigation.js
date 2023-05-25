@@ -36,6 +36,22 @@ export default function Navigation() {
           <h2 style={{ fontSize: "bold", fontWeight: "600" }}>Dashboard</h2>
         </button>
       </NavLink>
+      <NavLink
+        to="/NewFeatures"
+        className={(nav) => (nav.isActive ? "nav-active" : " ")}
+      >
+        <button>
+          <h2 style={{ fontSize: "bold", fontWeight: "600" }}>NewFeatures</h2>
+        </button>
+      </NavLink>
+      <NavLink
+        to="/Faq"
+        className={(nav) => (nav.isActive ? "nav-active" : " ")}
+      >
+        <button>
+          <h2 style={{ fontSize: "bold", fontWeight: "600" }}>Faq</h2>
+        </button>
+      </NavLink>
     </div>
   );
 }

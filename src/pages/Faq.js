@@ -6,7 +6,6 @@ document.body.style.zoom = "110%";
 document.body.style.backgroundColor = "rgb(166,231,242,255)";
 
 
-
 export default function Faq(){
   return (
     <div className="faq">

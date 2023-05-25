@@ -1,4 +1,4 @@
-.pokemons{
+.pokemons {
 
   .pokemon-name {
     text-align: center;
@@ -23,26 +23,33 @@
     }
   }
 
-.optionTab {
-  justify-content: space-around;
-  align-items: center;
-  margin: 6rem;
-  margin-bottom: 20px;
-  background: darken($my_blue, 12);
-  border-radius: 20px;
-  padding: 3px;
-  color: white;
-  box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.452);
+  .optionTab {
+    justify-content: space-around;
+    align-items: center;
+    margin: 6rem;
+    margin-bottom: 20px;
+    background: darken($my_blue, 12);
+    border-radius: 20px;
+    padding: 3px;
+    color: white;
+    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.452);
 
-  input {
-    transform: translateY(1px);
-    cursor: pointer;
+    input {
+      transform: translateY(1px);
+      cursor: pointer;
+    }
+
+    label {
+      margin-left: 10px;
+      margin-right: 10px;
+      cursor: pointer;
+    }
   }
 
-  label {
-    margin-left: 10px;
-    margin-right: 10px;
-    cursor: pointer;
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
   }
-}
+
 }

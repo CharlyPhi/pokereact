@@ -9,11 +9,7 @@
 @import "./Dashboard.scss";
 @import "./Pokemons.scss";
 @import 'variables.scss';
+@import 'button.scss';
 
 
 
-.footer{
-  span{
-    &:hover{color: $pika_yellow}
-  }
-}
