@@ -36,15 +36,21 @@ export default function SearchBar() {
 
   return (
     <div className="searchbar">
+      <div>
       <label name="query">
         <h2>Type any pokemon name, and double click Search !</h2>
       </label>
+      </div>
+      <div>
       <input
         name="query"
         defaultValue="missingNo....."
         type="search"
         onChange={(e) => setInputValue(e.target.value)}
+
       ></input>
+      </div>
+      <div>
       <button
         className="button-10"
         id="search"
@@ -57,7 +63,7 @@ export default function SearchBar() {
       >
         Search
       </button>
-
+      </div>
       <Card pokemon={pokemon} key={pokemon.order} />
     </div>
   );

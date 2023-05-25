@@ -1,0 +1,11 @@
+@import 'variables';
+
+.searchbar {
+  label {
+    margin: $searchMargin;
+  }
+  input,
+  button {
+    margin: $searchMargin;
+  }
+}
