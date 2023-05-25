@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "095fbab40f1b79626b28ab57f314a989",
+    "revision": "657efdcfc9a528bc4ae8c66cf41be683",
     "url": "/pokereact/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/pokereact/static/css/2.72a9e112.chunk.css"
   },
   {
-    "revision": "7f93be9a142e948d9062",
-    "url": "/pokereact/static/css/main.1f8d6f16.chunk.css"
+    "revision": "f4e1404aaa0b5294382d",
+    "url": "/pokereact/static/css/main.7f3c8b94.chunk.css"
   },
   {
     "revision": "9c5380c1e665253ba471",
@@ -20,12 +20,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/pokereact/static/js/2.59ba0a9c.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "7f93be9a142e948d9062",
-    "url": "/pokereact/static/js/main.ca61a3af.chunk.js"
+    "revision": "f4e1404aaa0b5294382d",
+    "url": "/pokereact/static/js/main.a5d25a8d.chunk.js"
   },
   {
     "revision": "4e0e34f265fae8f33b01b27ae29d9d6f",
-    "url": "/pokereact/static/js/main.ca61a3af.chunk.js.LICENSE.txt"
+    "url": "/pokereact/static/js/main.a5d25a8d.chunk.js.LICENSE.txt"
   },
   {
     "revision": "678207f40a62fc752192",
