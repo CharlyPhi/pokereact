@@ -1,28 +1,32 @@
 {
   "files": {
-    "main.css": "/pokereact/static/css/main.2fc42b56.chunk.css",
-    "main.js": "/pokereact/static/js/main.83911d81.chunk.js",
-    "main.js.map": "/pokereact/static/js/main.83911d81.chunk.js.map",
+    "main.css": "/pokereact/static/css/main.7f3c8b94.chunk.css",
+    "main.js": "/pokereact/static/js/main.a5d25a8d.chunk.js",
+    "main.js.map": "/pokereact/static/js/main.a5d25a8d.chunk.js.map",
     "runtime-main.js": "/pokereact/static/js/runtime-main.5dd0a390.js",
     "runtime-main.js.map": "/pokereact/static/js/runtime-main.5dd0a390.js.map",
     "static/css/2.72a9e112.chunk.css": "/pokereact/static/css/2.72a9e112.chunk.css",
-    "static/js/2.993e1b56.chunk.js": "/pokereact/static/js/2.993e1b56.chunk.js",
-    "static/js/2.993e1b56.chunk.js.map": "/pokereact/static/js/2.993e1b56.chunk.js.map",
+    "static/js/2.59ba0a9c.chunk.js": "/pokereact/static/js/2.59ba0a9c.chunk.js",
+    "static/js/2.59ba0a9c.chunk.js.map": "/pokereact/static/js/2.59ba0a9c.chunk.js.map",
     "index.html": "/pokereact/index.html",
-    "precache-manifest.8bad5043d8fed81ec244ed91c034094d.js": "/pokereact/precache-manifest.8bad5043d8fed81ec244ed91c034094d.js",
+    "precache-manifest.5a2ae5beefb4e0be0b69b02cb7430560.js": "/pokereact/precache-manifest.5a2ae5beefb4e0be0b69b02cb7430560.js",
     "service-worker.js": "/pokereact/service-worker.js",
     "static/css/2.72a9e112.chunk.css.map": "/pokereact/static/css/2.72a9e112.chunk.css.map",
-    "static/css/main.2fc42b56.chunk.css.map": "/pokereact/static/css/main.2fc42b56.chunk.css.map",
-    "static/js/2.993e1b56.chunk.js.LICENSE.txt": "/pokereact/static/js/2.993e1b56.chunk.js.LICENSE.txt",
+    "static/css/main.7f3c8b94.chunk.css.map": "/pokereact/static/css/main.7f3c8b94.chunk.css.map",
+    "static/js/2.59ba0a9c.chunk.js.LICENSE.txt": "/pokereact/static/js/2.59ba0a9c.chunk.js.LICENSE.txt",
+    "static/js/main.a5d25a8d.chunk.js.LICENSE.txt": "/pokereact/static/js/main.a5d25a8d.chunk.js.LICENSE.txt",
+    "static/media/Psyduck-PC.png": "/pokereact/static/media/Psyduck-PC.ce128ade.png",
     "static/media/index.scss": "/pokereact/static/media/pokereact_banner_1920.08f04ca0.png",
+    "static/media/bow.png": "/pokereact/static/media/bow.642a0534.png",
     "static/media/mail_pikachu.jpg": "/pokereact/static/media/mail_pikachu.5e24c3ed.jpg",
-    "static/media/pikachu-starter.mp3": "/pokereact/static/media/pikachu-starter.8cc622ea.mp3"
+    "static/media/pikachu-starter.mp3": "/pokereact/static/media/pikachu-starter.8cc622ea.mp3",
+    "static/media/pokeball.jpg": "/pokereact/static/media/pokeball.9971b7a2.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.5dd0a390.js",
     "static/css/2.72a9e112.chunk.css",
-    "static/js/2.993e1b56.chunk.js",
-    "static/css/main.2fc42b56.chunk.css",
-    "static/js/main.83911d81.chunk.js"
+    "static/js/2.59ba0a9c.chunk.js",
+    "static/css/main.7f3c8b94.chunk.css",
+    "static/js/main.a5d25a8d.chunk.js"
   ]
 }
