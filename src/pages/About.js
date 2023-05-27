@@ -2,20 +2,24 @@ import React from "react";
 import Navigation from "../components/Navigation";
 import { useState } from "react";
 import "react-phone-number-input/style.css";
-import PhoneInput from "react-phone-number-input";
+//import PhoneInput from "react-phone-number-input";
 // get Ip country through "react-ipgeolocation";
-import useGeoLocation from "react-ipgeolocation";
+//import useGeoLocation from "react-ipgeolocation";
 import Votes from "../components/Votes";
 import Pikachu from "../assets/mail_pikachu.jpg";
 import PlayButton from "../assets/play-button.png";
 import Pika from "../assets/pikachu-starter.mp3";
+import emailjs from '@emailjs/browser';
+
+const Key = process.env.REACT_APP_PUBLIC_KEY;
+const template = process.env.REACT_APP_TEMPLATE;
+const service = process.env.REACT_APP_SERVICE;
 
 export default function About() {
   const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [value, setValue] = useState();
   const [mail, setMail] = useState("");
   const [msg, setMsg] = useState("");
+  const [phone, setPhone] = useState("");
   const [error, setError] = useState("");
 
   document.body.style.zoom = "110%";
@@ -24,23 +28,26 @@ export default function About() {
   // Handles the Form Submit (only the errors at the moment, no actual submit)
   const handleSubmit = (e) => {
     e.preventDefault();
-    try {
-      if (!firstName) {
-        setError("You need to enter a Name");
+ alert('your E-mail has been sent :) ');
+   /* if (!firstName) {
+      setError("You need to enter a name");
+    } else if (!mail) {
+      setError("You need to enter an email");
+    } else if (!msg) {
+      setError("Well, there is no message to read here");
+    } else if (!phone) {
+      setError("Well, there is no phone number to read here");
+    } else {*/
+
+    emailjs.sendForm(service, template, e.target, Key).then(
+      (response) => {
+        console.log("Email sent successfully!", response);
+      },
+      (error) => {
+        console.error("Error sending email:", error);
       }
-      if (!mail) {
-        setError("You need to enter an email");
-      }
-      if (!msg) {
-        setError("Well there is no message to read here");
-      }
-      if (!value) {
-        setError("Well there is no phone number to read here");
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
+    );
+};
 
   //Sounds
   const PikachuCry = new Audio(Pika);
@@ -78,43 +85,56 @@ export default function About() {
       </div>
 
       <div className="form">
-        <div className="contact-form">
-          <label htmlFor="Name">Name</label>
+          <form className="contact-form" onSubmit={handleSubmit}>
+          <label htmlFor="FirstName">     </label>
           <input
-            id="Name"
-            placeholder="Name"
+            name="FirstName"
+            placeholder="First Name"
             required={true}
             onChange={(e) => setFirstName(e.target.value)}
           ></input>
-          <label htmlFor="Mobile">Mobile</label>
-          <PhoneInput
-            id="Mobile"
-            value={value}
-            placeholder="Enter phone number"
-            onChange={(e) => setValue(e.target.value)}
-            defaultCountry={`${useGeoLocation().country}`}
-          />
-          <label htmlFor="e-mail">E-mail</label>
+          <label htmlFor="e-mail"></label>
           <input
             type="email"
-            id="E-mail"
+            name= "e-mail"
             placeholder="E-mail"
             required={true}
             onChange={(e) => setMail(e.target.value)}
           ></input>
-          <label htmlFor="Message">Message</label>
+          <label htmlFor="Message"></label>
           <textarea
-            id="Message"
-            placeholder="Message"
+            name='message'
+            placeholder="Type your message"
             minLength={10}
             maxLength={200}
             required={true}
             onChange={(e) => setMsg(e.target.value)}
           ></textarea>
-          <input type="submit" onClick={handleSubmit} />
-          <p>{error}</p>
-        </div>
+          <button type="submit">Send</button>
+          </form>
       </div>
     </div>
   );
 }
+
+
+
+
+
+
+/*
+<label htmlFor="Mobile">Mobile</label>
+<PhoneInput
+  id="Mobile"
+  placeholder="Enter phone number"
+  value={phone}
+  onChange={(e) => setPhone(e.taget.value)}
+  defaultCountry={"FR"}
+  onCountryChange= {`${useGeoLocation().country}`}
+/>
+*/
+
+
+/*
+
+*/

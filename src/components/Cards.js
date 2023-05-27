@@ -4,6 +4,7 @@ import bow from "../assets/bow.png";
 
 let url = process.env.REACT_APP_UrlSprites;
 let url2 = process.env.REACT_APP_UrlBase2;
+
 // let url =
 //   "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/";
 // let url2 = "https://pokeapi.co/api/v2/pokemon/";
