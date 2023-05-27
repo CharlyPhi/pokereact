@@ -1,17 +1,16 @@
+.dashboard {
+  .favorite-list {
 
-.dashboard{
-  .favorite-list{
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
 
-display: flex;
-justify-content: space-around;
-list-style-type: none;
-
-img{
-  transform: scale(0.5);
-}
+    img {
+      transform: scale(0.5);
+    }
 
 
-       /*  &:active{
+    /*  &:active{
         background-image: none;
         z-index:2;
         transform: scale(8);
@@ -22,18 +21,19 @@ img{
       } */
   }
 
-  .not_logged{
+  .not_logged {
     margin-top: 2rem;
+    margin-left: 1rem;
 
-    .psyduck_pc{
-      margin-top: 2rem;
+    .psyduck_pc {
+      margin: 2rem;
       margin-bottom: -4rem;
-      width: 35%;
+      width: 40%;
     }
 
-    button{
+    button {
       margin-left: 1rem;
-      border:none;
+      border: none;
       background: none;
     }
   }

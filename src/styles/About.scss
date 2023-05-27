@@ -1,105 +1,116 @@
 @import 'variables.scss';
 
-.about{
+.about {
 
-  p{
+  p {
     font-size: large;
     font-weight: 600;
-    font-style:oblique ;
-    text-align:justify;
+    font-style: oblique;
+    text-align: justify;
   }
 
-  h1{
-    margin-left:0.5rem;
-  }
-  .about-top{
-   width:100%;
-   display: flex;
+  h1 {
+    margin-left: 0.5rem;
   }
 
-  .about-top-left{
-   display: flex;
-   flex-direction: column;
-   margin-left: 8rem;
-   margin-top: 2rem;
-  }
-
-  .about-top-text{
-   margin-bottom: 5rem;
-  }
-
-  .graph{
-   width: 100%;
-   .bar-one{
-     height: 2rem;
-     background-color: blue;
-     border: 1px solid black;
-   }
-   .bar-two{
-     height: 2rem;
-     background-color: rgb(0, 0, 0);
-     border: 2px solid black;
-   }
-   .bar-three{
-     height: 2rem;
-     background-color: rgb(227, 12, 12);
-     border: 1px solid black;
-   }
-   .bar-four{
-     height: 2rem;
-     background-color: rgb(218, 188, 21);
-     border: 1px solid black;
-   }
-  }
-
-  .graph{
+  .about-top {
     width: 100%;
-    .bar-one{
+    display: flex;
+  }
+
+  .about-top-left {
+    display: flex;
+    flex-direction: column;
+    margin-left: 8rem;
+    margin-top: 2rem;
+  }
+
+  .about-top-text {
+    margin-bottom: 5rem;
+  }
+
+  .graph {
+    width: 100%;
+
+    .bar-one {
+      height: 2rem;
+      background-color: blue;
+      border: 1px solid black;
+    }
+
+    .bar-two {
+      height: 2rem;
+      background-color: rgb(0, 0, 0);
+      border: 2px solid black;
+    }
+
+    .bar-three {
+      height: 2rem;
+      background-color: rgb(227, 12, 12);
+      border: 1px solid black;
+    }
+
+    .bar-four {
+      height: 2rem;
+      background-color: rgb(218, 188, 21);
+      border: 1px solid black;
+    }
+  }
+
+  .graph {
+    width: 100%;
+
+    .bar-one {
       height: 2rem;
       background-color: blue;
     }
-    .bar-two{
+
+    .bar-two {
       height: 2rem;
       background-color: rgb(0, 0, 0);
     }
-    .bar-three{
+
+    .bar-three {
       height: 2rem;
       background-color: rgb(227, 12, 12);
     }
-    .bar-four{
+
+    .bar-four {
       height: 2rem;
       background-color: rgb(218, 188, 21);
     }
   }
 
-  .votes{
-   display: flex;
-   flex-direction: column;
-   padding-bottom: 1em;
-   button{
-     width: 8rem;
-     height:8rem;
-     background-color: $my_blue;
-     border: 2px solid darken($my_blue, 50);
-     border-radius: 15%;
-     box-shadow: 0.8rem 0.8rem 0.1rem 0.05rem lighten($my_blue, 40);
-   }
-   button:hover{
-     background-color: lighten($my_blue, 10);
-     border: 1px solid;
-     border-color:lighten($my_blue, 5);
-   }
+  .votes {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1em;
+
+    button {
+      width: 8rem;
+      height: 8rem;
+      background-color: $my_blue;
+      border: 2px solid darken($my_blue, 50);
+      border-radius: 15%;
+      box-shadow: 0.8rem 0.8rem 0.1rem 0.05rem lighten($my_blue, 40);
+    }
+
+    button:hover {
+      background-color: lighten($my_blue, 10);
+      border: 1px solid;
+      border-color: lighten($my_blue, 5);
+    }
   }
 
-  .pifacteur{
-   margin: 6rem auto;
-   width: 40rem;
-   height: 40rem;
-   border: none;
-   z-index:0;
+  .pifacteur {
+    margin: 6rem auto;
+    width: 40rem;
+    height: 40rem;
+    border: none;
+    z-index: 0;
   }
 
-  .play-button{
+  .play-button {
     width: 5rem;
     height: 2rem;
     margin-left: 5rem;
@@ -109,42 +120,41 @@
     z-index: 0;
   }
 
-  .form{
-  background-image: url(".././assets/open_pokeball.png");
-  width: 50em;
-  height: 46em;
-  margin: 10em auto;
-  padding-top: 15em;
-  label{
-   color: white;
+  .form {
+    background-image: url(".././assets/open_pokeball.png");
+    width: 50em;
+    height: 46em;
+    margin: 10em auto;
+    padding-top: 15em;
+
+    label {
+      color: white;
+    }
+
+    input,
+    textarea,
+    button {
+      width: 50%;
+      border-radius: 2%;
+    }
+
+    span {
+      font-size: small;
+    }
   }
 
-  input{
-   width: 50%;
-   border-radius: 2%;
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 4em;
+    margin-left: 19.5em;
+  
   }
 
-  textarea{
-   width: 50%;
-   border-radius: 2%;
-  }
-
-  span{
-    font-size:small;
-  }
-  }
-
-  .contact-form{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin-top: 2em;
-  margin-left: 19.5em;
-  }
-
-  .PhoneInput{
-   color: white;
-   width: 15.5rem;
+  .PhoneInput {
+    color: white;
+    width: 15.5rem;
   }
 
 }
