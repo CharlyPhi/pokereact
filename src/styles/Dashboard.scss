@@ -1,6 +1,5 @@
 .dashboard {
   .favorite-list {
-
     display: flex;
     justify-content: space-around;
     list-style-type: none;
@@ -8,7 +7,6 @@
     img {
       transform: scale(0.5);
     }
-
 
     /*  &:active{
         background-image: none;
@@ -37,5 +35,4 @@
       background: none;
     }
   }
-
 }
