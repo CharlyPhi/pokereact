@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/pokereact/precache-manifest.a93e979ecd124e9045208cf2269ba879.js"
+  "/pokereact/precache-manifest.6cad30176a8b29f5fc5c8d42733278b2.js"
 );
 
 self.addEventListener('message', (event) => {

@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/pokereact/static/css/main.1f8d6f16.chunk.css",
-    "main.js": "/pokereact/static/js/main.ca61a3af.chunk.js",
-    "main.js.map": "/pokereact/static/js/main.ca61a3af.chunk.js.map",
+    "main.css": "/pokereact/static/css/main.91094e67.chunk.css",
+    "main.js": "/pokereact/static/js/main.7943e409.chunk.js",
+    "main.js.map": "/pokereact/static/js/main.7943e409.chunk.js.map",
     "runtime-main.js": "/pokereact/static/js/runtime-main.5dd0a390.js",
     "runtime-main.js.map": "/pokereact/static/js/runtime-main.5dd0a390.js.map",
     "static/css/2.72a9e112.chunk.css": "/pokereact/static/css/2.72a9e112.chunk.css",
-    "static/js/2.59ba0a9c.chunk.js": "/pokereact/static/js/2.59ba0a9c.chunk.js",
-    "static/js/2.59ba0a9c.chunk.js.map": "/pokereact/static/js/2.59ba0a9c.chunk.js.map",
+    "static/js/2.cc0ff969.chunk.js": "/pokereact/static/js/2.cc0ff969.chunk.js",
+    "static/js/2.cc0ff969.chunk.js.map": "/pokereact/static/js/2.cc0ff969.chunk.js.map",
     "index.html": "/pokereact/index.html",
-    "precache-manifest.a93e979ecd124e9045208cf2269ba879.js": "/pokereact/precache-manifest.a93e979ecd124e9045208cf2269ba879.js",
+    "precache-manifest.6cad30176a8b29f5fc5c8d42733278b2.js": "/pokereact/precache-manifest.6cad30176a8b29f5fc5c8d42733278b2.js",
     "service-worker.js": "/pokereact/service-worker.js",
     "static/css/2.72a9e112.chunk.css.map": "/pokereact/static/css/2.72a9e112.chunk.css.map",
-    "static/css/main.1f8d6f16.chunk.css.map": "/pokereact/static/css/main.1f8d6f16.chunk.css.map",
-    "static/js/2.59ba0a9c.chunk.js.LICENSE.txt": "/pokereact/static/js/2.59ba0a9c.chunk.js.LICENSE.txt",
-    "static/js/main.ca61a3af.chunk.js.LICENSE.txt": "/pokereact/static/js/main.ca61a3af.chunk.js.LICENSE.txt",
+    "static/css/main.91094e67.chunk.css.map": "/pokereact/static/css/main.91094e67.chunk.css.map",
+    "static/js/2.cc0ff969.chunk.js.LICENSE.txt": "/pokereact/static/js/2.cc0ff969.chunk.js.LICENSE.txt",
+    "static/js/main.7943e409.chunk.js.LICENSE.txt": "/pokereact/static/js/main.7943e409.chunk.js.LICENSE.txt",
     "static/media/Psyduck-PC.png": "/pokereact/static/media/Psyduck-PC.ce128ade.png",
     "static/media/index.scss": "/pokereact/static/media/pokereact_banner_1920.08f04ca0.png",
     "static/media/bow.png": "/pokereact/static/media/bow.642a0534.png",
@@ -25,8 +25,8 @@
   "entrypoints": [
     "static/js/runtime-main.5dd0a390.js",
     "static/css/2.72a9e112.chunk.css",
-    "static/js/2.59ba0a9c.chunk.js",
-    "static/css/main.1f8d6f16.chunk.css",
-    "static/js/main.ca61a3af.chunk.js"
+    "static/js/2.cc0ff969.chunk.js",
+    "static/css/main.91094e67.chunk.css",
+    "static/js/main.7943e409.chunk.js"
   ]
 }
