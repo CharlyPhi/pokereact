@@ -1,6 +1,5 @@
 @import 'variables';
 
-
 .NavBar {
   margin-left: 0;
   height: 2.5rem;
@@ -11,7 +10,7 @@
   flex-direction: row;
 
   h2 {
-    font-size: larger
+    font-size: larger;
   }
 
   span {
@@ -35,7 +34,6 @@
   }
 }
 
-
 .banner {
   background-image: url("../assets/pokereact_banner_1920.png");
   height: 17.5rem;
@@ -55,9 +53,10 @@
 
   span {
     &:hover {
-      color: $pika_yellow
+      color: $pika_yellow;
     }
   }
+
   .footer-links {
     display: flex;
     align-items: center;
@@ -67,7 +66,6 @@
     color: black;
     text-decoration: none;
     font-size: 1.2rem;
-
     padding: 0rem 1.3rem;
   }
 

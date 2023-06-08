@@ -1,14 +1,14 @@
 .dashboard {
   .favorite-list {
-
+    ul{
     display: flex;
+    flex-wrap:wrap ;
     justify-content: space-around;
     list-style-type: none;
 
     img {
-      transform: scale(0.5);
+      transform: scale(0.2);
     }
-
 
     /*  &:active{
         background-image: none;
@@ -19,8 +19,12 @@
           display:none;
         }
       } */
+      li{
+        max-width: 100px;
+        max-height: 200px;
+      }
   }
-
+}
   .not_logged {
     margin-top: 2rem;
     margin-left: 1rem;
@@ -37,5 +41,4 @@
       background: none;
     }
   }
-
 }
