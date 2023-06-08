@@ -10,16 +10,33 @@ export default function Dashboard({ loggedInStatus, checkLoggingStatus }) {
   const username = loggedInStatus.user.username;
   const url1 =
     "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/";
+  const [favoriteDisplayed, setFavoriteDisplayed] = useState(false);
+
 
   useEffect(() => {
     checkLoggingStatus();
-  });
+  },[]);
 
   const getFavorites = (id) => {
-    axios
+    if (favoriteDisplayed === false) {
+   axios
       .get(`http://localhost:3001/favorites/${id}`)
-      .then((res) => setFavorites(res.data));
-  };
+      .then((res) => setFavorites(res.data)).then(setFavoriteDisplayed(true))
+      }
+      else if (favoriteDisplayed === true) {
+        const imageClass = document.getElementsByClassName('favs');
+        [...imageClass].forEach(elmt => {elmt.style.display = 'none' });
+        setFavoriteDisplayed(null);
+      }
+      else if (favoriteDisplayed === null) {
+        const imageClass = document.getElementsByClassName('favs');
+         [...imageClass].forEach(elmt => {elmt.style.display = 'block' });
+         setFavoriteDisplayed(true);
+      }
+
+      };
+
+
 
   // const switchShiny = (e, fav) => {
   //   if ((e.target.src = `{url1 + ${fav.pokeId} + ".png"}`)) {
@@ -39,12 +56,13 @@ export default function Dashboard({ loggedInStatus, checkLoggingStatus }) {
           <h1>Hey {username} ! Welcome back to your Dashboard.</h1>
         </div>
       )}
-      <div>
-        {username && (
-          <div className="list">
-            <ul className="favorite-list">
+
+        {favorites && (
+          <div className="favorite-list">
+
+            <ul>
               {favorites.map((fav, index) => (
-                <li key={index}>
+                <li key={index} className="favs">
                   {fav.pokeId && (
                     <img
                       src={url1 + `${fav.pokeId}` + ".png"}
@@ -56,13 +74,17 @@ export default function Dashboard({ loggedInStatus, checkLoggingStatus }) {
               ))}
             </ul>
             {favorites[0] && (
-              <button type="button" onClick={() => getFavorites(id)}>
-                Click to see the your list of favorites
+              <button className="button-10" onClick={() => getFavorites(id)}>
+                {!favoriteDisplayed &&('Show favorites')
+                }
+                {favoriteDisplayed &&('Hide favorites')
+                }
+
               </button>
             )}
           </div>
         )}
-      </div>
+
       <div>
         {!favorites[0] && (
           <div>
@@ -74,8 +96,8 @@ export default function Dashboard({ loggedInStatus, checkLoggingStatus }) {
               to="/Pokedex"
               className={(nav) => (nav.isActive ? "nav-active" : " ")}
             >
-              <button>
-                <h2 type="button" className="button-10">
+              <button className="button-10">
+                <h2>
                   Click here
                 </h2>
               </button>
@@ -103,8 +125,8 @@ export default function Dashboard({ loggedInStatus, checkLoggingStatus }) {
               to="/Homepage"
               className={(nav) => (nav.isActive ? "nav-active" : " ")}
             >
-              <button>
-                <h2 type="button" className="button-10">
+              <button className="button-10">
+                <h2>
                   Click here
                 </h2>
               </button>

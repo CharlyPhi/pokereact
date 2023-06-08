@@ -7,6 +7,7 @@ export default function Login({ handleSuccessfulAuth }) {
   const [username, setUsername] = useState("");
 
   const handleSubmit = (e) => {
+    e.preventDefault();
     axios
       .post(
         "http://localhost:3001/sessions",
@@ -27,7 +28,6 @@ export default function Login({ handleSuccessfulAuth }) {
       .catch((error) => {
         console.log("login Error", error);
       });
-    e.preventDefault();
   };
 
   return (

@@ -1,6 +1,8 @@
 import React from "react";
 import Navigation from "../components/Navigation";
 import SearchBar from "../components/SearchBar";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function NewFeatures() {
   function toggleZoomScreen() {
@@ -9,11 +11,19 @@ export default function NewFeatures() {
   }
   toggleZoomScreen();
 
+  const notify = () => toast("Wow so easy!");
+
+
   return (
     <div className="SearchBar">
       <Navigation />
       <div className="banner"></div>
       <SearchBar/>
+
+      <div>
+        <button onClick={notify}>Notify!</button>
+        <ToastContainer />
+      </div>
     </div>
   );
 }

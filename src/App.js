@@ -8,6 +8,7 @@ import NewFeatures from "./pages/NewFeatures";
 import Faq from "./pages/Faq";
 import axios from "axios";
 
+
 export default function App() {
   const [loggedInStatus, setLoggedInStatus] = useState({
     Status: "Not_logged_in",
@@ -41,10 +42,12 @@ export default function App() {
 
   useEffect(() => {
     checkLoggingStatus();
-  });
+  },[]);
 
   //essayer avec useContext si j'ai le temps
+
   return (
+
     <BrowserRouter>
       <Routes>
         <Route
