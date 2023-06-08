@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import Navigation from "../components/Navigation";
 import Psyduck from "../assets/Psyduck-PC.png";
 
+
 export default function Dashboard({ loggedInStatus, checkLoggingStatus }) {
   const [favorites, setFavorites] = useState([{}]);
   const id = loggedInStatus.user.id;
@@ -33,7 +34,6 @@ export default function Dashboard({ loggedInStatus, checkLoggingStatus }) {
          [...imageClass].forEach(elmt => {elmt.style.display = 'block' });
          setFavoriteDisplayed(true);
       }
-
       };
 
 
@@ -59,7 +59,6 @@ export default function Dashboard({ loggedInStatus, checkLoggingStatus }) {
 
         {favorites && (
           <div className="favorite-list">
-
             <ul>
               {favorites.map((fav, index) => (
                 <li key={index} className="favs">
