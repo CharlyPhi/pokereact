@@ -7,6 +7,8 @@ import Dashboard from "./pages/Dashboard";
 import NewFeatures from "./pages/NewFeatures";
 import Faq from "./pages/Faq";
 import axios from "axios";
+import {ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 
 export default function App() {
@@ -44,10 +46,12 @@ export default function App() {
     checkLoggingStatus();
   },[]);
 
+
+
   //essayer avec useContext si j'ai le temps
 
   return (
-
+<>
     <BrowserRouter>
       <Routes>
         <Route
@@ -92,6 +96,21 @@ export default function App() {
         <Route exact path="*" element={<Homepage />} />
       </Routes>
     </BrowserRouter>
+
+
+  <ToastContainer
+      position="top-right"
+      autoClose={3000}
+      hideProgressBar={true}
+      newestOnTop={true}
+      closeOnClick
+      rtl={false}
+      pauseOnFocusLoss
+      draggable
+      pauseOnHover
+      theme="dark"
+  />
+</>
   );
 }
 
