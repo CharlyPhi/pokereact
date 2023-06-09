@@ -1,30 +1,47 @@
+@import 'variables';
+
 .dashboard {
-  .favorite-list {
-    ul{
+
+  .dashboard-left {
+    margin-top: 2rem;
     display: flex;
-    flex-wrap:wrap ;
-    justify-content: space-around;
-    list-style-type: none;
-
-    img {
-      transform: scale(0.2);
-    }
-
-    /*  &:active{
-        background-image: none;
-        z-index:2;
-        transform: scale(8);
-         transition: none;
-         ul.infos{
-          display:none;
-        }
-      } */
-      li{
-        max-width: 100px;
-        max-height: 200px;
-      }
+    flex-direction: column;
   }
-}
+
+  .dashboard-all {
+    display: flex;
+    justify-content: space-between;
+
+    button {
+      width: 130px;
+      margin: 0;
+    }
+  }
+
+  .sidebar {
+    background-color: $my_blue;
+    height: 800px;
+    min-width: 140px;
+    border: 6px solid rgb(0, 0, 0);
+  }
+
+
+
+  .favorite-list {
+    ul {
+      margin-top: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      list-style-type: none;
+
+      img {
+        width: 95px;
+        height: 95px;
+      }
+
+    }
+  }
+
   .not_logged {
     margin-top: 2rem;
     margin-left: 1rem;
@@ -37,8 +54,6 @@
 
     button {
       margin-left: 1rem;
-      border: none;
-      background: none;
     }
   }
 }

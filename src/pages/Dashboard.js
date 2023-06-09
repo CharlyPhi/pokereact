@@ -50,14 +50,14 @@ export default function Dashboard({ loggedInStatus, checkLoggingStatus }) {
     <div className="dashboard">
       <Navigation />
       <div className="banner"></div>
-
-      {username && (
+<div className="dashboard-all">
+      <div className="dashboard-left">
+        {username && (
         <div className="Welcome">
           <h1>Hey {username} ! Welcome back to your Dashboard.</h1>
         </div>
       )}
-
-        {favorites && (
+ {favorites && (
           <div className="favorite-list">
             <ul>
               {favorites.map((fav, index) => (
@@ -72,17 +72,21 @@ export default function Dashboard({ loggedInStatus, checkLoggingStatus }) {
                 </li>
               ))}
             </ul>
-            {favorites[0] && (
+          </div>
+        )}
+  </div>
+    <div className="sidebar">
+    {favorites[0] && (
               <button className="button-10" onClick={() => getFavorites(id)}>
                 {!favoriteDisplayed &&('Show favorites')
                 }
                 {favoriteDisplayed &&('Hide favorites')
                 }
-
               </button>
             )}
-          </div>
-        )}
+    </div>
+
+    </div>
 
       <div>
         {!favorites[0] && (

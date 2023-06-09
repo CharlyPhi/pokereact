@@ -18,6 +18,7 @@ const service = process.env.REACT_APP_SERVICE;
 
 export default function About() {
   const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [mail, setMail] = useState("");
   const [msg, setMsg] = useState("");
 
@@ -124,6 +125,13 @@ export default function About() {
             placeholder="First Name"
             required={true}
             onChange={(e) => setFirstName(e.target.value)}
+          ></input>
+            <label htmlFor="LastName">     </label>
+          <input
+            name="LastName"
+            placeholder="Last Name"
+            required={true}
+            onChange={(e) => setLastName(e.target.value)}
           ></input>
           <label htmlFor="e-mail"></label>
           <input
