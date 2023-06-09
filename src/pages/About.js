@@ -10,6 +10,7 @@ import Pikachu from "../assets/mail_pikachu.jpg";
 import PlayButton from "../assets/play-button.png";
 import Pika from "../assets/pikachu-starter.mp3";
 import emailjs from '@emailjs/browser';
+import { toast } from 'react-toastify';
 
 const Key = process.env.REACT_APP_PUBLIC_KEY;
 const template = process.env.REACT_APP_TEMPLATE;
@@ -19,8 +20,33 @@ export default function About() {
   const [firstName, setFirstName] = useState("");
   const [mail, setMail] = useState("");
   const [msg, setMsg] = useState("");
-  const [phone, setPhone] = useState("");
-  const [error, setError] = useState("");
+
+  const emailSent = () => {
+
+    toast.success("Your E-mail has been sent ! ", {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      });
+};
+      const emailNotSent = () => {
+
+        toast.succes("An error has occured, try again ! ", {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+          });
+      };
 
   document.body.style.zoom = "110%";
   document.body.style.backgroundColor = "rgb(166,231,242,255)";
@@ -28,7 +54,7 @@ export default function About() {
   // Handles the Form Submit (only the errors at the moment, no actual submit)
   const handleSubmit = (e) => {
     e.preventDefault();
- alert('your E-mail has been sent :) ');
+
    /* if (!firstName) {
       setError("You need to enter a name");
     } else if (!mail) {
@@ -41,13 +67,19 @@ export default function About() {
 
     emailjs.sendForm(service, template, e.target, Key).then(
       (response) => {
-        console.log("Email sent successfully!", response);
+        emailSent();
       },
       (error) => {
-        console.error("Error sending email:", error);
+        emailNotSent();
       }
     );
+    e.target.reset();
+
+
+
 };
+
+
 
   //Sounds
   const PikachuCry = new Audio(Pika);
@@ -85,7 +117,7 @@ export default function About() {
       </div>
 
       <div className="form">
-          <form className="contact-form" onSubmit={handleSubmit}>
+          <form className="contact-form" name ="contact-form" onSubmit={handleSubmit}>
           <label htmlFor="FirstName">     </label>
           <input
             name="FirstName"
