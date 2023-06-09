@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import bow from "../assets/bow.png";
-import { toast, ToastContainer } from 'react-toastify';
-import "react-toastify/dist/ReactToastify.css";
 
+import { toast } from 'react-toastify';
 let url = process.env.REACT_APP_UrlSprites;
 let url2 = process.env.REACT_APP_UrlBase2;
 
@@ -27,12 +26,30 @@ export default function Cards({
 
   const favoriteAdded = () => {
 
-    toast("Favorite addded ! ");
+    toast.success("Favorite added ! ", {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      });
   };
 
   const favoriteRemoved = () => {
 
-    toast("Favorite removed ! ");
+    toast.success("Favorite removed ! ", {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      });
   };
 
 
@@ -106,7 +123,6 @@ export default function Cards({
           </li>
         </ul>
       </li>
-      <ToastContainer />
     </>
   );
 }
