@@ -1,35 +1,46 @@
 @import 'variables';
 
-.NavBar {
-  margin-left: 0;
-  height: 2.5rem;
-  background-color: $my_blue;
-  margin-top: 0;
-  width: 100%;
+.Navbar {
   display: flex;
-  flex-direction: row;
+      background-color: $my_blue;
+      height: 2.5rem;
+  .NavBarButons {
 
-  h2 {
-    font-size: larger;
-  }
+    margin-left: 0;
+    margin-top: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
 
-  span {
-    margin-left: 2rem;
-  }
+    h2 {
+      font-size: larger;
+    }
 
-  button {
-    font-size: medium;
-    border: none;
-    width: 10rem;
-    height: 2.5rem;
-    background: $my_blue;
-    /* fallback for old browsers */
-    background: linear-gradient(to right, lighten($my_blue, 50), lighten($my_blue, 10), $my_blue);
+    span {
+      margin-left: 2rem;
+    }
 
-    &:hover {
-      background: #195dca;
+    button {
+      font-size: medium;
+      border: none;
+      width: 10rem;
+      height: 2.5rem;
+      background: $my_blue;
       /* fallback for old browsers */
-      background: linear-gradient(to right, #85bcfb, #657ff1, #1962d7);
+      background: linear-gradient(to right, lighten($my_blue, 50), lighten($my_blue, 10), $my_blue);
+
+      &:hover {
+        background: #195dca;
+        /* fallback for old browsers */
+        background: linear-gradient(to right, #85bcfb, #657ff1, #1962d7);
+      }
+    }
+  }
+
+
+  .avtr {
+    img {
+      width: 50px;
     }
   }
 }

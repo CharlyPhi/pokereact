@@ -5,6 +5,7 @@ import Homepage from "./pages/Homepage";
 import Pokedex from "./pages/Pokedex";
 import Dashboard from "./pages/Dashboard";
 import NewFeatures from "./pages/NewFeatures";
+import Avatar from "./components/Avatar";
 import Faq from "./pages/Faq";
 import axios from "axios";
 import { toast } from 'react-toastify';
@@ -67,6 +68,8 @@ export default function App() {
       });
 };
 
+  <Avatar loggedInStatus={loggedInStatus}/>
+
   return (
 <>
     <BrowserRouter>
@@ -127,6 +130,8 @@ export default function App() {
       pauseOnHover
       theme="dark"
   />
+
+
 </>
   );
 }
