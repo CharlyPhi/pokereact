@@ -5,6 +5,7 @@ import Navigation from "../components/Navigation";
 import Login from "../components/auth/Login";
 import axios from "axios";
 
+
 document.body.style.zoom = "110%";
 document.body.style.backgroundColor = "rgb(100,231,242,255)";
 
@@ -39,13 +40,17 @@ export default function Homepage({
     return registered;
   };
 
+
+
+
+
   return (
     <div className="homepage">
 
       <Navigation />
       <div className="banner"></div>
       <div className="forms">
-        {loggedInStatusStatus === 'logged_in' && (
+        {loggedInStatusStatus === 'Logged_in' && (
           <div className='logout'>
             <button className="button-10" onClick={() => clickToLogout()}>
               Log out
