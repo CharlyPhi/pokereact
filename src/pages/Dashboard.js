@@ -7,8 +7,8 @@ import Psyduck from "../assets/Psyduck-PC.png";
 
 export default function Dashboard({ loggedInStatus, checkLoggingStatus }) {
   const [favorites, setFavorites] = useState([{}]);
-  const id = loggedInStatus.user.id;
-  const username = loggedInStatus.user.username;
+  const id = loggedInStatus.user ? loggedInStatus.user.id : null;
+  const username = loggedInStatus.user ? loggedInStatus.user.username : null;
   const url1 =
     "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/";
   const [favoriteDisplayed, setFavoriteDisplayed] = useState(false);
@@ -76,7 +76,7 @@ export default function Dashboard({ loggedInStatus, checkLoggingStatus }) {
       </div>
           {username && (
           <div className="Welcome">
-            <h1>Hey {username} ! Welcome back to your Dashboard.</h1>
+            <h1>Hey {username} ! Welcome back !</h1>
           </div>
           )}
       {favorites && username && (

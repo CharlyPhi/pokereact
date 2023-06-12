@@ -7,6 +7,7 @@ import Dashboard from "./pages/Dashboard";
 import NewFeatures from "./pages/NewFeatures";
 import Faq from "./pages/Faq";
 import axios from "axios";
+import { toast } from 'react-toastify';
 import {ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 
@@ -23,6 +24,7 @@ export default function App() {
 
   const handleLogout = () => {
     setLoggedInStatus({ Status: "Not_logged_in", user: {} });
+    logoutConfirm();
   };
 
   const checkLoggingStatus = () => {
@@ -48,7 +50,22 @@ export default function App() {
 
 
 
-  //essayer avec useContext si j'ai le temps
+
+
+
+  const logoutConfirm = () => {
+
+    toast.success("Logout successful", {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      });
+};
 
   return (
 <>
