@@ -48,67 +48,11 @@ export default function Dashboard({ loggedInStatus, checkLoggingStatus }) {
 
   return (
     <div className="dashboard">
-      <Navigation />
+      <Navigation/>
       <div className="banner"></div>
-<div className="dashboard-all">
-      <div className="dashboard-left">
-        {username && (
-        <div className="Welcome">
-          <h1>Hey {username} ! Welcome back to your Dashboard.</h1>
-        </div>
-      )}
- {favorites && (
-          <div className="favorite-list">
-            <ul>
-              {favorites.map((fav, index) => (
-                <li key={index} className="favs">
-                  {fav.pokeId && (
-                    <img
-                      src={url1 + `${fav.pokeId}` + ".png"}
-                      alt={fav.name}
-                      // onClick={(e, fav) => switchShiny(e, fav)}
-                    />
-                  )}
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-  </div>
-    <div className="sidebar">
-    {favorites[0] && (
-              <button className="button-10" onClick={() => getFavorites(id)}>
-                {!favoriteDisplayed &&('Show favorites')
-                }
-                {favoriteDisplayed &&('Hide favorites')
-                }
-              </button>
-            )}
-    </div>
-
-    </div>
-
-      <div>
-        {!favorites[0] && (
-          <div>
-            <h1>
-              You dont have any favorites at the moment, go to the pokedex if
-              you want to add some.
-            </h1>
-            <NavLink
-              to="/Pokedex"
-              className={(nav) => (nav.isActive ? "nav-active" : " ")}
-            >
-              <button className="button-10">
-                <h2>
-                  Click here
-                </h2>
-              </button>
-            </NavLink>
-          </div>
-        )}
-      </div>
-      <div>
+      <div className="dashboard-all">
+        <div className="dashboard-left">
+        <div>
         {!username && (
           <div className="not_logged">
             <h1>
@@ -119,24 +63,70 @@ export default function Dashboard({ loggedInStatus, checkLoggingStatus }) {
                 alt="confused Psyduck "
               />
             </h1>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <h1>Dont worry, it's easy !</h1>
             <NavLink
               to="/Homepage"
               className={(nav) => (nav.isActive ? "nav-active" : " ")}
             >
               <button className="button-10">
-                <h2>
-                  Click here
-                </h2>
+                Login
               </button>
             </NavLink>
           </div>
         )}
       </div>
+          {username && (
+          <div className="Welcome">
+            <h1>Hey {username} ! Welcome back to your Dashboard.</h1>
+          </div>
+          )}
+      {favorites && username && (
+        <div className="favorite-list">
+          <ul>
+            {favorites.map((fav, index) => (
+            <li key={index} className="favs">
+              {fav.pokeId && (
+              <img
+              src={url1 + `${fav.pokeId}` + ".png"}
+              alt={fav.name}
+              // onClick={(e, fav) => switchShiny(e, fav)}
+              />
+              )}
+            </li>
+            ))}
+          </ul>
+        </div>
+        )}
+        <div>
+      {!favorites[0] && username && (
+      <div>
+        <h1>
+          No favorites to display
+        </h1>
+
+      </div>
+      )}
+    </div>
+  </div>
+  <div className="sidebar">
+    {username && (
+              <button className="button-10" onClick={() => getFavorites(id)}>
+                {!favoriteDisplayed &&('Show favorites')
+                }
+                {favoriteDisplayed &&('Hide favorites')
+                }
+              </button>
+            )}
+            <NavLink
+          to="/Pokedex"
+          className={(nav) => (nav.isActive ? "nav-active" : " ")}
+        >
+        <button className="button-10">
+           Pokedex
+        </button>
+        </NavLink>
+    </div>
+    </div>
+
     </div>
   );
 }
