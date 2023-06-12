@@ -1,9 +1,10 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-
+import Avatar from "./Avatar";
 export default function Navigation() {
   return (
-    <div className="NavBar">
+    <div className="Navbar">
+    <div className="NavBarButons">
       <NavLink
         to="/Homepage"
         className={(nav) => (nav.isActive ? "nav-active" : " ")}
@@ -52,6 +53,11 @@ export default function Navigation() {
           <h2 style={{ fontSize: "bold", fontWeight: "600" }}>Faq</h2>
         </button>
       </NavLink>
+      </div>
+      <div className="avtr">
+      <Avatar className="avatar"/>
+      </div>
+
     </div>
   );
 }
