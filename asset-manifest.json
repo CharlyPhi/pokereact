@@ -1,22 +1,23 @@
 {
   "files": {
-    "main.css": "/pokereact/static/css/main.9cd40e21.css",
-    "main.js": "/pokereact/static/js/main.a00daae7.js",
+    "main.css": "/pokereact/static/css/main.971bbee5.css",
+    "main.js": "/pokereact/static/js/main.9a4cef2d.js",
     "static/media/pokereact_banner_1920.png": "/pokereact/static/media/pokereact_banner_1920.d8a5030ce73ba4ad1e80.png",
     "static/media/Psyduck-PC.png": "/pokereact/static/media/Psyduck-PC.040f0d6613d2493b7f0e.png",
     "static/media/card-default.png": "/pokereact/static/media/card-default.0f66306e461f561dc460.png",
     "static/media/mail_pikachu.jpg": "/pokereact/static/media/mail_pikachu.2de66f6cb54b482159f1.jpg",
     "static/media/open_pokeball.png": "/pokereact/static/media/open_pokeball.5a066bc89db25d4f1e9f.png",
+    "static/media/defaultAvatar.png": "/pokereact/static/media/defaultAvatar.1e479e0a796e4778a069.png",
     "static/media/bow.png": "/pokereact/static/media/bow.ba4a7d85aece290ab06f.png",
     "static/media/pokeball.jpg": "/pokereact/static/media/pokeball.d797b1b98c6e88e04283.jpg",
     "static/media/book7.gif": "/pokereact/static/media/book7.df747d5cb260f533018a.gif",
     "static/media/pikachu-starter.mp3": "/pokereact/static/media/pikachu-starter.1cd39455763209d01b9a.mp3",
     "index.html": "/pokereact/index.html",
-    "main.9cd40e21.css.map": "/pokereact/static/css/main.9cd40e21.css.map",
-    "main.a00daae7.js.map": "/pokereact/static/js/main.a00daae7.js.map"
+    "main.971bbee5.css.map": "/pokereact/static/css/main.971bbee5.css.map",
+    "main.9a4cef2d.js.map": "/pokereact/static/js/main.9a4cef2d.js.map"
   },
   "entrypoints": [
-    "static/css/main.9cd40e21.css",
-    "static/js/main.a00daae7.js"
+    "static/css/main.971bbee5.css",
+    "static/js/main.9a4cef2d.js"
   ]
 }
