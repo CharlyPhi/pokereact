@@ -11,7 +11,6 @@ export default function NewFeatures() {
   }
   toggleZoomScreen();
 
-  const notify = () => toast("Wow so easy!");
 
 
   return (
@@ -19,11 +18,6 @@ export default function NewFeatures() {
       <Navigation />
       <div className="banner"></div>
       <SearchBar/>
-
-      <div>
-        <button onClick={notify}>Notify!</button>
-        <ToastContainer />
-      </div>
     </div>
   );
 }
