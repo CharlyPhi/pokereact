@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/pokereact/static/css/main.20447c2a.css",
-    "main.js": "/pokereact/static/js/main.0f5d7743.js",
+    "main.css": "/pokereact/static/css/main.f699c2ac.css",
+    "main.js": "/pokereact/static/js/main.aa26f88c.js",
     "static/media/pokereact_banner_1920.png": "/pokereact/static/media/pokereact_banner_1920.d8a5030ce73ba4ad1e80.png",
     "static/media/Psyduck-PC.png": "/pokereact/static/media/Psyduck-PC.040f0d6613d2493b7f0e.png",
     "static/media/card-default.png": "/pokereact/static/media/card-default.0f66306e461f561dc460.png",
@@ -12,11 +12,11 @@
     "static/media/book7.gif": "/pokereact/static/media/book7.df747d5cb260f533018a.gif",
     "static/media/pikachu-starter.mp3": "/pokereact/static/media/pikachu-starter.1cd39455763209d01b9a.mp3",
     "index.html": "/pokereact/index.html",
-    "main.20447c2a.css.map": "/pokereact/static/css/main.20447c2a.css.map",
-    "main.0f5d7743.js.map": "/pokereact/static/js/main.0f5d7743.js.map"
+    "main.f699c2ac.css.map": "/pokereact/static/css/main.f699c2ac.css.map",
+    "main.aa26f88c.js.map": "/pokereact/static/js/main.aa26f88c.js.map"
   },
   "entrypoints": [
-    "static/css/main.20447c2a.css",
-    "static/js/main.0f5d7743.js"
+    "static/css/main.f699c2ac.css",
+    "static/js/main.aa26f88c.js"
   ]
 }
