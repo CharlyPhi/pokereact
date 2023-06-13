@@ -1,7 +1,17 @@
-import React from "react";
+import {React, useState, useEffect} from 'react';
 import { NavLink } from "react-router-dom";
 import Avatar from "./Avatar";
+import SubMenu from "./SubMenu";
+
 export default function Navigation() {
+
+  const [menuOn, setMenuOn] = useState(false);
+
+  const handleMenu = () => {
+    setMenuOn((prevState) => !prevState);
+  };
+
+
   return (
     <div className="Navbar">
     <div className="NavBarButons">
@@ -54,9 +64,13 @@ export default function Navigation() {
         </button>
       </NavLink>
       </div>
+      <div className="avatarPlusMenu">
       <div className="avtr">
-      <Avatar className="avatar"/>
+      <button style={{background: 'transparent', border: 'none'}}onClick={handleMenu}><Avatar className="avatar"/></button>
       </div>
+      {menuOn && <SubMenu/>}
+      </div>
+
 
     </div>
   );

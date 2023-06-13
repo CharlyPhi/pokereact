@@ -6,6 +6,7 @@ import Pokedex from "./pages/Pokedex";
 import Dashboard from "./pages/Dashboard";
 import NewFeatures from "./pages/NewFeatures";
 import Avatar from "./components/Avatar";
+import SubMenu from "./components/SubMenu";
 import Faq from "./pages/Faq";
 import axios from "axios";
 import { toast } from 'react-toastify';
@@ -67,8 +68,11 @@ export default function App() {
       theme: "light",
       });
 };
-
+<>
   <Avatar loggedInStatus={loggedInStatus}/>
+  <></>
+  <SubMenu/>
+  </>
 
   return (
 <>

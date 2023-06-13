@@ -1,8 +1,6 @@
 import React from "react";
 import Navigation from "../components/Navigation";
 import SearchBar from "../components/SearchBar";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
 export default function NewFeatures() {
   function toggleZoomScreen() {
