@@ -2,8 +2,9 @@
 
 .Navbar {
   display: flex;
-      background-color: $my_blue;
-      height: 2.5rem;
+  background-color: $my_blue;
+  height: 2.5rem;
+
   .NavBarButons {
 
     margin-left: 0;
@@ -39,11 +40,27 @@
 
 
   .avtr {
+
     img {
+      margin-left:2rem;
       width: 50px;
     }
   }
 }
+
+.avatarPlusMenu {
+  margin: auto 0;
+  min-height: 120px;
+
+  .subMenu {
+    width: 60px;
+    margin-right: 2rem;
+     button {
+      width: 70px;
+     }
+  }
+}
+
 
 .banner {
   background-image: url("../assets/pokereact_banner_1920.png");

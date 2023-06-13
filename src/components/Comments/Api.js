@@ -6,7 +6,7 @@ export const getComments = async () => {
       username: "OwShift",
       userId: "1",
       parentId: null,
-      createdAt: "2022-07-16T23:00:33.010+02:00",
+      createdAt: "2023-07-16T23:00:33.010+02:00",
     },
     {
       id: "2",
@@ -14,7 +14,7 @@ export const getComments = async () => {
       username: "DarkMode4Ever",
       userId: "2",
       parentId: null,
-      createdAt: "2022-06-16T23:00:33.010+02:00",
+      createdAt: "2023-06-16T23:00:33.010+02:00",
     },
     {
       id: "3",
@@ -22,7 +22,7 @@ export const getComments = async () => {
       username: "KpopIsDope974",
       userId: "2",
       parentId: "1",
-      createdAt: "2022-07-16T23:00:33.010+02:00",
+      createdAt: "2023-07-16T23:00:33.010+02:00",
     },
     {
       id: "4",
@@ -30,7 +30,7 @@ export const getComments = async () => {
       username: "Admin",
       userId: "2",
       parentId: "2",
-      createdAt: "2022-06-16T23:00:33.010+02:00",
+      createdAt: "2023-06-16T23:00:33.010+02:00",
     },
   ];
 };

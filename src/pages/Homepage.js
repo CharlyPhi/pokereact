@@ -66,7 +66,7 @@ export default function Homepage({
         )}
 
           {!registered &&
-            ((
+            (
               <div className="not_logged">
                 <h1>First time ?</h1>
 
@@ -81,7 +81,7 @@ export default function Homepage({
                   Go to Log In
                 </button>
               </div>
-            ))}
+            )}
       </div>
     </div>
   );
