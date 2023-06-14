@@ -57,7 +57,7 @@ export default function Cards({
     if (!favorites.map((fav) => fav.name).includes(e.target.alt)) {
       axios
         .post(
-          "http://localhost:3001/favorites/",
+          "https://pokerails-api-for-pokereact.onrender.com/favorites/",
           {
             favorite: {
               name: e.target.alt,
@@ -72,7 +72,7 @@ export default function Cards({
     } else {
       let fav = favorites.find((elem) => elem.name === e.target.alt);
       axios.delete(
-        `http://localhost:3001/favorites/${fav.id}/${loggedInStatus.user.id}`
+        `https://pokerails-api-for-pokereact.onrender.com/favorites/${fav.id}/${loggedInStatus.user.id}`
       ).then(favoriteRemoved);
     }
   };

@@ -21,7 +21,7 @@ export default function Dashboard({ loggedInStatus, checkLoggingStatus }) {
   const getFavorites = (id) => {
     if (favoriteDisplayed === false) {
    axios
-      .get(`http://localhost:3001/favorites/${id}`)
+      .get(`https://pokerails-api-for-pokereact.onrender.com/favorites/${id}`)
       .then((res) => setFavorites(res.data)).then(setFavoriteDisplayed(true))
       }
       else if (favoriteDisplayed === true) {

@@ -26,7 +26,7 @@ export default function Homepage({
 
   const clickToLogout = () => {
     axios
-      .delete("http://localhost:3001/logout", { withCredentials: true })
+      .delete("https://pokerails-api-for-pokereact.onrender.com/logout", { withCredentials: true })
       .then((res) => {
         handleLogout();
       })

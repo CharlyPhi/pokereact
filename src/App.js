@@ -31,7 +31,7 @@ export default function App() {
 
   const checkLoggingStatus = () => {
     axios
-      .get("http://localhost:3001/logged_in", { withCredentials: true })
+      .get("https://pokerails-api-for-pokereact.onrender.com/logged_in", { withCredentials: true })
       .then((res) => {
         if (res.data.logged_in ) {
           setLoggedInStatus({ Status: "Logged_in", user: res.data.user });

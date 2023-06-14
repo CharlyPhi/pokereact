@@ -10,7 +10,7 @@ export default function Registration({ handleSuccessfulAuth }) {
   const handleSubmit = (e) => {
     axios
       .post(
-        "http://localhost:3001/registrations",
+        "https://pokerails-api-for-pokereact.onrender.com/registrations",
         {
           user: {
             email: email,
