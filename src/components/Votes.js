@@ -10,7 +10,7 @@ export default function Votes() {
 
   const getVotes = async () => {
     try {
-      await axios.get("http://localhost:3001/votes").then((res) => {
+      await axios.get("https://pokerails-api-for-pokereact.onrender.com/votes").then((res) => {
         setVote1({
           id: res.data[0].id,
           description: res.data[0].description,
@@ -39,7 +39,7 @@ export default function Votes() {
 
   const upvote = async (id) => {
     return axios
-      .patch(`http://localhost:3001/votes/${id}}`, {
+      .patch(`https://pokerails-api-for-pokereact.onrender.com/votes/${id}}`, {
         withCredentials: true,
       })
       .then((res) => {

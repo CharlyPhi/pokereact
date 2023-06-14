@@ -18,7 +18,7 @@ export default function Pokemon({ loggedInStatus }) {
 
   const getFavorites = (loggedInStatus) => {
     axios
-      .get(`http://localhost:3001/favorites/${loggedInStatus.user.id}`)
+      .get(`https://pokerails-api-for-pokereact.onrender.com/favorites/${loggedInStatus.user.id}`)
       .then((res) => {
         setFavorites(res.data);
       });
